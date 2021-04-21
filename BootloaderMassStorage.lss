@@ -1,0 +1,2262 @@
+
+BootloaderMassStorage.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         0000011c  00800100  0000f320  000013f4  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00001320  0000e000  0000e000  000000d4  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .apitable_trampolines 00000026  0000ffa0  0000ffa0  00001510  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  3 .apitable_jumptable 00000018  0000ffe0  0000ffe0  00001536  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  4 .apitable_signatures 00000008  0000fff8  0000fff8  0000154e  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  5 .bss          0000000f  0080021c  0080021c  00001556  2**0
+                  ALLOC
+  6 .comment      00000011  00000000  00000000  00001556  2**0
+                  CONTENTS, READONLY
+  7 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00001568  2**2
+                  CONTENTS, READONLY
+  8 .debug_aranges 00000028  00000000  00000000  000015a8  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_info   00000be4  00000000  00000000  000015d0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_abbrev 00000ae4  00000000  00000000  000021b4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_line   000000f1  00000000  00000000  00002c98  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_str    000003f7  00000000  00000000  00002d89  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_ranges 00000020  00000000  00000000  00003180  2**3
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+0000e000 <__vectors>:
+    e000:	4b c0       	rjmp	.+150    	; 0xe098 <__ctors_end>
+    e002:	00 00       	nop
+    e004:	8b c0       	rjmp	.+278    	; 0xe11c <__bad_interrupt>
+    e006:	00 00       	nop
+    e008:	89 c0       	rjmp	.+274    	; 0xe11c <__bad_interrupt>
+    e00a:	00 00       	nop
+    e00c:	87 c0       	rjmp	.+270    	; 0xe11c <__bad_interrupt>
+    e00e:	00 00       	nop
+    e010:	85 c0       	rjmp	.+266    	; 0xe11c <__bad_interrupt>
+    e012:	00 00       	nop
+    e014:	83 c0       	rjmp	.+262    	; 0xe11c <__bad_interrupt>
+    e016:	00 00       	nop
+    e018:	81 c0       	rjmp	.+258    	; 0xe11c <__bad_interrupt>
+    e01a:	00 00       	nop
+    e01c:	7f c0       	rjmp	.+254    	; 0xe11c <__bad_interrupt>
+    e01e:	00 00       	nop
+    e020:	7d c0       	rjmp	.+250    	; 0xe11c <__bad_interrupt>
+    e022:	00 00       	nop
+    e024:	7b c0       	rjmp	.+246    	; 0xe11c <__bad_interrupt>
+    e026:	00 00       	nop
+    e028:	4b c4       	rjmp	.+2198   	; 0xe8c0 <__vector_10>
+    e02a:	00 00       	nop
+    e02c:	06 c4       	rjmp	.+2060   	; 0xe83a <__vector_11>
+    e02e:	00 00       	nop
+    e030:	75 c0       	rjmp	.+234    	; 0xe11c <__bad_interrupt>
+    e032:	00 00       	nop
+    e034:	73 c0       	rjmp	.+230    	; 0xe11c <__bad_interrupt>
+    e036:	00 00       	nop
+    e038:	71 c0       	rjmp	.+226    	; 0xe11c <__bad_interrupt>
+    e03a:	00 00       	nop
+    e03c:	6f c0       	rjmp	.+222    	; 0xe11c <__bad_interrupt>
+    e03e:	00 00       	nop
+    e040:	6d c0       	rjmp	.+218    	; 0xe11c <__bad_interrupt>
+    e042:	00 00       	nop
+    e044:	6b c0       	rjmp	.+214    	; 0xe11c <__bad_interrupt>
+    e046:	00 00       	nop
+    e048:	69 c0       	rjmp	.+210    	; 0xe11c <__bad_interrupt>
+    e04a:	00 00       	nop
+    e04c:	67 c0       	rjmp	.+206    	; 0xe11c <__bad_interrupt>
+    e04e:	00 00       	nop
+    e050:	3a c6       	rjmp	.+3188   	; 0xecc6 <__vector_20>
+    e052:	00 00       	nop
+    e054:	63 c0       	rjmp	.+198    	; 0xe11c <__bad_interrupt>
+    e056:	00 00       	nop
+    e058:	61 c0       	rjmp	.+194    	; 0xe11c <__bad_interrupt>
+    e05a:	00 00       	nop
+    e05c:	5f c0       	rjmp	.+190    	; 0xe11c <__bad_interrupt>
+    e05e:	00 00       	nop
+    e060:	5d c0       	rjmp	.+186    	; 0xe11c <__bad_interrupt>
+    e062:	00 00       	nop
+    e064:	5b c0       	rjmp	.+182    	; 0xe11c <__bad_interrupt>
+    e066:	00 00       	nop
+    e068:	59 c0       	rjmp	.+178    	; 0xe11c <__bad_interrupt>
+    e06a:	00 00       	nop
+    e06c:	57 c0       	rjmp	.+174    	; 0xe11c <__bad_interrupt>
+    e06e:	00 00       	nop
+    e070:	55 c0       	rjmp	.+170    	; 0xe11c <__bad_interrupt>
+    e072:	00 00       	nop
+    e074:	53 c0       	rjmp	.+166    	; 0xe11c <__bad_interrupt>
+    e076:	00 00       	nop
+    e078:	51 c0       	rjmp	.+162    	; 0xe11c <__bad_interrupt>
+    e07a:	00 00       	nop
+    e07c:	4f c0       	rjmp	.+158    	; 0xe11c <__bad_interrupt>
+    e07e:	00 00       	nop
+    e080:	4d c0       	rjmp	.+154    	; 0xe11c <__bad_interrupt>
+    e082:	00 00       	nop
+    e084:	4b c0       	rjmp	.+150    	; 0xe11c <__bad_interrupt>
+    e086:	00 00       	nop
+    e088:	49 c0       	rjmp	.+146    	; 0xe11c <__bad_interrupt>
+    e08a:	00 00       	nop
+    e08c:	47 c0       	rjmp	.+142    	; 0xe11c <__bad_interrupt>
+    e08e:	00 00       	nop
+    e090:	45 c0       	rjmp	.+138    	; 0xe11c <__bad_interrupt>
+    e092:	00 00       	nop
+    e094:	43 c0       	rjmp	.+134    	; 0xe11c <__bad_interrupt>
+    e096:	00 00       	nop
+
+0000e098 <__ctors_end>:
+    e098:	11 24       	eor	r1, r1
+    e09a:	1f be       	out	0x3f, r1	; 63
+    e09c:	cf ef       	ldi	r28, 0xFF	; 255
+    e09e:	d0 e1       	ldi	r29, 0x10	; 16
+    e0a0:	de bf       	out	0x3e, r29	; 62
+    e0a2:	cd bf       	out	0x3d, r28	; 61
+
+0000e0a4 <Application_Jump_Check>:
+    e0a4:	8f ef       	ldi	r24, 0xFF	; 255
+    e0a6:	81 b9       	out	0x01, r24	; 1
+    e0a8:	12 b8       	out	0x02, r1	; 2
+    e0aa:	6d 98       	cbi	0x0d, 5	; 13
+    e0ac:	75 9a       	sbi	0x0e, 5	; 14
+    e0ae:	8f e3       	ldi	r24, 0x3F	; 63
+    e0b0:	9c e9       	ldi	r25, 0x9C	; 156
+    e0b2:	01 97       	sbiw	r24, 0x01	; 1
+    e0b4:	f1 f7       	brne	.-4      	; 0xe0b2 <Application_Jump_Check+0xe>
+    e0b6:	00 c0       	rjmp	.+0      	; 0xe0b8 <Application_Jump_Check+0x14>
+    e0b8:	00 00       	nop
+    e0ba:	4c b1       	in	r20, 0x0c	; 12
+    e0bc:	75 98       	cbi	0x0e, 5	; 14
+    e0be:	20 e0       	ldi	r18, 0x00	; 0
+    e0c0:	30 e0       	ldi	r19, 0x00	; 0
+    e0c2:	f9 01       	movw	r30, r18
+    e0c4:	85 91       	lpm	r24, Z+
+    e0c6:	94 91       	lpm	r25, Z
+    e0c8:	45 ff       	sbrs	r20, 5
+    e0ca:	12 c0       	rjmp	.+36     	; 0xe0f0 <__do_copy_data>
+    e0cc:	01 96       	adiw	r24, 0x01	; 1
+    e0ce:	81 f0       	breq	.+32     	; 0xe0f0 <__do_copy_data>
+    e0d0:	84 b7       	in	r24, 0x34	; 52
+    e0d2:	87 7f       	andi	r24, 0xF7	; 247
+    e0d4:	84 bf       	out	0x34, r24	; 52
+    e0d6:	0f b6       	in	r0, 0x3f	; 63
+    e0d8:	f8 94       	cli
+    e0da:	a8 95       	wdr
+    e0dc:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__TEXT_REGION_LENGTH__+0x7e0060>
+    e0e0:	88 61       	ori	r24, 0x18	; 24
+    e0e2:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__TEXT_REGION_LENGTH__+0x7e0060>
+    e0e6:	10 92 60 00 	sts	0x0060, r1	; 0x800060 <__TEXT_REGION_LENGTH__+0x7e0060>
+    e0ea:	0f be       	out	0x3f, r0	; 63
+    e0ec:	f9 01       	movw	r30, r18
+    e0ee:	09 95       	icall
+
+0000e0f0 <__do_copy_data>:
+    e0f0:	12 e0       	ldi	r17, 0x02	; 2
+    e0f2:	a0 e0       	ldi	r26, 0x00	; 0
+    e0f4:	b1 e0       	ldi	r27, 0x01	; 1
+    e0f6:	e0 e2       	ldi	r30, 0x20	; 32
+    e0f8:	f3 ef       	ldi	r31, 0xF3	; 243
+    e0fa:	02 c0       	rjmp	.+4      	; 0xe100 <__do_copy_data+0x10>
+    e0fc:	05 90       	lpm	r0, Z+
+    e0fe:	0d 92       	st	X+, r0
+    e100:	ac 31       	cpi	r26, 0x1C	; 28
+    e102:	b1 07       	cpc	r27, r17
+    e104:	d9 f7       	brne	.-10     	; 0xe0fc <__do_copy_data+0xc>
+
+0000e106 <__do_clear_bss>:
+    e106:	22 e0       	ldi	r18, 0x02	; 2
+    e108:	ac e1       	ldi	r26, 0x1C	; 28
+    e10a:	b2 e0       	ldi	r27, 0x02	; 2
+    e10c:	01 c0       	rjmp	.+2      	; 0xe110 <.do_clear_bss_start>
+
+0000e10e <.do_clear_bss_loop>:
+    e10e:	1d 92       	st	X+, r1
+
+0000e110 <.do_clear_bss_start>:
+    e110:	ab 32       	cpi	r26, 0x2B	; 43
+    e112:	b2 07       	cpc	r27, r18
+    e114:	e1 f7       	brne	.-8      	; 0xe10e <.do_clear_bss_loop>
+    e116:	e6 d5       	rcall	.+3020   	; 0xece4 <main>
+    e118:	0c 94 8e 79 	jmp	0xf31c	; 0xf31c <_exit>
+
+0000e11c <__bad_interrupt>:
+    e11c:	71 cf       	rjmp	.-286    	; 0xe000 <__vectors>
+
+0000e11e <Endpoint_WaitUntilReady>:
+    e11e:	20 91 e4 00 	lds	r18, 0x00E4	; 0x8000e4 <__TEXT_REGION_LENGTH__+0x7e00e4>
+    e122:	30 91 e5 00 	lds	r19, 0x00E5	; 0x8000e5 <__TEXT_REGION_LENGTH__+0x7e00e5>
+    e126:	95 e6       	ldi	r25, 0x65	; 101
+    e128:	40 91 ec 00 	lds	r20, 0x00EC	; 0x8000ec <__TEXT_REGION_LENGTH__+0x7e00ec>
+    e12c:	84 2f       	mov	r24, r20
+    e12e:	81 70       	andi	r24, 0x01	; 1
+    e130:	40 ff       	sbrs	r20, 0
+    e132:	22 c0       	rjmp	.+68     	; 0xe178 <Endpoint_WaitUntilReady+0x5a>
+    e134:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e138:	80 fd       	sbrc	r24, 0
+    e13a:	1c c0       	rjmp	.+56     	; 0xe174 <Endpoint_WaitUntilReady+0x56>
+    e13c:	8e b3       	in	r24, 0x1e	; 30
+    e13e:	88 23       	and	r24, r24
+    e140:	99 f0       	breq	.+38     	; 0xe168 <Endpoint_WaitUntilReady+0x4a>
+    e142:	85 30       	cpi	r24, 0x05	; 5
+    e144:	99 f0       	breq	.+38     	; 0xe16c <Endpoint_WaitUntilReady+0x4e>
+    e146:	80 91 eb 00 	lds	r24, 0x00EB	; 0x8000eb <__TEXT_REGION_LENGTH__+0x7e00eb>
+    e14a:	85 fd       	sbrc	r24, 5
+    e14c:	11 c0       	rjmp	.+34     	; 0xe170 <Endpoint_WaitUntilReady+0x52>
+    e14e:	40 91 e4 00 	lds	r20, 0x00E4	; 0x8000e4 <__TEXT_REGION_LENGTH__+0x7e00e4>
+    e152:	50 91 e5 00 	lds	r21, 0x00E5	; 0x8000e5 <__TEXT_REGION_LENGTH__+0x7e00e5>
+    e156:	24 17       	cp	r18, r20
+    e158:	35 07       	cpc	r19, r21
+    e15a:	31 f3       	breq	.-52     	; 0xe128 <Endpoint_WaitUntilReady+0xa>
+    e15c:	91 50       	subi	r25, 0x01	; 1
+    e15e:	11 f0       	breq	.+4      	; 0xe164 <Endpoint_WaitUntilReady+0x46>
+    e160:	9a 01       	movw	r18, r20
+    e162:	e2 cf       	rjmp	.-60     	; 0xe128 <Endpoint_WaitUntilReady+0xa>
+    e164:	84 e0       	ldi	r24, 0x04	; 4
+    e166:	08 95       	ret
+    e168:	82 e0       	ldi	r24, 0x02	; 2
+    e16a:	08 95       	ret
+    e16c:	83 e0       	ldi	r24, 0x03	; 3
+    e16e:	08 95       	ret
+    e170:	81 e0       	ldi	r24, 0x01	; 1
+    e172:	08 95       	ret
+    e174:	80 e0       	ldi	r24, 0x00	; 0
+    e176:	08 95       	ret
+    e178:	40 91 e8 00 	lds	r20, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e17c:	42 ff       	sbrs	r20, 2
+    e17e:	de cf       	rjmp	.-68     	; 0xe13c <Endpoint_WaitUntilReady+0x1e>
+    e180:	08 95       	ret
+
+0000e182 <Endpoint_Null_Stream.constprop.6>:
+    e182:	0f 93       	push	r16
+    e184:	1f 93       	push	r17
+    e186:	cf 93       	push	r28
+    e188:	df 93       	push	r29
+    e18a:	8c 01       	movw	r16, r24
+    e18c:	c8 df       	rcall	.-112    	; 0xe11e <Endpoint_WaitUntilReady>
+    e18e:	81 11       	cpse	r24, r1
+    e190:	17 c0       	rjmp	.+46     	; 0xe1c0 <Endpoint_Null_Stream.constprop.6+0x3e>
+    e192:	c0 e0       	ldi	r28, 0x00	; 0
+    e194:	d0 e0       	ldi	r29, 0x00	; 0
+    e196:	c0 17       	cp	r28, r16
+    e198:	d1 07       	cpc	r29, r17
+    e19a:	88 f4       	brcc	.+34     	; 0xe1be <Endpoint_Null_Stream.constprop.6+0x3c>
+    e19c:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e1a0:	85 fd       	sbrc	r24, 5
+    e1a2:	09 c0       	rjmp	.+18     	; 0xe1b6 <Endpoint_Null_Stream.constprop.6+0x34>
+    e1a4:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e1a8:	8e 77       	andi	r24, 0x7E	; 126
+    e1aa:	80 93 e8 00 	sts	0x00E8, r24	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e1ae:	b7 df       	rcall	.-146    	; 0xe11e <Endpoint_WaitUntilReady>
+    e1b0:	88 23       	and	r24, r24
+    e1b2:	89 f3       	breq	.-30     	; 0xe196 <Endpoint_Null_Stream.constprop.6+0x14>
+    e1b4:	05 c0       	rjmp	.+10     	; 0xe1c0 <Endpoint_Null_Stream.constprop.6+0x3e>
+    e1b6:	10 92 f1 00 	sts	0x00F1, r1	; 0x8000f1 <__TEXT_REGION_LENGTH__+0x7e00f1>
+    e1ba:	21 96       	adiw	r28, 0x01	; 1
+    e1bc:	ec cf       	rjmp	.-40     	; 0xe196 <Endpoint_Null_Stream.constprop.6+0x14>
+    e1be:	80 e0       	ldi	r24, 0x00	; 0
+    e1c0:	df 91       	pop	r29
+    e1c2:	cf 91       	pop	r28
+    e1c4:	1f 91       	pop	r17
+    e1c6:	0f 91       	pop	r16
+    e1c8:	08 95       	ret
+
+0000e1ca <Endpoint_ClearStatusStage>:
+    e1ca:	80 91 23 02 	lds	r24, 0x0223	; 0x800223 <USB_ControlRequest>
+    e1ce:	87 ff       	sbrs	r24, 7
+    e1d0:	0f c0       	rjmp	.+30     	; 0xe1f0 <Endpoint_ClearStatusStage+0x26>
+    e1d2:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e1d6:	82 fd       	sbrc	r24, 2
+    e1d8:	04 c0       	rjmp	.+8      	; 0xe1e2 <Endpoint_ClearStatusStage+0x18>
+    e1da:	8e b3       	in	r24, 0x1e	; 30
+    e1dc:	81 11       	cpse	r24, r1
+    e1de:	f9 cf       	rjmp	.-14     	; 0xe1d2 <Endpoint_ClearStatusStage+0x8>
+    e1e0:	10 c0       	rjmp	.+32     	; 0xe202 <Endpoint_ClearStatusStage+0x38>
+    e1e2:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e1e6:	8b 77       	andi	r24, 0x7B	; 123
+    e1e8:	0a c0       	rjmp	.+20     	; 0xe1fe <Endpoint_ClearStatusStage+0x34>
+    e1ea:	8e b3       	in	r24, 0x1e	; 30
+    e1ec:	88 23       	and	r24, r24
+    e1ee:	49 f0       	breq	.+18     	; 0xe202 <Endpoint_ClearStatusStage+0x38>
+    e1f0:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e1f4:	80 ff       	sbrs	r24, 0
+    e1f6:	f9 cf       	rjmp	.-14     	; 0xe1ea <Endpoint_ClearStatusStage+0x20>
+    e1f8:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e1fc:	8e 77       	andi	r24, 0x7E	; 126
+    e1fe:	80 93 e8 00 	sts	0x00E8, r24	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e202:	08 95       	ret
+
+0000e204 <Endpoint_ConfigureEndpoint_Prv>:
+    e204:	8f 70       	andi	r24, 0x0F	; 15
+    e206:	80 93 e9 00 	sts	0x00E9, r24	; 0x8000e9 <__TEXT_REGION_LENGTH__+0x7e00e9>
+    e20a:	eb ee       	ldi	r30, 0xEB	; 235
+    e20c:	f0 e0       	ldi	r31, 0x00	; 0
+    e20e:	80 81       	ld	r24, Z
+    e210:	81 60       	ori	r24, 0x01	; 1
+    e212:	80 83       	st	Z, r24
+    e214:	ed ee       	ldi	r30, 0xED	; 237
+    e216:	f0 e0       	ldi	r31, 0x00	; 0
+    e218:	10 82       	st	Z, r1
+    e21a:	60 93 ec 00 	sts	0x00EC, r22	; 0x8000ec <__TEXT_REGION_LENGTH__+0x7e00ec>
+    e21e:	40 83       	st	Z, r20
+    e220:	80 91 ee 00 	lds	r24, 0x00EE	; 0x8000ee <__TEXT_REGION_LENGTH__+0x7e00ee>
+    e224:	88 1f       	adc	r24, r24
+    e226:	88 27       	eor	r24, r24
+    e228:	88 1f       	adc	r24, r24
+    e22a:	08 95       	ret
+
+0000e22c <Endpoint_ConfigureEndpointTable.constprop.14>:
+    e22c:	fc 01       	movw	r30, r24
+    e22e:	60 81       	ld	r22, Z
+    e230:	61 11       	cpse	r22, r1
+    e232:	02 c0       	rjmp	.+4      	; 0xe238 <Endpoint_ConfigureEndpointTable.constprop.14+0xc>
+    e234:	81 e0       	ldi	r24, 0x01	; 1
+    e236:	08 95       	ret
+    e238:	24 81       	ldd	r18, Z+4	; 0x04
+    e23a:	a1 81       	ldd	r26, Z+1	; 0x01
+    e23c:	b2 81       	ldd	r27, Z+2	; 0x02
+    e23e:	93 81       	ldd	r25, Z+3	; 0x03
+    e240:	86 2f       	mov	r24, r22
+    e242:	8f 70       	andi	r24, 0x0F	; 15
+    e244:	87 30       	cpi	r24, 0x07	; 7
+    e246:	10 f0       	brcs	.+4      	; 0xe24c <Endpoint_ConfigureEndpointTable.constprop.14+0x20>
+    e248:	80 e0       	ldi	r24, 0x00	; 0
+    e24a:	08 95       	ret
+    e24c:	22 30       	cpi	r18, 0x02	; 2
+    e24e:	10 f4       	brcc	.+4      	; 0xe254 <Endpoint_ConfigureEndpointTable.constprop.14+0x28>
+    e250:	42 e0       	ldi	r20, 0x02	; 2
+    e252:	01 c0       	rjmp	.+2      	; 0xe256 <Endpoint_ConfigureEndpointTable.constprop.14+0x2a>
+    e254:	46 e0       	ldi	r20, 0x06	; 6
+    e256:	e8 e0       	ldi	r30, 0x08	; 8
+    e258:	f0 e0       	ldi	r31, 0x00	; 0
+    e25a:	20 e0       	ldi	r18, 0x00	; 0
+    e25c:	ea 17       	cp	r30, r26
+    e25e:	fb 07       	cpc	r31, r27
+    e260:	20 f4       	brcc	.+8      	; 0xe26a <Endpoint_ConfigureEndpointTable.constprop.14+0x3e>
+    e262:	2f 5f       	subi	r18, 0xFF	; 255
+    e264:	ee 0f       	add	r30, r30
+    e266:	ff 1f       	adc	r31, r31
+    e268:	f9 cf       	rjmp	.-14     	; 0xe25c <Endpoint_ConfigureEndpointTable.constprop.14+0x30>
+    e26a:	22 95       	swap	r18
+    e26c:	20 7f       	andi	r18, 0xF0	; 240
+    e26e:	42 2b       	or	r20, r18
+    e270:	50 e4       	ldi	r21, 0x40	; 64
+    e272:	95 9f       	mul	r25, r21
+    e274:	90 01       	movw	r18, r0
+    e276:	11 24       	eor	r1, r1
+    e278:	66 1f       	adc	r22, r22
+    e27a:	66 27       	eor	r22, r22
+    e27c:	66 1f       	adc	r22, r22
+    e27e:	62 2b       	or	r22, r18
+    e280:	c1 df       	rcall	.-126    	; 0xe204 <Endpoint_ConfigureEndpoint_Prv>
+    e282:	81 11       	cpse	r24, r1
+    e284:	d7 cf       	rjmp	.-82     	; 0xe234 <Endpoint_ConfigureEndpointTable.constprop.14+0x8>
+    e286:	e0 cf       	rjmp	.-64     	; 0xe248 <Endpoint_ConfigureEndpointTable.constprop.14+0x1c>
+
+0000e288 <Endpoint_Read_Stream_LE>:
+    e288:	cf 92       	push	r12
+    e28a:	df 92       	push	r13
+    e28c:	ef 92       	push	r14
+    e28e:	ff 92       	push	r15
+    e290:	0f 93       	push	r16
+    e292:	1f 93       	push	r17
+    e294:	cf 93       	push	r28
+    e296:	df 93       	push	r29
+    e298:	ec 01       	movw	r28, r24
+    e29a:	8b 01       	movw	r16, r22
+    e29c:	7a 01       	movw	r14, r20
+    e29e:	3f df       	rcall	.-386    	; 0xe11e <Endpoint_WaitUntilReady>
+    e2a0:	81 11       	cpse	r24, r1
+    e2a2:	32 c0       	rjmp	.+100    	; 0xe308 <Endpoint_Read_Stream_LE+0x80>
+    e2a4:	e1 14       	cp	r14, r1
+    e2a6:	f1 04       	cpc	r15, r1
+    e2a8:	39 f0       	breq	.+14     	; 0xe2b8 <Endpoint_Read_Stream_LE+0x30>
+    e2aa:	f7 01       	movw	r30, r14
+    e2ac:	80 81       	ld	r24, Z
+    e2ae:	91 81       	ldd	r25, Z+1	; 0x01
+    e2b0:	08 1b       	sub	r16, r24
+    e2b2:	19 0b       	sbc	r17, r25
+    e2b4:	c8 0f       	add	r28, r24
+    e2b6:	d9 1f       	adc	r29, r25
+    e2b8:	c1 2c       	mov	r12, r1
+    e2ba:	d1 2c       	mov	r13, r1
+    e2bc:	01 15       	cp	r16, r1
+    e2be:	11 05       	cpc	r17, r1
+    e2c0:	11 f1       	breq	.+68     	; 0xe306 <Endpoint_Read_Stream_LE+0x7e>
+    e2c2:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e2c6:	85 fd       	sbrc	r24, 5
+    e2c8:	15 c0       	rjmp	.+42     	; 0xe2f4 <Endpoint_Read_Stream_LE+0x6c>
+    e2ca:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e2ce:	8b 77       	andi	r24, 0x7B	; 123
+    e2d0:	80 93 e8 00 	sts	0x00E8, r24	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e2d4:	e1 14       	cp	r14, r1
+    e2d6:	f1 04       	cpc	r15, r1
+    e2d8:	49 f0       	breq	.+18     	; 0xe2ec <Endpoint_Read_Stream_LE+0x64>
+    e2da:	f7 01       	movw	r30, r14
+    e2dc:	80 81       	ld	r24, Z
+    e2de:	91 81       	ldd	r25, Z+1	; 0x01
+    e2e0:	c8 0e       	add	r12, r24
+    e2e2:	d9 1e       	adc	r13, r25
+    e2e4:	d1 82       	std	Z+1, r13	; 0x01
+    e2e6:	c0 82       	st	Z, r12
+    e2e8:	85 e0       	ldi	r24, 0x05	; 5
+    e2ea:	0e c0       	rjmp	.+28     	; 0xe308 <Endpoint_Read_Stream_LE+0x80>
+    e2ec:	18 df       	rcall	.-464    	; 0xe11e <Endpoint_WaitUntilReady>
+    e2ee:	88 23       	and	r24, r24
+    e2f0:	29 f3       	breq	.-54     	; 0xe2bc <Endpoint_Read_Stream_LE+0x34>
+    e2f2:	0a c0       	rjmp	.+20     	; 0xe308 <Endpoint_Read_Stream_LE+0x80>
+    e2f4:	80 91 f1 00 	lds	r24, 0x00F1	; 0x8000f1 <__TEXT_REGION_LENGTH__+0x7e00f1>
+    e2f8:	89 93       	st	Y+, r24
+    e2fa:	01 50       	subi	r16, 0x01	; 1
+    e2fc:	11 09       	sbc	r17, r1
+    e2fe:	ff ef       	ldi	r31, 0xFF	; 255
+    e300:	cf 1a       	sub	r12, r31
+    e302:	df 0a       	sbc	r13, r31
+    e304:	db cf       	rjmp	.-74     	; 0xe2bc <Endpoint_Read_Stream_LE+0x34>
+    e306:	80 e0       	ldi	r24, 0x00	; 0
+    e308:	df 91       	pop	r29
+    e30a:	cf 91       	pop	r28
+    e30c:	1f 91       	pop	r17
+    e30e:	0f 91       	pop	r16
+    e310:	ff 90       	pop	r15
+    e312:	ef 90       	pop	r14
+    e314:	df 90       	pop	r13
+    e316:	cf 90       	pop	r12
+    e318:	08 95       	ret
+
+0000e31a <Endpoint_Write_Stream_LE>:
+    e31a:	cf 92       	push	r12
+    e31c:	df 92       	push	r13
+    e31e:	ef 92       	push	r14
+    e320:	ff 92       	push	r15
+    e322:	0f 93       	push	r16
+    e324:	1f 93       	push	r17
+    e326:	cf 93       	push	r28
+    e328:	df 93       	push	r29
+    e32a:	ec 01       	movw	r28, r24
+    e32c:	8b 01       	movw	r16, r22
+    e32e:	7a 01       	movw	r14, r20
+    e330:	f6 de       	rcall	.-532    	; 0xe11e <Endpoint_WaitUntilReady>
+    e332:	81 11       	cpse	r24, r1
+    e334:	32 c0       	rjmp	.+100    	; 0xe39a <Endpoint_Write_Stream_LE+0x80>
+    e336:	e1 14       	cp	r14, r1
+    e338:	f1 04       	cpc	r15, r1
+    e33a:	39 f0       	breq	.+14     	; 0xe34a <Endpoint_Write_Stream_LE+0x30>
+    e33c:	f7 01       	movw	r30, r14
+    e33e:	80 81       	ld	r24, Z
+    e340:	91 81       	ldd	r25, Z+1	; 0x01
+    e342:	08 1b       	sub	r16, r24
+    e344:	19 0b       	sbc	r17, r25
+    e346:	c8 0f       	add	r28, r24
+    e348:	d9 1f       	adc	r29, r25
+    e34a:	c1 2c       	mov	r12, r1
+    e34c:	d1 2c       	mov	r13, r1
+    e34e:	01 15       	cp	r16, r1
+    e350:	11 05       	cpc	r17, r1
+    e352:	11 f1       	breq	.+68     	; 0xe398 <Endpoint_Write_Stream_LE+0x7e>
+    e354:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e358:	85 fd       	sbrc	r24, 5
+    e35a:	15 c0       	rjmp	.+42     	; 0xe386 <Endpoint_Write_Stream_LE+0x6c>
+    e35c:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e360:	8e 77       	andi	r24, 0x7E	; 126
+    e362:	80 93 e8 00 	sts	0x00E8, r24	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e366:	e1 14       	cp	r14, r1
+    e368:	f1 04       	cpc	r15, r1
+    e36a:	49 f0       	breq	.+18     	; 0xe37e <Endpoint_Write_Stream_LE+0x64>
+    e36c:	f7 01       	movw	r30, r14
+    e36e:	80 81       	ld	r24, Z
+    e370:	91 81       	ldd	r25, Z+1	; 0x01
+    e372:	c8 0e       	add	r12, r24
+    e374:	d9 1e       	adc	r13, r25
+    e376:	d1 82       	std	Z+1, r13	; 0x01
+    e378:	c0 82       	st	Z, r12
+    e37a:	85 e0       	ldi	r24, 0x05	; 5
+    e37c:	0e c0       	rjmp	.+28     	; 0xe39a <Endpoint_Write_Stream_LE+0x80>
+    e37e:	cf de       	rcall	.-610    	; 0xe11e <Endpoint_WaitUntilReady>
+    e380:	88 23       	and	r24, r24
+    e382:	29 f3       	breq	.-54     	; 0xe34e <Endpoint_Write_Stream_LE+0x34>
+    e384:	0a c0       	rjmp	.+20     	; 0xe39a <Endpoint_Write_Stream_LE+0x80>
+    e386:	89 91       	ld	r24, Y+
+    e388:	80 93 f1 00 	sts	0x00F1, r24	; 0x8000f1 <__TEXT_REGION_LENGTH__+0x7e00f1>
+    e38c:	01 50       	subi	r16, 0x01	; 1
+    e38e:	11 09       	sbc	r17, r1
+    e390:	ff ef       	ldi	r31, 0xFF	; 255
+    e392:	cf 1a       	sub	r12, r31
+    e394:	df 0a       	sbc	r13, r31
+    e396:	db cf       	rjmp	.-74     	; 0xe34e <Endpoint_Write_Stream_LE+0x34>
+    e398:	80 e0       	ldi	r24, 0x00	; 0
+    e39a:	df 91       	pop	r29
+    e39c:	cf 91       	pop	r28
+    e39e:	1f 91       	pop	r17
+    e3a0:	0f 91       	pop	r16
+    e3a2:	ff 90       	pop	r15
+    e3a4:	ef 90       	pop	r14
+    e3a6:	df 90       	pop	r13
+    e3a8:	cf 90       	pop	r12
+    e3aa:	08 95       	ret
+
+0000e3ac <IsPageAddressValid>:
+    e3ac:	61 15       	cp	r22, r1
+    e3ae:	20 ee       	ldi	r18, 0xE0	; 224
+    e3b0:	72 07       	cpc	r23, r18
+    e3b2:	81 05       	cpc	r24, r1
+    e3b4:	91 05       	cpc	r25, r1
+    e3b6:	28 f4       	brcc	.+10     	; 0xe3c2 <IsPageAddressValid+0x16>
+    e3b8:	21 e0       	ldi	r18, 0x01	; 1
+    e3ba:	61 11       	cpse	r22, r1
+    e3bc:	20 e0       	ldi	r18, 0x00	; 0
+    e3be:	82 2f       	mov	r24, r18
+    e3c0:	01 c0       	rjmp	.+2      	; 0xe3c4 <IsPageAddressValid+0x18>
+    e3c2:	80 e0       	ldi	r24, 0x00	; 0
+    e3c4:	81 70       	andi	r24, 0x01	; 1
+    e3c6:	08 95       	ret
+
+0000e3c8 <USB_Device_ProcessControlRequest>:
+    e3c8:	cf 93       	push	r28
+    e3ca:	e3 e2       	ldi	r30, 0x23	; 35
+    e3cc:	f2 e0       	ldi	r31, 0x02	; 2
+    e3ce:	8b e2       	ldi	r24, 0x2B	; 43
+    e3d0:	92 e0       	ldi	r25, 0x02	; 2
+    e3d2:	20 91 f1 00 	lds	r18, 0x00F1	; 0x8000f1 <__TEXT_REGION_LENGTH__+0x7e00f1>
+    e3d6:	21 93       	st	Z+, r18
+    e3d8:	8e 17       	cp	r24, r30
+    e3da:	9f 07       	cpc	r25, r31
+    e3dc:	d1 f7       	brne	.-12     	; 0xe3d2 <USB_Device_ProcessControlRequest+0xa>
+    e3de:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e3e2:	83 ff       	sbrs	r24, 3
+    e3e4:	36 c0       	rjmp	.+108    	; 0xe452 <USB_Device_ProcessControlRequest+0x8a>
+    e3e6:	80 91 01 01 	lds	r24, 0x0101	; 0x800101 <Disk_MS_Interface>
+    e3ea:	90 e0       	ldi	r25, 0x00	; 0
+    e3ec:	20 91 27 02 	lds	r18, 0x0227	; 0x800227 <USB_ControlRequest+0x4>
+    e3f0:	30 91 28 02 	lds	r19, 0x0228	; 0x800228 <USB_ControlRequest+0x5>
+    e3f4:	28 17       	cp	r18, r24
+    e3f6:	39 07       	cpc	r19, r25
+    e3f8:	61 f5       	brne	.+88     	; 0xe452 <USB_Device_ProcessControlRequest+0x8a>
+    e3fa:	80 91 24 02 	lds	r24, 0x0224	; 0x800224 <USB_ControlRequest+0x1>
+    e3fe:	8e 3f       	cpi	r24, 0xFE	; 254
+    e400:	81 f0       	breq	.+32     	; 0xe422 <USB_Device_ProcessControlRequest+0x5a>
+    e402:	8f 3f       	cpi	r24, 0xFF	; 255
+    e404:	31 f5       	brne	.+76     	; 0xe452 <USB_Device_ProcessControlRequest+0x8a>
+    e406:	80 91 23 02 	lds	r24, 0x0223	; 0x800223 <USB_ControlRequest>
+    e40a:	81 32       	cpi	r24, 0x21	; 33
+    e40c:	11 f5       	brne	.+68     	; 0xe452 <USB_Device_ProcessControlRequest+0x8a>
+    e40e:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e412:	87 7f       	andi	r24, 0xF7	; 247
+    e414:	80 93 e8 00 	sts	0x00E8, r24	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e418:	d8 de       	rcall	.-592    	; 0xe1ca <Endpoint_ClearStatusStage>
+    e41a:	81 e0       	ldi	r24, 0x01	; 1
+    e41c:	80 93 39 01 	sts	0x0139, r24	; 0x800139 <Disk_MS_Interface+0x38>
+    e420:	18 c0       	rjmp	.+48     	; 0xe452 <USB_Device_ProcessControlRequest+0x8a>
+    e422:	80 91 23 02 	lds	r24, 0x0223	; 0x800223 <USB_ControlRequest>
+    e426:	81 3a       	cpi	r24, 0xA1	; 161
+    e428:	a1 f4       	brne	.+40     	; 0xe452 <USB_Device_ProcessControlRequest+0x8a>
+    e42a:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e42e:	87 7f       	andi	r24, 0xF7	; 247
+    e430:	80 93 e8 00 	sts	0x00E8, r24	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e434:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e438:	80 ff       	sbrs	r24, 0
+    e43a:	fc cf       	rjmp	.-8      	; 0xe434 <USB_Device_ProcessControlRequest+0x6c>
+    e43c:	80 91 0c 01 	lds	r24, 0x010C	; 0x80010c <Disk_MS_Interface+0xb>
+    e440:	81 50       	subi	r24, 0x01	; 1
+    e442:	80 93 f1 00 	sts	0x00F1, r24	; 0x8000f1 <__TEXT_REGION_LENGTH__+0x7e00f1>
+    e446:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e44a:	8e 77       	andi	r24, 0x7E	; 126
+    e44c:	80 93 e8 00 	sts	0x00E8, r24	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e450:	bc de       	rcall	.-648    	; 0xe1ca <Endpoint_ClearStatusStage>
+    e452:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e456:	83 ff       	sbrs	r24, 3
+    e458:	e5 c0       	rjmp	.+458    	; 0xe624 <USB_Device_ProcessControlRequest+0x25c>
+    e45a:	80 91 23 02 	lds	r24, 0x0223	; 0x800223 <USB_ControlRequest>
+    e45e:	90 91 24 02 	lds	r25, 0x0224	; 0x800224 <USB_ControlRequest+0x1>
+    e462:	95 30       	cpi	r25, 0x05	; 5
+    e464:	09 f4       	brne	.+2      	; 0xe468 <USB_Device_ProcessControlRequest+0xa0>
+    e466:	6f c0       	rjmp	.+222    	; 0xe546 <USB_Device_ProcessControlRequest+0x17e>
+    e468:	30 f4       	brcc	.+12     	; 0xe476 <USB_Device_ProcessControlRequest+0xae>
+    e46a:	91 30       	cpi	r25, 0x01	; 1
+    e46c:	71 f1       	breq	.+92     	; 0xe4ca <USB_Device_ProcessControlRequest+0x102>
+    e46e:	68 f0       	brcs	.+26     	; 0xe48a <USB_Device_ProcessControlRequest+0xc2>
+    e470:	93 30       	cpi	r25, 0x03	; 3
+    e472:	59 f1       	breq	.+86     	; 0xe4ca <USB_Device_ProcessControlRequest+0x102>
+    e474:	d7 c0       	rjmp	.+430    	; 0xe624 <USB_Device_ProcessControlRequest+0x25c>
+    e476:	98 30       	cpi	r25, 0x08	; 8
+    e478:	09 f4       	brne	.+2      	; 0xe47c <USB_Device_ProcessControlRequest+0xb4>
+    e47a:	93 c0       	rjmp	.+294    	; 0xe5a2 <USB_Device_ProcessControlRequest+0x1da>
+    e47c:	99 30       	cpi	r25, 0x09	; 9
+    e47e:	09 f4       	brne	.+2      	; 0xe482 <USB_Device_ProcessControlRequest+0xba>
+    e480:	a0 c0       	rjmp	.+320    	; 0xe5c2 <USB_Device_ProcessControlRequest+0x1fa>
+    e482:	96 30       	cpi	r25, 0x06	; 6
+    e484:	09 f0       	breq	.+2      	; 0xe488 <USB_Device_ProcessControlRequest+0xc0>
+    e486:	ce c0       	rjmp	.+412    	; 0xe624 <USB_Device_ProcessControlRequest+0x25c>
+    e488:	7f c0       	rjmp	.+254    	; 0xe588 <USB_Device_ProcessControlRequest+0x1c0>
+    e48a:	80 38       	cpi	r24, 0x80	; 128
+    e48c:	99 f0       	breq	.+38     	; 0xe4b4 <USB_Device_ProcessControlRequest+0xec>
+    e48e:	82 38       	cpi	r24, 0x82	; 130
+    e490:	09 f0       	breq	.+2      	; 0xe494 <USB_Device_ProcessControlRequest+0xcc>
+    e492:	c8 c0       	rjmp	.+400    	; 0xe624 <USB_Device_ProcessControlRequest+0x25c>
+    e494:	80 91 27 02 	lds	r24, 0x0227	; 0x800227 <USB_ControlRequest+0x4>
+    e498:	8f 70       	andi	r24, 0x0F	; 15
+    e49a:	87 30       	cpi	r24, 0x07	; 7
+    e49c:	08 f0       	brcs	.+2      	; 0xe4a0 <USB_Device_ProcessControlRequest+0xd8>
+    e49e:	c2 c0       	rjmp	.+388    	; 0xe624 <USB_Device_ProcessControlRequest+0x25c>
+    e4a0:	80 93 e9 00 	sts	0x00E9, r24	; 0x8000e9 <__TEXT_REGION_LENGTH__+0x7e00e9>
+    e4a4:	80 91 eb 00 	lds	r24, 0x00EB	; 0x8000eb <__TEXT_REGION_LENGTH__+0x7e00eb>
+    e4a8:	85 fb       	bst	r24, 5
+    e4aa:	88 27       	eor	r24, r24
+    e4ac:	80 f9       	bld	r24, 0
+    e4ae:	10 92 e9 00 	sts	0x00E9, r1	; 0x8000e9 <__TEXT_REGION_LENGTH__+0x7e00e9>
+    e4b2:	01 c0       	rjmp	.+2      	; 0xe4b6 <USB_Device_ProcessControlRequest+0xee>
+    e4b4:	80 e0       	ldi	r24, 0x00	; 0
+    e4b6:	90 91 e8 00 	lds	r25, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e4ba:	97 7f       	andi	r25, 0xF7	; 247
+    e4bc:	90 93 e8 00 	sts	0x00E8, r25	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e4c0:	80 93 f1 00 	sts	0x00F1, r24	; 0x8000f1 <__TEXT_REGION_LENGTH__+0x7e00f1>
+    e4c4:	10 92 f1 00 	sts	0x00F1, r1	; 0x8000f1 <__TEXT_REGION_LENGTH__+0x7e00f1>
+    e4c8:	78 c0       	rjmp	.+240    	; 0xe5ba <USB_Device_ProcessControlRequest+0x1f2>
+    e4ca:	28 2f       	mov	r18, r24
+    e4cc:	2d 7f       	andi	r18, 0xFD	; 253
+    e4ce:	09 f0       	breq	.+2      	; 0xe4d2 <USB_Device_ProcessControlRequest+0x10a>
+    e4d0:	a9 c0       	rjmp	.+338    	; 0xe624 <USB_Device_ProcessControlRequest+0x25c>
+    e4d2:	82 30       	cpi	r24, 0x02	; 2
+    e4d4:	09 f0       	breq	.+2      	; 0xe4d8 <USB_Device_ProcessControlRequest+0x110>
+    e4d6:	a6 c0       	rjmp	.+332    	; 0xe624 <USB_Device_ProcessControlRequest+0x25c>
+    e4d8:	80 91 25 02 	lds	r24, 0x0225	; 0x800225 <USB_ControlRequest+0x2>
+    e4dc:	81 11       	cpse	r24, r1
+    e4de:	2a c0       	rjmp	.+84     	; 0xe534 <USB_Device_ProcessControlRequest+0x16c>
+    e4e0:	80 91 27 02 	lds	r24, 0x0227	; 0x800227 <USB_ControlRequest+0x4>
+    e4e4:	8f 70       	andi	r24, 0x0F	; 15
+    e4e6:	2f ef       	ldi	r18, 0xFF	; 255
+    e4e8:	28 0f       	add	r18, r24
+    e4ea:	26 30       	cpi	r18, 0x06	; 6
+    e4ec:	08 f0       	brcs	.+2      	; 0xe4f0 <USB_Device_ProcessControlRequest+0x128>
+    e4ee:	9a c0       	rjmp	.+308    	; 0xe624 <USB_Device_ProcessControlRequest+0x25c>
+    e4f0:	80 93 e9 00 	sts	0x00E9, r24	; 0x8000e9 <__TEXT_REGION_LENGTH__+0x7e00e9>
+    e4f4:	20 91 eb 00 	lds	r18, 0x00EB	; 0x8000eb <__TEXT_REGION_LENGTH__+0x7e00eb>
+    e4f8:	20 ff       	sbrs	r18, 0
+    e4fa:	1c c0       	rjmp	.+56     	; 0xe534 <USB_Device_ProcessControlRequest+0x16c>
+    e4fc:	93 30       	cpi	r25, 0x03	; 3
+    e4fe:	21 f4       	brne	.+8      	; 0xe508 <USB_Device_ProcessControlRequest+0x140>
+    e500:	80 91 eb 00 	lds	r24, 0x00EB	; 0x8000eb <__TEXT_REGION_LENGTH__+0x7e00eb>
+    e504:	80 62       	ori	r24, 0x20	; 32
+    e506:	14 c0       	rjmp	.+40     	; 0xe530 <USB_Device_ProcessControlRequest+0x168>
+    e508:	90 91 eb 00 	lds	r25, 0x00EB	; 0x8000eb <__TEXT_REGION_LENGTH__+0x7e00eb>
+    e50c:	90 61       	ori	r25, 0x10	; 16
+    e50e:	90 93 eb 00 	sts	0x00EB, r25	; 0x8000eb <__TEXT_REGION_LENGTH__+0x7e00eb>
+    e512:	21 e0       	ldi	r18, 0x01	; 1
+    e514:	30 e0       	ldi	r19, 0x00	; 0
+    e516:	a9 01       	movw	r20, r18
+    e518:	02 c0       	rjmp	.+4      	; 0xe51e <USB_Device_ProcessControlRequest+0x156>
+    e51a:	44 0f       	add	r20, r20
+    e51c:	55 1f       	adc	r21, r21
+    e51e:	8a 95       	dec	r24
+    e520:	e2 f7       	brpl	.-8      	; 0xe51a <USB_Device_ProcessControlRequest+0x152>
+    e522:	40 93 ea 00 	sts	0x00EA, r20	; 0x8000ea <__TEXT_REGION_LENGTH__+0x7e00ea>
+    e526:	10 92 ea 00 	sts	0x00EA, r1	; 0x8000ea <__TEXT_REGION_LENGTH__+0x7e00ea>
+    e52a:	80 91 eb 00 	lds	r24, 0x00EB	; 0x8000eb <__TEXT_REGION_LENGTH__+0x7e00eb>
+    e52e:	88 60       	ori	r24, 0x08	; 8
+    e530:	80 93 eb 00 	sts	0x00EB, r24	; 0x8000eb <__TEXT_REGION_LENGTH__+0x7e00eb>
+    e534:	10 92 e9 00 	sts	0x00E9, r1	; 0x8000e9 <__TEXT_REGION_LENGTH__+0x7e00e9>
+    e538:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e53c:	87 7f       	andi	r24, 0xF7	; 247
+    e53e:	80 93 e8 00 	sts	0x00E8, r24	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e542:	43 de       	rcall	.-890    	; 0xe1ca <Endpoint_ClearStatusStage>
+    e544:	6f c0       	rjmp	.+222    	; 0xe624 <USB_Device_ProcessControlRequest+0x25c>
+    e546:	81 11       	cpse	r24, r1
+    e548:	6d c0       	rjmp	.+218    	; 0xe624 <USB_Device_ProcessControlRequest+0x25c>
+    e54a:	c0 91 25 02 	lds	r28, 0x0225	; 0x800225 <USB_ControlRequest+0x2>
+    e54e:	cf 77       	andi	r28, 0x7F	; 127
+    e550:	80 91 e3 00 	lds	r24, 0x00E3	; 0x8000e3 <__TEXT_REGION_LENGTH__+0x7e00e3>
+    e554:	80 78       	andi	r24, 0x80	; 128
+    e556:	8c 2b       	or	r24, r28
+    e558:	80 93 e3 00 	sts	0x00E3, r24	; 0x8000e3 <__TEXT_REGION_LENGTH__+0x7e00e3>
+    e55c:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e560:	87 7f       	andi	r24, 0xF7	; 247
+    e562:	80 93 e8 00 	sts	0x00E8, r24	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e566:	31 de       	rcall	.-926    	; 0xe1ca <Endpoint_ClearStatusStage>
+    e568:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e56c:	80 ff       	sbrs	r24, 0
+    e56e:	fc cf       	rjmp	.-8      	; 0xe568 <USB_Device_ProcessControlRequest+0x1a0>
+    e570:	80 91 e3 00 	lds	r24, 0x00E3	; 0x8000e3 <__TEXT_REGION_LENGTH__+0x7e00e3>
+    e574:	80 68       	ori	r24, 0x80	; 128
+    e576:	80 93 e3 00 	sts	0x00E3, r24	; 0x8000e3 <__TEXT_REGION_LENGTH__+0x7e00e3>
+    e57a:	c1 11       	cpse	r28, r1
+    e57c:	02 c0       	rjmp	.+4      	; 0xe582 <USB_Device_ProcessControlRequest+0x1ba>
+    e57e:	82 e0       	ldi	r24, 0x02	; 2
+    e580:	01 c0       	rjmp	.+2      	; 0xe584 <USB_Device_ProcessControlRequest+0x1bc>
+    e582:	83 e0       	ldi	r24, 0x03	; 3
+    e584:	8e bb       	out	0x1e, r24	; 30
+    e586:	4e c0       	rjmp	.+156    	; 0xe624 <USB_Device_ProcessControlRequest+0x25c>
+    e588:	80 58       	subi	r24, 0x80	; 128
+    e58a:	82 30       	cpi	r24, 0x02	; 2
+    e58c:	08 f0       	brcs	.+2      	; 0xe590 <USB_Device_ProcessControlRequest+0x1c8>
+    e58e:	4a c0       	rjmp	.+148    	; 0xe624 <USB_Device_ProcessControlRequest+0x25c>
+    e590:	80 91 26 02 	lds	r24, 0x0226	; 0x800226 <USB_ControlRequest+0x3>
+    e594:	81 30       	cpi	r24, 0x01	; 1
+    e596:	09 f4       	brne	.+2      	; 0xe59a <USB_Device_ProcessControlRequest+0x1d2>
+    e598:	54 c0       	rjmp	.+168    	; 0xe642 <USB_Device_ProcessControlRequest+0x27a>
+    e59a:	82 30       	cpi	r24, 0x02	; 2
+    e59c:	09 f0       	breq	.+2      	; 0xe5a0 <USB_Device_ProcessControlRequest+0x1d8>
+    e59e:	42 c0       	rjmp	.+132    	; 0xe624 <USB_Device_ProcessControlRequest+0x25c>
+    e5a0:	55 c0       	rjmp	.+170    	; 0xe64c <USB_Device_ProcessControlRequest+0x284>
+    e5a2:	80 38       	cpi	r24, 0x80	; 128
+    e5a4:	09 f0       	breq	.+2      	; 0xe5a8 <USB_Device_ProcessControlRequest+0x1e0>
+    e5a6:	3e c0       	rjmp	.+124    	; 0xe624 <USB_Device_ProcessControlRequest+0x25c>
+    e5a8:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e5ac:	87 7f       	andi	r24, 0xF7	; 247
+    e5ae:	80 93 e8 00 	sts	0x00E8, r24	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e5b2:	80 91 22 02 	lds	r24, 0x0222	; 0x800222 <USB_Device_ConfigurationNumber>
+    e5b6:	80 93 f1 00 	sts	0x00F1, r24	; 0x8000f1 <__TEXT_REGION_LENGTH__+0x7e00f1>
+    e5ba:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e5be:	8e 77       	andi	r24, 0x7E	; 126
+    e5c0:	be cf       	rjmp	.-132    	; 0xe53e <USB_Device_ProcessControlRequest+0x176>
+    e5c2:	81 11       	cpse	r24, r1
+    e5c4:	2f c0       	rjmp	.+94     	; 0xe624 <USB_Device_ProcessControlRequest+0x25c>
+    e5c6:	80 91 25 02 	lds	r24, 0x0225	; 0x800225 <USB_ControlRequest+0x2>
+    e5ca:	90 91 26 02 	lds	r25, 0x0226	; 0x800226 <USB_ControlRequest+0x3>
+    e5ce:	99 27       	eor	r25, r25
+    e5d0:	02 97       	sbiw	r24, 0x02	; 2
+    e5d2:	44 f5       	brge	.+80     	; 0xe624 <USB_Device_ProcessControlRequest+0x25c>
+    e5d4:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e5d8:	87 7f       	andi	r24, 0xF7	; 247
+    e5da:	80 93 e8 00 	sts	0x00E8, r24	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e5de:	c0 91 25 02 	lds	r28, 0x0225	; 0x800225 <USB_ControlRequest+0x2>
+    e5e2:	c0 93 22 02 	sts	0x0222, r28	; 0x800222 <USB_Device_ConfigurationNumber>
+    e5e6:	f1 dd       	rcall	.-1054   	; 0xe1ca <Endpoint_ClearStatusStage>
+    e5e8:	c1 11       	cpse	r28, r1
+    e5ea:	06 c0       	rjmp	.+12     	; 0xe5f8 <USB_Device_ProcessControlRequest+0x230>
+    e5ec:	80 91 e3 00 	lds	r24, 0x00E3	; 0x8000e3 <__TEXT_REGION_LENGTH__+0x7e00e3>
+    e5f0:	87 fd       	sbrc	r24, 7
+    e5f2:	02 c0       	rjmp	.+4      	; 0xe5f8 <USB_Device_ProcessControlRequest+0x230>
+    e5f4:	81 e0       	ldi	r24, 0x01	; 1
+    e5f6:	01 c0       	rjmp	.+2      	; 0xe5fa <USB_Device_ProcessControlRequest+0x232>
+    e5f8:	84 e0       	ldi	r24, 0x04	; 4
+    e5fa:	8e bb       	out	0x1e, r24	; 30
+    e5fc:	8d e2       	ldi	r24, 0x2D	; 45
+    e5fe:	ed e0       	ldi	r30, 0x0D	; 13
+    e600:	f1 e0       	ldi	r31, 0x01	; 1
+    e602:	df 01       	movw	r26, r30
+    e604:	1d 92       	st	X+, r1
+    e606:	8a 95       	dec	r24
+    e608:	e9 f7       	brne	.-6      	; 0xe604 <USB_Device_ProcessControlRequest+0x23c>
+    e60a:	82 e0       	ldi	r24, 0x02	; 2
+    e60c:	80 93 05 01 	sts	0x0105, r24	; 0x800105 <Disk_MS_Interface+0x4>
+    e610:	80 93 0a 01 	sts	0x010A, r24	; 0x80010a <Disk_MS_Interface+0x9>
+    e614:	82 e0       	ldi	r24, 0x02	; 2
+    e616:	91 e0       	ldi	r25, 0x01	; 1
+    e618:	09 de       	rcall	.-1006   	; 0xe22c <Endpoint_ConfigureEndpointTable.constprop.14>
+    e61a:	88 23       	and	r24, r24
+    e61c:	19 f0       	breq	.+6      	; 0xe624 <USB_Device_ProcessControlRequest+0x25c>
+    e61e:	87 e0       	ldi	r24, 0x07	; 7
+    e620:	91 e0       	ldi	r25, 0x01	; 1
+    e622:	04 de       	rcall	.-1016   	; 0xe22c <Endpoint_ConfigureEndpointTable.constprop.14>
+    e624:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e628:	83 ff       	sbrs	r24, 3
+    e62a:	66 c0       	rjmp	.+204    	; 0xe6f8 <USB_Device_ProcessControlRequest+0x330>
+    e62c:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e630:	87 7f       	andi	r24, 0xF7	; 247
+    e632:	80 93 e8 00 	sts	0x00E8, r24	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e636:	80 91 eb 00 	lds	r24, 0x00EB	; 0x8000eb <__TEXT_REGION_LENGTH__+0x7e00eb>
+    e63a:	80 62       	ori	r24, 0x20	; 32
+    e63c:	80 93 eb 00 	sts	0x00EB, r24	; 0x8000eb <__TEXT_REGION_LENGTH__+0x7e00eb>
+    e640:	5b c0       	rjmp	.+182    	; 0xe6f8 <USB_Device_ProcessControlRequest+0x330>
+    e642:	22 e1       	ldi	r18, 0x12	; 18
+    e644:	30 e0       	ldi	r19, 0x00	; 0
+    e646:	ee ee       	ldi	r30, 0xEE	; 238
+    e648:	f1 e0       	ldi	r31, 0x01	; 1
+    e64a:	04 c0       	rjmp	.+8      	; 0xe654 <USB_Device_ProcessControlRequest+0x28c>
+    e64c:	20 e2       	ldi	r18, 0x20	; 32
+    e64e:	30 e0       	ldi	r19, 0x00	; 0
+    e650:	ee ec       	ldi	r30, 0xCE	; 206
+    e652:	f1 e0       	ldi	r31, 0x01	; 1
+    e654:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e658:	87 7f       	andi	r24, 0xF7	; 247
+    e65a:	80 93 e8 00 	sts	0x00E8, r24	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e65e:	80 91 29 02 	lds	r24, 0x0229	; 0x800229 <USB_ControlRequest+0x6>
+    e662:	90 91 2a 02 	lds	r25, 0x022A	; 0x80022a <USB_ControlRequest+0x7>
+    e666:	28 17       	cp	r18, r24
+    e668:	39 07       	cpc	r19, r25
+    e66a:	08 f4       	brcc	.+2      	; 0xe66e <USB_Device_ProcessControlRequest+0x2a6>
+    e66c:	c9 01       	movw	r24, r18
+    e66e:	40 e0       	ldi	r20, 0x00	; 0
+    e670:	00 97       	sbiw	r24, 0x00	; 0
+    e672:	61 f1       	breq	.+88     	; 0xe6cc <USB_Device_ProcessControlRequest+0x304>
+    e674:	2e b3       	in	r18, 0x1e	; 30
+    e676:	22 23       	and	r18, r18
+    e678:	c9 f1       	breq	.+114    	; 0xe6ec <USB_Device_ProcessControlRequest+0x324>
+    e67a:	25 30       	cpi	r18, 0x05	; 5
+    e67c:	b9 f1       	breq	.+110    	; 0xe6ec <USB_Device_ProcessControlRequest+0x324>
+    e67e:	20 91 e8 00 	lds	r18, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e682:	23 fd       	sbrc	r18, 3
+    e684:	33 c0       	rjmp	.+102    	; 0xe6ec <USB_Device_ProcessControlRequest+0x324>
+    e686:	20 91 e8 00 	lds	r18, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e68a:	22 fd       	sbrc	r18, 2
+    e68c:	2b c0       	rjmp	.+86     	; 0xe6e4 <USB_Device_ProcessControlRequest+0x31c>
+    e68e:	20 91 e8 00 	lds	r18, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e692:	20 ff       	sbrs	r18, 0
+    e694:	ed cf       	rjmp	.-38     	; 0xe670 <USB_Device_ProcessControlRequest+0x2a8>
+    e696:	20 91 f2 00 	lds	r18, 0x00F2	; 0x8000f2 <__TEXT_REGION_LENGTH__+0x7e00f2>
+    e69a:	30 91 f3 00 	lds	r19, 0x00F3	; 0x8000f3 <__TEXT_REGION_LENGTH__+0x7e00f3>
+    e69e:	00 97       	sbiw	r24, 0x00	; 0
+    e6a0:	51 f0       	breq	.+20     	; 0xe6b6 <USB_Device_ProcessControlRequest+0x2ee>
+    e6a2:	28 30       	cpi	r18, 0x08	; 8
+    e6a4:	31 05       	cpc	r19, r1
+    e6a6:	38 f4       	brcc	.+14     	; 0xe6b6 <USB_Device_ProcessControlRequest+0x2ee>
+    e6a8:	41 91       	ld	r20, Z+
+    e6aa:	40 93 f1 00 	sts	0x00F1, r20	; 0x8000f1 <__TEXT_REGION_LENGTH__+0x7e00f1>
+    e6ae:	01 97       	sbiw	r24, 0x01	; 1
+    e6b0:	2f 5f       	subi	r18, 0xFF	; 255
+    e6b2:	3f 4f       	sbci	r19, 0xFF	; 255
+    e6b4:	f4 cf       	rjmp	.-24     	; 0xe69e <USB_Device_ProcessControlRequest+0x2d6>
+    e6b6:	41 e0       	ldi	r20, 0x01	; 1
+    e6b8:	28 30       	cpi	r18, 0x08	; 8
+    e6ba:	31 05       	cpc	r19, r1
+    e6bc:	09 f0       	breq	.+2      	; 0xe6c0 <USB_Device_ProcessControlRequest+0x2f8>
+    e6be:	40 e0       	ldi	r20, 0x00	; 0
+    e6c0:	20 91 e8 00 	lds	r18, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e6c4:	2e 77       	andi	r18, 0x7E	; 126
+    e6c6:	20 93 e8 00 	sts	0x00E8, r18	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e6ca:	d2 cf       	rjmp	.-92     	; 0xe670 <USB_Device_ProcessControlRequest+0x2a8>
+    e6cc:	41 11       	cpse	r20, r1
+    e6ce:	d2 cf       	rjmp	.-92     	; 0xe674 <USB_Device_ProcessControlRequest+0x2ac>
+    e6d0:	09 c0       	rjmp	.+18     	; 0xe6e4 <USB_Device_ProcessControlRequest+0x31c>
+    e6d2:	8e b3       	in	r24, 0x1e	; 30
+    e6d4:	88 23       	and	r24, r24
+    e6d6:	51 f0       	breq	.+20     	; 0xe6ec <USB_Device_ProcessControlRequest+0x324>
+    e6d8:	85 30       	cpi	r24, 0x05	; 5
+    e6da:	41 f0       	breq	.+16     	; 0xe6ec <USB_Device_ProcessControlRequest+0x324>
+    e6dc:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e6e0:	83 fd       	sbrc	r24, 3
+    e6e2:	04 c0       	rjmp	.+8      	; 0xe6ec <USB_Device_ProcessControlRequest+0x324>
+    e6e4:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e6e8:	82 ff       	sbrs	r24, 2
+    e6ea:	f3 cf       	rjmp	.-26     	; 0xe6d2 <USB_Device_ProcessControlRequest+0x30a>
+    e6ec:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e6f0:	8b 77       	andi	r24, 0x7B	; 123
+    e6f2:	80 93 e8 00 	sts	0x00E8, r24	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e6f6:	96 cf       	rjmp	.-212    	; 0xe624 <USB_Device_ProcessControlRequest+0x25c>
+    e6f8:	cf 91       	pop	r28
+    e6fa:	08 95       	ret
+
+0000e6fc <VirtualFAT_ReadBlock>:
+    e6fc:	cf 93       	push	r28
+    e6fe:	df 93       	push	r29
+    e700:	cd b7       	in	r28, 0x3d	; 61
+    e702:	de b7       	in	r29, 0x3e	; 62
+    e704:	d2 50       	subi	r29, 0x02	; 2
+    e706:	0f b6       	in	r0, 0x3f	; 63
+    e708:	f8 94       	cli
+    e70a:	de bf       	out	0x3e, r29	; 62
+    e70c:	0f be       	out	0x3f, r0	; 63
+    e70e:	cd bf       	out	0x3d, r28	; 61
+    e710:	9c 01       	movw	r18, r24
+    e712:	ce 01       	movw	r24, r28
+    e714:	01 96       	adiw	r24, 0x01	; 1
+    e716:	40 e0       	ldi	r20, 0x00	; 0
+    e718:	52 e0       	ldi	r21, 0x02	; 2
+    e71a:	fc 01       	movw	r30, r24
+    e71c:	ba 01       	movw	r22, r20
+    e71e:	11 92       	st	Z+, r1
+    e720:	61 50       	subi	r22, 0x01	; 1
+    e722:	70 40       	sbci	r23, 0x00	; 0
+    e724:	e1 f7       	brne	.-8      	; 0xe71e <VirtualFAT_ReadBlock+0x22>
+    e726:	23 30       	cpi	r18, 0x03	; 3
+    e728:	31 05       	cpc	r19, r1
+    e72a:	c0 f4       	brcc	.+48     	; 0xe75c <VirtualFAT_ReadBlock+0x60>
+    e72c:	21 30       	cpi	r18, 0x01	; 1
+    e72e:	31 05       	cpc	r19, r1
+    e730:	08 f5       	brcc	.+66     	; 0xe774 <VirtualFAT_ReadBlock+0x78>
+    e732:	2e e3       	ldi	r18, 0x3E	; 62
+    e734:	e0 e9       	ldi	r30, 0x90	; 144
+    e736:	f1 e0       	ldi	r31, 0x01	; 1
+    e738:	dc 01       	movw	r26, r24
+    e73a:	01 90       	ld	r0, Z+
+    e73c:	0d 92       	st	X+, r0
+    e73e:	2a 95       	dec	r18
+    e740:	e1 f7       	brne	.-8      	; 0xe73a <VirtualFAT_ReadBlock+0x3e>
+    e742:	25 e5       	ldi	r18, 0x55	; 85
+    e744:	c1 50       	subi	r28, 0x01	; 1
+    e746:	de 4f       	sbci	r29, 0xFE	; 254
+    e748:	28 83       	st	Y, r18
+    e74a:	cf 5f       	subi	r28, 0xFF	; 255
+    e74c:	d1 40       	sbci	r29, 0x01	; 1
+    e74e:	2a ea       	ldi	r18, 0xAA	; 170
+    e750:	c0 50       	subi	r28, 0x00	; 0
+    e752:	de 4f       	sbci	r29, 0xFE	; 254
+    e754:	28 83       	st	Y, r18
+    e756:	c0 50       	subi	r28, 0x00	; 0
+    e758:	d2 40       	sbci	r29, 0x02	; 2
+    e75a:	11 c0       	rjmp	.+34     	; 0xe77e <VirtualFAT_ReadBlock+0x82>
+    e75c:	23 30       	cpi	r18, 0x03	; 3
+    e75e:	31 05       	cpc	r19, r1
+    e760:	71 f4       	brne	.+28     	; 0xe77e <VirtualFAT_ReadBlock+0x82>
+    e762:	20 e2       	ldi	r18, 0x20	; 32
+    e764:	e0 e7       	ldi	r30, 0x70	; 112
+    e766:	f1 e0       	ldi	r31, 0x01	; 1
+    e768:	dc 01       	movw	r26, r24
+    e76a:	01 90       	ld	r0, Z+
+    e76c:	0d 92       	st	X+, r0
+    e76e:	2a 95       	dec	r18
+    e770:	e1 f7       	brne	.-8      	; 0xe76a <VirtualFAT_ReadBlock+0x6e>
+    e772:	05 c0       	rjmp	.+10     	; 0xe77e <VirtualFAT_ReadBlock+0x82>
+    e774:	28 ef       	ldi	r18, 0xF8	; 248
+    e776:	29 83       	std	Y+1, r18	; 0x01
+    e778:	2f ef       	ldi	r18, 0xFF	; 255
+    e77a:	2a 83       	std	Y+2, r18	; 0x02
+    e77c:	2b 83       	std	Y+3, r18	; 0x03
+    e77e:	40 e0       	ldi	r20, 0x00	; 0
+    e780:	50 e0       	ldi	r21, 0x00	; 0
+    e782:	60 e0       	ldi	r22, 0x00	; 0
+    e784:	72 e0       	ldi	r23, 0x02	; 2
+    e786:	c9 dd       	rcall	.-1134   	; 0xe31a <Endpoint_Write_Stream_LE>
+    e788:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e78c:	8e 77       	andi	r24, 0x7E	; 126
+    e78e:	80 93 e8 00 	sts	0x00E8, r24	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    e792:	de 5f       	subi	r29, 0xFE	; 254
+    e794:	0f b6       	in	r0, 0x3f	; 63
+    e796:	f8 94       	cli
+    e798:	de bf       	out	0x3e, r29	; 62
+    e79a:	0f be       	out	0x3f, r0	; 63
+    e79c:	cd bf       	out	0x3d, r28	; 61
+    e79e:	df 91       	pop	r29
+    e7a0:	cf 91       	pop	r28
+    e7a2:	08 95       	ret
+
+0000e7a4 <commandLCD>:
+    e7a4:	92 b1       	in	r25, 0x02	; 2
+    e7a6:	71 98       	cbi	0x0e, 1	; 14
+    e7a8:	70 98       	cbi	0x0e, 0	; 14
+    e7aa:	72 9a       	sbi	0x0e, 2	; 14
+    e7ac:	82 b9       	out	0x02, r24	; 2
+    e7ae:	72 98       	cbi	0x0e, 2	; 14
+    e7b0:	92 b9       	out	0x02, r25	; 2
+    e7b2:	80 ef       	ldi	r24, 0xF0	; 240
+    e7b4:	8a 95       	dec	r24
+    e7b6:	f1 f7       	brne	.-4      	; 0xe7b4 <commandLCD+0x10>
+    e7b8:	08 95       	ret
+
+0000e7ba <setCursorLCD>:
+    e7ba:	81 11       	cpse	r24, r1
+    e7bc:	81 e0       	ldi	r24, 0x01	; 1
+    e7be:	60 31       	cpi	r22, 0x10	; 16
+    e7c0:	08 f0       	brcs	.+2      	; 0xe7c4 <setCursorLCD+0xa>
+    e7c2:	6f e0       	ldi	r22, 0x0F	; 15
+    e7c4:	80 93 1e 02 	sts	0x021E, r24	; 0x80021e <lcd_info>
+    e7c8:	60 93 1f 02 	sts	0x021F, r22	; 0x80021f <lcd_info+0x1>
+    e7cc:	81 30       	cpi	r24, 0x01	; 1
+    e7ce:	11 f0       	breq	.+4      	; 0xe7d4 <setCursorLCD+0x1a>
+    e7d0:	80 e8       	ldi	r24, 0x80	; 128
+    e7d2:	01 c0       	rjmp	.+2      	; 0xe7d6 <setCursorLCD+0x1c>
+    e7d4:	80 ec       	ldi	r24, 0xC0	; 192
+    e7d6:	86 2b       	or	r24, r22
+    e7d8:	e5 df       	rcall	.-54     	; 0xe7a4 <commandLCD>
+    e7da:	8f e3       	ldi	r24, 0x3F	; 63
+    e7dc:	9f e1       	ldi	r25, 0x1F	; 31
+    e7de:	01 97       	sbiw	r24, 0x01	; 1
+    e7e0:	f1 f7       	brne	.-4      	; 0xe7de <setCursorLCD+0x24>
+    e7e2:	00 c0       	rjmp	.+0      	; 0xe7e4 <setCursorLCD+0x2a>
+    e7e4:	00 00       	nop
+    e7e6:	08 95       	ret
+
+0000e7e8 <clearLCD>:
+    e7e8:	81 e0       	ldi	r24, 0x01	; 1
+    e7ea:	dc df       	rcall	.-72     	; 0xe7a4 <commandLCD>
+    e7ec:	60 e0       	ldi	r22, 0x00	; 0
+    e7ee:	80 e0       	ldi	r24, 0x00	; 0
+    e7f0:	e4 cf       	rjmp	.-56     	; 0xe7ba <setCursorLCD>
+
+0000e7f2 <appendCharToLCD>:
+    e7f2:	cf 93       	push	r28
+    e7f4:	df 93       	push	r29
+    e7f6:	d8 2f       	mov	r29, r24
+    e7f8:	c2 b1       	in	r28, 0x02	; 2
+    e7fa:	80 91 1f 02 	lds	r24, 0x021F	; 0x80021f <lcd_info+0x1>
+    e7fe:	80 31       	cpi	r24, 0x10	; 16
+    e800:	58 f0       	brcs	.+22     	; 0xe818 <appendCharToLCD+0x26>
+    e802:	80 91 1e 02 	lds	r24, 0x021E	; 0x80021e <lcd_info>
+    e806:	88 23       	and	r24, r24
+    e808:	21 f0       	breq	.+8      	; 0xe812 <appendCharToLCD+0x20>
+    e80a:	ee df       	rcall	.-36     	; 0xe7e8 <clearLCD>
+    e80c:	60 e0       	ldi	r22, 0x00	; 0
+    e80e:	80 e0       	ldi	r24, 0x00	; 0
+    e810:	02 c0       	rjmp	.+4      	; 0xe816 <appendCharToLCD+0x24>
+    e812:	60 e0       	ldi	r22, 0x00	; 0
+    e814:	81 e0       	ldi	r24, 0x01	; 1
+    e816:	d1 df       	rcall	.-94     	; 0xe7ba <setCursorLCD>
+    e818:	71 98       	cbi	0x0e, 1	; 14
+    e81a:	70 9a       	sbi	0x0e, 0	; 14
+    e81c:	72 9a       	sbi	0x0e, 2	; 14
+    e81e:	d2 b9       	out	0x02, r29	; 2
+    e820:	72 98       	cbi	0x0e, 2	; 14
+    e822:	80 ef       	ldi	r24, 0xF0	; 240
+    e824:	8a 95       	dec	r24
+    e826:	f1 f7       	brne	.-4      	; 0xe824 <appendCharToLCD+0x32>
+    e828:	80 91 1f 02 	lds	r24, 0x021F	; 0x80021f <lcd_info+0x1>
+    e82c:	8f 5f       	subi	r24, 0xFF	; 255
+    e82e:	80 93 1f 02 	sts	0x021F, r24	; 0x80021f <lcd_info+0x1>
+    e832:	c2 b9       	out	0x02, r28	; 2
+    e834:	df 91       	pop	r29
+    e836:	cf 91       	pop	r28
+    e838:	08 95       	ret
+
+0000e83a <__vector_11>:
+    e83a:	1f 92       	push	r1
+    e83c:	0f 92       	push	r0
+    e83e:	0f b6       	in	r0, 0x3f	; 63
+    e840:	0f 92       	push	r0
+    e842:	11 24       	eor	r1, r1
+    e844:	2f 93       	push	r18
+    e846:	3f 93       	push	r19
+    e848:	4f 93       	push	r20
+    e84a:	5f 93       	push	r21
+    e84c:	6f 93       	push	r22
+    e84e:	7f 93       	push	r23
+    e850:	8f 93       	push	r24
+    e852:	9f 93       	push	r25
+    e854:	af 93       	push	r26
+    e856:	bf 93       	push	r27
+    e858:	cf 93       	push	r28
+    e85a:	df 93       	push	r29
+    e85c:	ef 93       	push	r30
+    e85e:	ff 93       	push	r31
+    e860:	c0 91 e9 00 	lds	r28, 0x00E9	; 0x8000e9 <__TEXT_REGION_LENGTH__+0x7e00e9>
+    e864:	cf 70       	andi	r28, 0x0F	; 15
+    e866:	80 91 ec 00 	lds	r24, 0x00EC	; 0x8000ec <__TEXT_REGION_LENGTH__+0x7e00ec>
+    e86a:	d8 2f       	mov	r29, r24
+    e86c:	d1 70       	andi	r29, 0x01	; 1
+    e86e:	80 fd       	sbrc	r24, 0
+    e870:	d0 e8       	ldi	r29, 0x80	; 128
+    e872:	10 92 e9 00 	sts	0x00E9, r1	; 0x8000e9 <__TEXT_REGION_LENGTH__+0x7e00e9>
+    e876:	80 91 f0 00 	lds	r24, 0x00F0	; 0x8000f0 <__TEXT_REGION_LENGTH__+0x7e00f0>
+    e87a:	87 7f       	andi	r24, 0xF7	; 247
+    e87c:	80 93 f0 00 	sts	0x00F0, r24	; 0x8000f0 <__TEXT_REGION_LENGTH__+0x7e00f0>
+    e880:	78 94       	sei
+    e882:	a2 dd       	rcall	.-1212   	; 0xe3c8 <USB_Device_ProcessControlRequest>
+    e884:	10 92 e9 00 	sts	0x00E9, r1	; 0x8000e9 <__TEXT_REGION_LENGTH__+0x7e00e9>
+    e888:	80 91 f0 00 	lds	r24, 0x00F0	; 0x8000f0 <__TEXT_REGION_LENGTH__+0x7e00f0>
+    e88c:	88 60       	ori	r24, 0x08	; 8
+    e88e:	80 93 f0 00 	sts	0x00F0, r24	; 0x8000f0 <__TEXT_REGION_LENGTH__+0x7e00f0>
+    e892:	cd 2b       	or	r28, r29
+    e894:	cf 70       	andi	r28, 0x0F	; 15
+    e896:	c0 93 e9 00 	sts	0x00E9, r28	; 0x8000e9 <__TEXT_REGION_LENGTH__+0x7e00e9>
+    e89a:	ff 91       	pop	r31
+    e89c:	ef 91       	pop	r30
+    e89e:	df 91       	pop	r29
+    e8a0:	cf 91       	pop	r28
+    e8a2:	bf 91       	pop	r27
+    e8a4:	af 91       	pop	r26
+    e8a6:	9f 91       	pop	r25
+    e8a8:	8f 91       	pop	r24
+    e8aa:	7f 91       	pop	r23
+    e8ac:	6f 91       	pop	r22
+    e8ae:	5f 91       	pop	r21
+    e8b0:	4f 91       	pop	r20
+    e8b2:	3f 91       	pop	r19
+    e8b4:	2f 91       	pop	r18
+    e8b6:	0f 90       	pop	r0
+    e8b8:	0f be       	out	0x3f, r0	; 63
+    e8ba:	0f 90       	pop	r0
+    e8bc:	1f 90       	pop	r1
+    e8be:	18 95       	reti
+
+0000e8c0 <__vector_10>:
+    e8c0:	1f 92       	push	r1
+    e8c2:	0f 92       	push	r0
+    e8c4:	0f b6       	in	r0, 0x3f	; 63
+    e8c6:	0f 92       	push	r0
+    e8c8:	11 24       	eor	r1, r1
+    e8ca:	2f 93       	push	r18
+    e8cc:	3f 93       	push	r19
+    e8ce:	4f 93       	push	r20
+    e8d0:	5f 93       	push	r21
+    e8d2:	6f 93       	push	r22
+    e8d4:	7f 93       	push	r23
+    e8d6:	8f 93       	push	r24
+    e8d8:	9f 93       	push	r25
+    e8da:	af 93       	push	r26
+    e8dc:	bf 93       	push	r27
+    e8de:	ef 93       	push	r30
+    e8e0:	ff 93       	push	r31
+    e8e2:	80 91 da 00 	lds	r24, 0x00DA	; 0x8000da <__TEXT_REGION_LENGTH__+0x7e00da>
+    e8e6:	80 ff       	sbrs	r24, 0
+    e8e8:	19 c0       	rjmp	.+50     	; 0xe91c <__vector_10+0x5c>
+    e8ea:	80 91 d8 00 	lds	r24, 0x00D8	; 0x8000d8 <__TEXT_REGION_LENGTH__+0x7e00d8>
+    e8ee:	80 ff       	sbrs	r24, 0
+    e8f0:	15 c0       	rjmp	.+42     	; 0xe91c <__vector_10+0x5c>
+    e8f2:	80 91 da 00 	lds	r24, 0x00DA	; 0x8000da <__TEXT_REGION_LENGTH__+0x7e00da>
+    e8f6:	8e 7f       	andi	r24, 0xFE	; 254
+    e8f8:	80 93 da 00 	sts	0x00DA, r24	; 0x8000da <__TEXT_REGION_LENGTH__+0x7e00da>
+    e8fc:	80 91 d9 00 	lds	r24, 0x00D9	; 0x8000d9 <__TEXT_REGION_LENGTH__+0x7e00d9>
+    e900:	80 ff       	sbrs	r24, 0
+    e902:	0a c0       	rjmp	.+20     	; 0xe918 <__vector_10+0x58>
+    e904:	88 e1       	ldi	r24, 0x18	; 24
+    e906:	89 bd       	out	0x29, r24	; 41
+    e908:	8a e1       	ldi	r24, 0x1A	; 26
+    e90a:	89 bd       	out	0x29, r24	; 41
+    e90c:	09 b4       	in	r0, 0x29	; 41
+    e90e:	00 fe       	sbrs	r0, 0
+    e910:	fd cf       	rjmp	.-6      	; 0xe90c <__vector_10+0x4c>
+    e912:	81 e0       	ldi	r24, 0x01	; 1
+    e914:	8e bb       	out	0x1e, r24	; 30
+    e916:	02 c0       	rjmp	.+4      	; 0xe91c <__vector_10+0x5c>
+    e918:	19 bc       	out	0x29, r1	; 41
+    e91a:	1e ba       	out	0x1e, r1	; 30
+    e91c:	80 91 e1 00 	lds	r24, 0x00E1	; 0x8000e1 <__TEXT_REGION_LENGTH__+0x7e00e1>
+    e920:	80 ff       	sbrs	r24, 0
+    e922:	16 c0       	rjmp	.+44     	; 0xe950 <__vector_10+0x90>
+    e924:	80 91 e2 00 	lds	r24, 0x00E2	; 0x8000e2 <__TEXT_REGION_LENGTH__+0x7e00e2>
+    e928:	80 ff       	sbrs	r24, 0
+    e92a:	12 c0       	rjmp	.+36     	; 0xe950 <__vector_10+0x90>
+    e92c:	80 91 e2 00 	lds	r24, 0x00E2	; 0x8000e2 <__TEXT_REGION_LENGTH__+0x7e00e2>
+    e930:	8e 7f       	andi	r24, 0xFE	; 254
+    e932:	80 93 e2 00 	sts	0x00E2, r24	; 0x8000e2 <__TEXT_REGION_LENGTH__+0x7e00e2>
+    e936:	80 91 e2 00 	lds	r24, 0x00E2	; 0x8000e2 <__TEXT_REGION_LENGTH__+0x7e00e2>
+    e93a:	80 61       	ori	r24, 0x10	; 16
+    e93c:	80 93 e2 00 	sts	0x00E2, r24	; 0x8000e2 <__TEXT_REGION_LENGTH__+0x7e00e2>
+    e940:	80 91 d8 00 	lds	r24, 0x00D8	; 0x8000d8 <__TEXT_REGION_LENGTH__+0x7e00d8>
+    e944:	80 62       	ori	r24, 0x20	; 32
+    e946:	80 93 d8 00 	sts	0x00D8, r24	; 0x8000d8 <__TEXT_REGION_LENGTH__+0x7e00d8>
+    e94a:	19 bc       	out	0x29, r1	; 41
+    e94c:	85 e0       	ldi	r24, 0x05	; 5
+    e94e:	8e bb       	out	0x1e, r24	; 30
+    e950:	80 91 e1 00 	lds	r24, 0x00E1	; 0x8000e1 <__TEXT_REGION_LENGTH__+0x7e00e1>
+    e954:	84 ff       	sbrs	r24, 4
+    e956:	2d c0       	rjmp	.+90     	; 0xe9b2 <__vector_10+0xf2>
+    e958:	80 91 e2 00 	lds	r24, 0x00E2	; 0x8000e2 <__TEXT_REGION_LENGTH__+0x7e00e2>
+    e95c:	84 ff       	sbrs	r24, 4
+    e95e:	29 c0       	rjmp	.+82     	; 0xe9b2 <__vector_10+0xf2>
+    e960:	88 e1       	ldi	r24, 0x18	; 24
+    e962:	89 bd       	out	0x29, r24	; 41
+    e964:	8a e1       	ldi	r24, 0x1A	; 26
+    e966:	89 bd       	out	0x29, r24	; 41
+    e968:	09 b4       	in	r0, 0x29	; 41
+    e96a:	00 fe       	sbrs	r0, 0
+    e96c:	fd cf       	rjmp	.-6      	; 0xe968 <__vector_10+0xa8>
+    e96e:	80 91 d8 00 	lds	r24, 0x00D8	; 0x8000d8 <__TEXT_REGION_LENGTH__+0x7e00d8>
+    e972:	8f 7d       	andi	r24, 0xDF	; 223
+    e974:	80 93 d8 00 	sts	0x00D8, r24	; 0x8000d8 <__TEXT_REGION_LENGTH__+0x7e00d8>
+    e978:	80 91 e1 00 	lds	r24, 0x00E1	; 0x8000e1 <__TEXT_REGION_LENGTH__+0x7e00e1>
+    e97c:	8f 7e       	andi	r24, 0xEF	; 239
+    e97e:	80 93 e1 00 	sts	0x00E1, r24	; 0x8000e1 <__TEXT_REGION_LENGTH__+0x7e00e1>
+    e982:	80 91 e2 00 	lds	r24, 0x00E2	; 0x8000e2 <__TEXT_REGION_LENGTH__+0x7e00e2>
+    e986:	8f 7e       	andi	r24, 0xEF	; 239
+    e988:	80 93 e2 00 	sts	0x00E2, r24	; 0x8000e2 <__TEXT_REGION_LENGTH__+0x7e00e2>
+    e98c:	80 91 e2 00 	lds	r24, 0x00E2	; 0x8000e2 <__TEXT_REGION_LENGTH__+0x7e00e2>
+    e990:	81 60       	ori	r24, 0x01	; 1
+    e992:	80 93 e2 00 	sts	0x00E2, r24	; 0x8000e2 <__TEXT_REGION_LENGTH__+0x7e00e2>
+    e996:	80 91 22 02 	lds	r24, 0x0222	; 0x800222 <USB_Device_ConfigurationNumber>
+    e99a:	88 23       	and	r24, r24
+    e99c:	11 f0       	breq	.+4      	; 0xe9a2 <__vector_10+0xe2>
+    e99e:	84 e0       	ldi	r24, 0x04	; 4
+    e9a0:	07 c0       	rjmp	.+14     	; 0xe9b0 <__vector_10+0xf0>
+    e9a2:	80 91 e3 00 	lds	r24, 0x00E3	; 0x8000e3 <__TEXT_REGION_LENGTH__+0x7e00e3>
+    e9a6:	87 fd       	sbrc	r24, 7
+    e9a8:	02 c0       	rjmp	.+4      	; 0xe9ae <__vector_10+0xee>
+    e9aa:	81 e0       	ldi	r24, 0x01	; 1
+    e9ac:	01 c0       	rjmp	.+2      	; 0xe9b0 <__vector_10+0xf0>
+    e9ae:	83 e0       	ldi	r24, 0x03	; 3
+    e9b0:	8e bb       	out	0x1e, r24	; 30
+    e9b2:	80 91 e1 00 	lds	r24, 0x00E1	; 0x8000e1 <__TEXT_REGION_LENGTH__+0x7e00e1>
+    e9b6:	83 ff       	sbrs	r24, 3
+    e9b8:	25 c0       	rjmp	.+74     	; 0xea04 <__vector_10+0x144>
+    e9ba:	80 91 e2 00 	lds	r24, 0x00E2	; 0x8000e2 <__TEXT_REGION_LENGTH__+0x7e00e2>
+    e9be:	83 ff       	sbrs	r24, 3
+    e9c0:	21 c0       	rjmp	.+66     	; 0xea04 <__vector_10+0x144>
+    e9c2:	80 91 e1 00 	lds	r24, 0x00E1	; 0x8000e1 <__TEXT_REGION_LENGTH__+0x7e00e1>
+    e9c6:	87 7f       	andi	r24, 0xF7	; 247
+    e9c8:	80 93 e1 00 	sts	0x00E1, r24	; 0x8000e1 <__TEXT_REGION_LENGTH__+0x7e00e1>
+    e9cc:	82 e0       	ldi	r24, 0x02	; 2
+    e9ce:	8e bb       	out	0x1e, r24	; 30
+    e9d0:	10 92 22 02 	sts	0x0222, r1	; 0x800222 <USB_Device_ConfigurationNumber>
+    e9d4:	80 91 e1 00 	lds	r24, 0x00E1	; 0x8000e1 <__TEXT_REGION_LENGTH__+0x7e00e1>
+    e9d8:	8e 7f       	andi	r24, 0xFE	; 254
+    e9da:	80 93 e1 00 	sts	0x00E1, r24	; 0x8000e1 <__TEXT_REGION_LENGTH__+0x7e00e1>
+    e9de:	80 91 e2 00 	lds	r24, 0x00E2	; 0x8000e2 <__TEXT_REGION_LENGTH__+0x7e00e2>
+    e9e2:	8e 7f       	andi	r24, 0xFE	; 254
+    e9e4:	80 93 e2 00 	sts	0x00E2, r24	; 0x8000e2 <__TEXT_REGION_LENGTH__+0x7e00e2>
+    e9e8:	80 91 e2 00 	lds	r24, 0x00E2	; 0x8000e2 <__TEXT_REGION_LENGTH__+0x7e00e2>
+    e9ec:	80 61       	ori	r24, 0x10	; 16
+    e9ee:	80 93 e2 00 	sts	0x00E2, r24	; 0x8000e2 <__TEXT_REGION_LENGTH__+0x7e00e2>
+    e9f2:	42 e0       	ldi	r20, 0x02	; 2
+    e9f4:	60 e0       	ldi	r22, 0x00	; 0
+    e9f6:	80 e0       	ldi	r24, 0x00	; 0
+    e9f8:	05 dc       	rcall	.-2038   	; 0xe204 <Endpoint_ConfigureEndpoint_Prv>
+    e9fa:	80 91 f0 00 	lds	r24, 0x00F0	; 0x8000f0 <__TEXT_REGION_LENGTH__+0x7e00f0>
+    e9fe:	88 60       	ori	r24, 0x08	; 8
+    ea00:	80 93 f0 00 	sts	0x00F0, r24	; 0x8000f0 <__TEXT_REGION_LENGTH__+0x7e00f0>
+    ea04:	ff 91       	pop	r31
+    ea06:	ef 91       	pop	r30
+    ea08:	bf 91       	pop	r27
+    ea0a:	af 91       	pop	r26
+    ea0c:	9f 91       	pop	r25
+    ea0e:	8f 91       	pop	r24
+    ea10:	7f 91       	pop	r23
+    ea12:	6f 91       	pop	r22
+    ea14:	5f 91       	pop	r21
+    ea16:	4f 91       	pop	r20
+    ea18:	3f 91       	pop	r19
+    ea1a:	2f 91       	pop	r18
+    ea1c:	0f 90       	pop	r0
+    ea1e:	0f be       	out	0x3f, r0	; 63
+    ea20:	0f 90       	pop	r0
+    ea22:	1f 90       	pop	r1
+    ea24:	18 95       	reti
+
+0000ea26 <BootloaderAPI_WriteLock>:
+    ea26:	9f b7       	in	r25, 0x3f	; 63
+    ea28:	f8 94       	cli
+    ea2a:	07 b6       	in	r0, 0x37	; 55
+    ea2c:	00 fc       	sbrc	r0, 0
+    ea2e:	fd cf       	rjmp	.-6      	; 0xea2a <BootloaderAPI_WriteLock+0x4>
+    ea30:	f9 99       	sbic	0x1f, 1	; 31
+    ea32:	fe cf       	rjmp	.-4      	; 0xea30 <BootloaderAPI_WriteLock+0xa>
+    ea34:	80 95       	com	r24
+    ea36:	29 e0       	ldi	r18, 0x09	; 9
+    ea38:	e1 e0       	ldi	r30, 0x01	; 1
+    ea3a:	f0 e0       	ldi	r31, 0x00	; 0
+    ea3c:	08 2e       	mov	r0, r24
+    ea3e:	20 93 57 00 	sts	0x0057, r18	; 0x800057 <__TEXT_REGION_LENGTH__+0x7e0057>
+    ea42:	e8 95       	spm
+    ea44:	9f bf       	out	0x3f, r25	; 63
+    ea46:	08 95       	ret
+
+0000ea48 <BootloaderAPI_ReadLock>:
+    ea48:	e1 e0       	ldi	r30, 0x01	; 1
+    ea4a:	f0 e0       	ldi	r31, 0x00	; 0
+    ea4c:	89 e0       	ldi	r24, 0x09	; 9
+    ea4e:	80 93 57 00 	sts	0x0057, r24	; 0x800057 <__TEXT_REGION_LENGTH__+0x7e0057>
+    ea52:	84 91       	lpm	r24, Z
+    ea54:	08 95       	ret
+
+0000ea56 <BootloaderAPI_ReadFuse>:
+    ea56:	29 e0       	ldi	r18, 0x09	; 9
+    ea58:	fc 01       	movw	r30, r24
+    ea5a:	20 93 57 00 	sts	0x0057, r18	; 0x800057 <__TEXT_REGION_LENGTH__+0x7e0057>
+    ea5e:	84 91       	lpm	r24, Z
+    ea60:	08 95       	ret
+
+0000ea62 <BootloaderAPI_ReadSignature>:
+    ea62:	21 e2       	ldi	r18, 0x21	; 33
+    ea64:	fc 01       	movw	r30, r24
+    ea66:	20 93 57 00 	sts	0x0057, r18	; 0x800057 <__TEXT_REGION_LENGTH__+0x7e0057>
+    ea6a:	84 91       	lpm	r24, Z
+    ea6c:	08 95       	ret
+
+0000ea6e <BootloaderAPI_FillWord>:
+    ea6e:	07 b6       	in	r0, 0x37	; 55
+    ea70:	00 fc       	sbrc	r0, 0
+    ea72:	fd cf       	rjmp	.-6      	; 0xea6e <BootloaderAPI_FillWord>
+    ea74:	f9 99       	sbic	0x1f, 1	; 31
+    ea76:	fe cf       	rjmp	.-4      	; 0xea74 <BootloaderAPI_FillWord+0x6>
+    ea78:	21 e0       	ldi	r18, 0x01	; 1
+    ea7a:	fb 01       	movw	r30, r22
+    ea7c:	0a 01       	movw	r0, r20
+    ea7e:	20 93 57 00 	sts	0x0057, r18	; 0x800057 <__TEXT_REGION_LENGTH__+0x7e0057>
+    ea82:	e8 95       	spm
+    ea84:	11 24       	eor	r1, r1
+    ea86:	08 95       	ret
+
+0000ea88 <BootloaderAPI_WritePage>:
+    ea88:	cf 92       	push	r12
+    ea8a:	df 92       	push	r13
+    ea8c:	ef 92       	push	r14
+    ea8e:	ff 92       	push	r15
+    ea90:	6b 01       	movw	r12, r22
+    ea92:	7c 01       	movw	r14, r24
+    ea94:	8b dc       	rcall	.-1770   	; 0xe3ac <IsPageAddressValid>
+    ea96:	88 23       	and	r24, r24
+    ea98:	a1 f0       	breq	.+40     	; 0xeac2 <BootloaderAPI_WritePage+0x3a>
+    ea9a:	8f b7       	in	r24, 0x3f	; 63
+    ea9c:	f8 94       	cli
+    ea9e:	07 b6       	in	r0, 0x37	; 55
+    eaa0:	00 fc       	sbrc	r0, 0
+    eaa2:	fd cf       	rjmp	.-6      	; 0xea9e <BootloaderAPI_WritePage+0x16>
+    eaa4:	f9 99       	sbic	0x1f, 1	; 31
+    eaa6:	fe cf       	rjmp	.-4      	; 0xeaa4 <BootloaderAPI_WritePage+0x1c>
+    eaa8:	95 e0       	ldi	r25, 0x05	; 5
+    eaaa:	f6 01       	movw	r30, r12
+    eaac:	90 93 57 00 	sts	0x0057, r25	; 0x800057 <__TEXT_REGION_LENGTH__+0x7e0057>
+    eab0:	e8 95       	spm
+    eab2:	07 b6       	in	r0, 0x37	; 55
+    eab4:	00 fc       	sbrc	r0, 0
+    eab6:	fd cf       	rjmp	.-6      	; 0xeab2 <BootloaderAPI_WritePage+0x2a>
+    eab8:	91 e1       	ldi	r25, 0x11	; 17
+    eaba:	90 93 57 00 	sts	0x0057, r25	; 0x800057 <__TEXT_REGION_LENGTH__+0x7e0057>
+    eabe:	e8 95       	spm
+    eac0:	8f bf       	out	0x3f, r24	; 63
+    eac2:	ff 90       	pop	r15
+    eac4:	ef 90       	pop	r14
+    eac6:	df 90       	pop	r13
+    eac8:	cf 90       	pop	r12
+    eaca:	08 95       	ret
+
+0000eacc <BootloaderAPI_ErasePage>:
+    eacc:	cf 92       	push	r12
+    eace:	df 92       	push	r13
+    ead0:	ef 92       	push	r14
+    ead2:	ff 92       	push	r15
+    ead4:	6b 01       	movw	r12, r22
+    ead6:	7c 01       	movw	r14, r24
+    ead8:	69 dc       	rcall	.-1838   	; 0xe3ac <IsPageAddressValid>
+    eada:	88 23       	and	r24, r24
+    eadc:	a1 f0       	breq	.+40     	; 0xeb06 <BootloaderAPI_ErasePage+0x3a>
+    eade:	8f b7       	in	r24, 0x3f	; 63
+    eae0:	f8 94       	cli
+    eae2:	07 b6       	in	r0, 0x37	; 55
+    eae4:	00 fc       	sbrc	r0, 0
+    eae6:	fd cf       	rjmp	.-6      	; 0xeae2 <BootloaderAPI_ErasePage+0x16>
+    eae8:	f9 99       	sbic	0x1f, 1	; 31
+    eaea:	fe cf       	rjmp	.-4      	; 0xeae8 <BootloaderAPI_ErasePage+0x1c>
+    eaec:	93 e0       	ldi	r25, 0x03	; 3
+    eaee:	f6 01       	movw	r30, r12
+    eaf0:	90 93 57 00 	sts	0x0057, r25	; 0x800057 <__TEXT_REGION_LENGTH__+0x7e0057>
+    eaf4:	e8 95       	spm
+    eaf6:	07 b6       	in	r0, 0x37	; 55
+    eaf8:	00 fc       	sbrc	r0, 0
+    eafa:	fd cf       	rjmp	.-6      	; 0xeaf6 <BootloaderAPI_ErasePage+0x2a>
+    eafc:	91 e1       	ldi	r25, 0x11	; 17
+    eafe:	90 93 57 00 	sts	0x0057, r25	; 0x800057 <__TEXT_REGION_LENGTH__+0x7e0057>
+    eb02:	e8 95       	spm
+    eb04:	8f bf       	out	0x3f, r24	; 63
+    eb06:	ff 90       	pop	r15
+    eb08:	ef 90       	pop	r14
+    eb0a:	df 90       	pop	r13
+    eb0c:	cf 90       	pop	r12
+    eb0e:	08 95       	ret
+
+0000eb10 <VirtualFAT_WriteBlock>:
+    eb10:	4f 92       	push	r4
+    eb12:	5f 92       	push	r5
+    eb14:	6f 92       	push	r6
+    eb16:	7f 92       	push	r7
+    eb18:	af 92       	push	r10
+    eb1a:	bf 92       	push	r11
+    eb1c:	cf 92       	push	r12
+    eb1e:	df 92       	push	r13
+    eb20:	ef 92       	push	r14
+    eb22:	ff 92       	push	r15
+    eb24:	0f 93       	push	r16
+    eb26:	1f 93       	push	r17
+    eb28:	cf 93       	push	r28
+    eb2a:	df 93       	push	r29
+    eb2c:	cd b7       	in	r28, 0x3d	; 61
+    eb2e:	de b7       	in	r29, 0x3e	; 62
+    eb30:	d2 50       	subi	r29, 0x02	; 2
+    eb32:	0f b6       	in	r0, 0x3f	; 63
+    eb34:	f8 94       	cli
+    eb36:	de bf       	out	0x3e, r29	; 62
+    eb38:	0f be       	out	0x3f, r0	; 63
+    eb3a:	cd bf       	out	0x3d, r28	; 61
+    eb3c:	8c 01       	movw	r16, r24
+    eb3e:	40 e0       	ldi	r20, 0x00	; 0
+    eb40:	50 e0       	ldi	r21, 0x00	; 0
+    eb42:	60 e0       	ldi	r22, 0x00	; 0
+    eb44:	72 e0       	ldi	r23, 0x02	; 2
+    eb46:	ce 01       	movw	r24, r28
+    eb48:	01 96       	adiw	r24, 0x01	; 1
+    eb4a:	9e db       	rcall	.-2244   	; 0xe288 <Endpoint_Read_Stream_LE>
+    eb4c:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    eb50:	8b 77       	andi	r24, 0x7B	; 123
+    eb52:	80 93 e8 00 	sts	0x00E8, r24	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    eb56:	03 30       	cpi	r16, 0x03	; 3
+    eb58:	11 05       	cpc	r17, r1
+    eb5a:	08 f4       	brcc	.+2      	; 0xeb5e <VirtualFAT_WriteBlock+0x4e>
+    eb5c:	43 c0       	rjmp	.+134    	; 0xebe4 <VirtualFAT_WriteBlock+0xd4>
+    eb5e:	03 30       	cpi	r16, 0x03	; 3
+    eb60:	11 05       	cpc	r17, r1
+    eb62:	29 f4       	brne	.+10     	; 0xeb6e <VirtualFAT_WriteBlock+0x5e>
+    eb64:	10 92 21 02 	sts	0x0221, r1	; 0x800221 <sector_in_file+0x1>
+    eb68:	10 92 20 02 	sts	0x0220, r1	; 0x800220 <sector_in_file>
+    eb6c:	3b c0       	rjmp	.+118    	; 0xebe4 <VirtualFAT_WriteBlock+0xd4>
+    eb6e:	80 91 20 02 	lds	r24, 0x0220	; 0x800220 <sector_in_file>
+    eb72:	90 91 21 02 	lds	r25, 0x0221	; 0x800221 <sector_in_file+0x1>
+    eb76:	80 37       	cpi	r24, 0x70	; 112
+    eb78:	91 05       	cpc	r25, r1
+    eb7a:	a0 f5       	brcc	.+104    	; 0xebe4 <VirtualFAT_WriteBlock+0xd4>
+    eb7c:	5c 01       	movw	r10, r24
+    eb7e:	ba 2c       	mov	r11, r10
+    eb80:	aa 24       	eor	r10, r10
+    eb82:	bb 0c       	add	r11, r11
+    eb84:	01 96       	adiw	r24, 0x01	; 1
+    eb86:	90 93 21 02 	sts	0x0221, r25	; 0x800221 <sector_in_file+0x1>
+    eb8a:	80 93 20 02 	sts	0x0220, r24	; 0x800220 <sector_in_file>
+    eb8e:	8e 01       	movw	r16, r28
+    eb90:	0f 5f       	subi	r16, 0xFF	; 255
+    eb92:	1f 4f       	sbci	r17, 0xFF	; 255
+    eb94:	75 01       	movw	r14, r10
+    eb96:	8e ef       	ldi	r24, 0xFE	; 254
+    eb98:	f8 1a       	sub	r15, r24
+    eb9a:	25 01       	movw	r4, r10
+    eb9c:	61 2c       	mov	r6, r1
+    eb9e:	71 2c       	mov	r7, r1
+    eba0:	a1 10       	cpse	r10, r1
+    eba2:	03 c0       	rjmp	.+6      	; 0xebaa <VirtualFAT_WriteBlock+0x9a>
+    eba4:	c3 01       	movw	r24, r6
+    eba6:	b2 01       	movw	r22, r4
+    eba8:	91 df       	rcall	.-222    	; 0xeacc <BootloaderAPI_ErasePage>
+    ebaa:	f8 01       	movw	r30, r16
+    ebac:	41 81       	ldd	r20, Z+1	; 0x01
+    ebae:	50 e0       	ldi	r21, 0x00	; 0
+    ebb0:	54 2f       	mov	r21, r20
+    ebb2:	44 27       	eor	r20, r20
+    ebb4:	80 81       	ld	r24, Z
+    ebb6:	48 2b       	or	r20, r24
+    ebb8:	c3 01       	movw	r24, r6
+    ebba:	b2 01       	movw	r22, r4
+    ebbc:	58 df       	rcall	.-336    	; 0xea6e <BootloaderAPI_FillWord>
+    ebbe:	65 01       	movw	r12, r10
+    ebc0:	f2 e0       	ldi	r31, 0x02	; 2
+    ebc2:	cf 0e       	add	r12, r31
+    ebc4:	d1 1c       	adc	r13, r1
+    ebc6:	c1 10       	cpse	r12, r1
+    ebc8:	06 c0       	rjmp	.+12     	; 0xebd6 <VirtualFAT_WriteBlock+0xc6>
+    ebca:	b5 01       	movw	r22, r10
+    ebcc:	6e 5f       	subi	r22, 0xFE	; 254
+    ebce:	71 09       	sbc	r23, r1
+    ebd0:	80 e0       	ldi	r24, 0x00	; 0
+    ebd2:	90 e0       	ldi	r25, 0x00	; 0
+    ebd4:	59 df       	rcall	.-334    	; 0xea88 <BootloaderAPI_WritePage>
+    ebd6:	0e 5f       	subi	r16, 0xFE	; 254
+    ebd8:	1f 4f       	sbci	r17, 0xFF	; 255
+    ebda:	ce 14       	cp	r12, r14
+    ebdc:	df 04       	cpc	r13, r15
+    ebde:	11 f0       	breq	.+4      	; 0xebe4 <VirtualFAT_WriteBlock+0xd4>
+    ebe0:	56 01       	movw	r10, r12
+    ebe2:	db cf       	rjmp	.-74     	; 0xeb9a <VirtualFAT_WriteBlock+0x8a>
+    ebe4:	de 5f       	subi	r29, 0xFE	; 254
+    ebe6:	0f b6       	in	r0, 0x3f	; 63
+    ebe8:	f8 94       	cli
+    ebea:	de bf       	out	0x3e, r29	; 62
+    ebec:	0f be       	out	0x3f, r0	; 63
+    ebee:	cd bf       	out	0x3d, r28	; 61
+    ebf0:	df 91       	pop	r29
+    ebf2:	cf 91       	pop	r28
+    ebf4:	1f 91       	pop	r17
+    ebf6:	0f 91       	pop	r16
+    ebf8:	ff 90       	pop	r15
+    ebfa:	ef 90       	pop	r14
+    ebfc:	df 90       	pop	r13
+    ebfe:	cf 90       	pop	r12
+    ec00:	bf 90       	pop	r11
+    ec02:	af 90       	pop	r10
+    ec04:	7f 90       	pop	r7
+    ec06:	6f 90       	pop	r6
+    ec08:	5f 90       	pop	r5
+    ec0a:	4f 90       	pop	r4
+    ec0c:	08 95       	ret
+
+0000ec0e <SCSI_Command_ReadWrite_10.constprop.8>:
+    ec0e:	df 92       	push	r13
+    ec10:	ef 92       	push	r14
+    ec12:	ff 92       	push	r15
+    ec14:	0f 93       	push	r16
+    ec16:	1f 93       	push	r17
+    ec18:	cf 93       	push	r28
+    ec1a:	df 93       	push	r29
+    ec1c:	00 91 21 01 	lds	r16, 0x0121	; 0x800121 <Disk_MS_Interface+0x20>
+    ec20:	10 91 20 01 	lds	r17, 0x0120	; 0x800120 <Disk_MS_Interface+0x1f>
+    ec24:	20 91 24 01 	lds	r18, 0x0124	; 0x800124 <Disk_MS_Interface+0x23>
+    ec28:	c2 2f       	mov	r28, r18
+    ec2a:	30 91 23 01 	lds	r19, 0x0123	; 0x800123 <Disk_MS_Interface+0x22>
+    ec2e:	d3 2f       	mov	r29, r19
+    ec30:	04 39       	cpi	r16, 0x94	; 148
+    ec32:	11 05       	cpc	r17, r1
+    ec34:	68 f0       	brcs	.+26     	; 0xec50 <SCSI_Command_ReadWrite_10.constprop.8+0x42>
+    ec36:	80 91 3c 01 	lds	r24, 0x013C	; 0x80013c <SenseData+0x2>
+    ec3a:	80 7f       	andi	r24, 0xF0	; 240
+    ec3c:	85 60       	ori	r24, 0x05	; 5
+    ec3e:	80 93 3c 01 	sts	0x013C, r24	; 0x80013c <SenseData+0x2>
+    ec42:	81 e2       	ldi	r24, 0x21	; 33
+    ec44:	80 93 46 01 	sts	0x0146, r24	; 0x800146 <SenseData+0xc>
+    ec48:	10 92 47 01 	sts	0x0147, r1	; 0x800147 <SenseData+0xd>
+    ec4c:	80 e0       	ldi	r24, 0x00	; 0
+    ec4e:	33 c0       	rjmp	.+102    	; 0xecb6 <SCSI_Command_ReadWrite_10.constprop.8+0xa8>
+    ec50:	d8 2e       	mov	r13, r24
+    ec52:	78 01       	movw	r14, r16
+    ec54:	c7 01       	movw	r24, r14
+    ec56:	80 1b       	sub	r24, r16
+    ec58:	91 0b       	sbc	r25, r17
+    ec5a:	8c 17       	cp	r24, r28
+    ec5c:	9d 07       	cpc	r25, r29
+    ec5e:	50 f4       	brcc	.+20     	; 0xec74 <SCSI_Command_ReadWrite_10.constprop.8+0x66>
+    ec60:	c7 01       	movw	r24, r14
+    ec62:	dd 20       	and	r13, r13
+    ec64:	11 f0       	breq	.+4      	; 0xec6a <SCSI_Command_ReadWrite_10.constprop.8+0x5c>
+    ec66:	4a dd       	rcall	.-1388   	; 0xe6fc <VirtualFAT_ReadBlock>
+    ec68:	01 c0       	rjmp	.+2      	; 0xec6c <SCSI_Command_ReadWrite_10.constprop.8+0x5e>
+    ec6a:	52 df       	rcall	.-348    	; 0xeb10 <VirtualFAT_WriteBlock>
+    ec6c:	8f ef       	ldi	r24, 0xFF	; 255
+    ec6e:	e8 1a       	sub	r14, r24
+    ec70:	f8 0a       	sbc	r15, r24
+    ec72:	f0 cf       	rjmp	.-32     	; 0xec54 <SCSI_Command_ReadWrite_10.constprop.8+0x46>
+    ec74:	ce 01       	movw	r24, r28
+    ec76:	a0 e0       	ldi	r26, 0x00	; 0
+    ec78:	b0 e0       	ldi	r27, 0x00	; 0
+    ec7a:	29 e0       	ldi	r18, 0x09	; 9
+    ec7c:	88 0f       	add	r24, r24
+    ec7e:	99 1f       	adc	r25, r25
+    ec80:	aa 1f       	adc	r26, r26
+    ec82:	bb 1f       	adc	r27, r27
+    ec84:	2a 95       	dec	r18
+    ec86:	d1 f7       	brne	.-12     	; 0xec7c <SCSI_Command_ReadWrite_10.constprop.8+0x6e>
+    ec88:	40 91 15 01 	lds	r20, 0x0115	; 0x800115 <Disk_MS_Interface+0x14>
+    ec8c:	50 91 16 01 	lds	r21, 0x0116	; 0x800116 <Disk_MS_Interface+0x15>
+    ec90:	60 91 17 01 	lds	r22, 0x0117	; 0x800117 <Disk_MS_Interface+0x16>
+    ec94:	70 91 18 01 	lds	r23, 0x0118	; 0x800118 <Disk_MS_Interface+0x17>
+    ec98:	8a 01       	movw	r16, r20
+    ec9a:	9b 01       	movw	r18, r22
+    ec9c:	08 1b       	sub	r16, r24
+    ec9e:	19 0b       	sbc	r17, r25
+    eca0:	2a 0b       	sbc	r18, r26
+    eca2:	3b 0b       	sbc	r19, r27
+    eca4:	00 93 15 01 	sts	0x0115, r16	; 0x800115 <Disk_MS_Interface+0x14>
+    eca8:	10 93 16 01 	sts	0x0116, r17	; 0x800116 <Disk_MS_Interface+0x15>
+    ecac:	20 93 17 01 	sts	0x0117, r18	; 0x800117 <Disk_MS_Interface+0x16>
+    ecb0:	30 93 18 01 	sts	0x0118, r19	; 0x800118 <Disk_MS_Interface+0x17>
+    ecb4:	81 e0       	ldi	r24, 0x01	; 1
+    ecb6:	df 91       	pop	r29
+    ecb8:	cf 91       	pop	r28
+    ecba:	1f 91       	pop	r17
+    ecbc:	0f 91       	pop	r16
+    ecbe:	ff 90       	pop	r15
+    ecc0:	ef 90       	pop	r14
+    ecc2:	df 90       	pop	r13
+    ecc4:	08 95       	ret
+
+0000ecc6 <__vector_20>:
+    ecc6:	1f 92       	push	r1
+    ecc8:	0f 92       	push	r0
+    ecca:	0f b6       	in	r0, 0x3f	; 63
+    eccc:	0f 92       	push	r0
+    ecce:	11 24       	eor	r1, r1
+    ecd0:	8f 93       	push	r24
+    ecd2:	82 b1       	in	r24, 0x02	; 2
+    ecd4:	80 58       	subi	r24, 0x80	; 128
+    ecd6:	82 b9       	out	0x02, r24	; 2
+    ecd8:	8f 91       	pop	r24
+    ecda:	0f 90       	pop	r0
+    ecdc:	0f be       	out	0x3f, r0	; 63
+    ecde:	0f 90       	pop	r0
+    ece0:	1f 90       	pop	r1
+    ece2:	18 95       	reti
+
+0000ece4 <main>:
+    ece4:	cf 93       	push	r28
+    ece6:	df 93       	push	r29
+    ece8:	00 d0       	rcall	.+0      	; 0xecea <main+0x6>
+    ecea:	cd b7       	in	r28, 0x3d	; 61
+    ecec:	de b7       	in	r29, 0x3e	; 62
+    ecee:	8f ef       	ldi	r24, 0xFF	; 255
+    ecf0:	81 b9       	out	0x01, r24	; 1
+    ecf2:	ef e1       	ldi	r30, 0x1F	; 31
+    ecf4:	fe e4       	ldi	r31, 0x4E	; 78
+    ecf6:	31 97       	sbiw	r30, 0x01	; 1
+    ecf8:	f1 f7       	brne	.-4      	; 0xecf6 <main+0x12>
+    ecfa:	00 c0       	rjmp	.+0      	; 0xecfc <main+0x18>
+    ecfc:	00 00       	nop
+    ecfe:	11 b8       	out	0x01, r1	; 1
+    ed00:	12 b8       	out	0x02, r1	; 2
+    ed02:	68 9a       	sbi	0x0d, 0	; 13
+    ed04:	69 9a       	sbi	0x0d, 1	; 13
+    ed06:	6a 9a       	sbi	0x0d, 2	; 13
+    ed08:	70 98       	cbi	0x0e, 0	; 14
+    ed0a:	71 98       	cbi	0x0e, 1	; 14
+    ed0c:	72 98       	cbi	0x0e, 2	; 14
+    ed0e:	ef e5       	ldi	r30, 0x5F	; 95
+    ed10:	fa ee       	ldi	r31, 0xEA	; 234
+    ed12:	31 97       	sbiw	r30, 0x01	; 1
+    ed14:	f1 f7       	brne	.-4      	; 0xed12 <main+0x2e>
+    ed16:	00 c0       	rjmp	.+0      	; 0xed18 <main+0x34>
+    ed18:	00 00       	nop
+    ed1a:	81 b9       	out	0x01, r24	; 1
+    ed1c:	80 e3       	ldi	r24, 0x30	; 48
+    ed1e:	42 dd       	rcall	.-1404   	; 0xe7a4 <commandLCD>
+    ed20:	80 e3       	ldi	r24, 0x30	; 48
+    ed22:	40 dd       	rcall	.-1408   	; 0xe7a4 <commandLCD>
+    ed24:	80 e3       	ldi	r24, 0x30	; 48
+    ed26:	3e dd       	rcall	.-1412   	; 0xe7a4 <commandLCD>
+    ed28:	88 e3       	ldi	r24, 0x38	; 56
+    ed2a:	3c dd       	rcall	.-1416   	; 0xe7a4 <commandLCD>
+    ed2c:	86 e0       	ldi	r24, 0x06	; 6
+    ed2e:	3a dd       	rcall	.-1420   	; 0xe7a4 <commandLCD>
+    ed30:	88 e1       	ldi	r24, 0x18	; 24
+    ed32:	38 dd       	rcall	.-1424   	; 0xe7a4 <commandLCD>
+    ed34:	8c e0       	ldi	r24, 0x0C	; 12
+    ed36:	36 dd       	rcall	.-1428   	; 0xe7a4 <commandLCD>
+    ed38:	10 92 1f 02 	sts	0x021F, r1	; 0x80021f <lcd_info+0x1>
+    ed3c:	10 92 1e 02 	sts	0x021E, r1	; 0x80021e <lcd_info>
+    ed40:	53 dd       	rcall	.-1370   	; 0xe7e8 <clearLCD>
+    ed42:	73 9a       	sbi	0x0e, 3	; 14
+    ed44:	63 e0       	ldi	r22, 0x03	; 3
+    ed46:	80 e0       	ldi	r24, 0x00	; 0
+    ed48:	38 dd       	rcall	.-1424   	; 0xe7ba <setCursorLCD>
+    ed4a:	00 e0       	ldi	r16, 0x00	; 0
+    ed4c:	12 e0       	ldi	r17, 0x02	; 2
+    ed4e:	f8 01       	movw	r30, r16
+    ed50:	81 91       	ld	r24, Z+
+    ed52:	8f 01       	movw	r16, r30
+    ed54:	88 23       	and	r24, r24
+    ed56:	11 f0       	breq	.+4      	; 0xed5c <main+0x78>
+    ed58:	4c dd       	rcall	.-1384   	; 0xe7f2 <appendCharToLCD>
+    ed5a:	f9 cf       	rjmp	.-14     	; 0xed4e <main+0x6a>
+    ed5c:	60 e0       	ldi	r22, 0x00	; 0
+    ed5e:	81 e0       	ldi	r24, 0x01	; 1
+    ed60:	2c dd       	rcall	.-1448   	; 0xe7ba <setCursorLCD>
+    ed62:	0a e0       	ldi	r16, 0x0A	; 10
+    ed64:	12 e0       	ldi	r17, 0x02	; 2
+    ed66:	f8 01       	movw	r30, r16
+    ed68:	81 91       	ld	r24, Z+
+    ed6a:	8f 01       	movw	r16, r30
+    ed6c:	88 23       	and	r24, r24
+    ed6e:	11 f0       	breq	.+4      	; 0xed74 <main+0x90>
+    ed70:	40 dd       	rcall	.-1408   	; 0xe7f2 <appendCharToLCD>
+    ed72:	f9 cf       	rjmp	.-14     	; 0xed66 <main+0x82>
+    ed74:	84 b7       	in	r24, 0x34	; 52
+    ed76:	87 7f       	andi	r24, 0xF7	; 247
+    ed78:	84 bf       	out	0x34, r24	; 52
+    ed7a:	0f b6       	in	r0, 0x3f	; 63
+    ed7c:	f8 94       	cli
+    ed7e:	a8 95       	wdr
+    ed80:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__TEXT_REGION_LENGTH__+0x7e0060>
+    ed84:	88 61       	ori	r24, 0x18	; 24
+    ed86:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__TEXT_REGION_LENGTH__+0x7e0060>
+    ed8a:	10 92 60 00 	sts	0x0060, r1	; 0x800060 <__TEXT_REGION_LENGTH__+0x7e0060>
+    ed8e:	0f be       	out	0x3f, r0	; 63
+    ed90:	90 e0       	ldi	r25, 0x00	; 0
+    ed92:	80 e8       	ldi	r24, 0x80	; 128
+    ed94:	0f b6       	in	r0, 0x3f	; 63
+    ed96:	f8 94       	cli
+    ed98:	80 93 61 00 	sts	0x0061, r24	; 0x800061 <__TEXT_REGION_LENGTH__+0x7e0061>
+    ed9c:	90 93 61 00 	sts	0x0061, r25	; 0x800061 <__TEXT_REGION_LENGTH__+0x7e0061>
+    eda0:	0f be       	out	0x3f, r0	; 63
+    eda2:	85 b7       	in	r24, 0x35	; 53
+    eda4:	98 2f       	mov	r25, r24
+    eda6:	91 60       	ori	r25, 0x01	; 1
+    eda8:	95 bf       	out	0x35, r25	; 53
+    edaa:	82 60       	ori	r24, 0x02	; 2
+    edac:	85 bf       	out	0x35, r24	; 53
+    edae:	80 91 d8 00 	lds	r24, 0x00D8	; 0x8000d8 <__TEXT_REGION_LENGTH__+0x7e00d8>
+    edb2:	8f 7e       	andi	r24, 0xEF	; 239
+    edb4:	80 93 d8 00 	sts	0x00D8, r24	; 0x8000d8 <__TEXT_REGION_LENGTH__+0x7e00d8>
+    edb8:	80 91 d7 00 	lds	r24, 0x00D7	; 0x8000d7 <__TEXT_REGION_LENGTH__+0x7e00d7>
+    edbc:	81 60       	ori	r24, 0x01	; 1
+    edbe:	80 93 d7 00 	sts	0x00D7, r24	; 0x8000d7 <__TEXT_REGION_LENGTH__+0x7e00d7>
+    edc2:	81 e0       	ldi	r24, 0x01	; 1
+    edc4:	80 93 1c 02 	sts	0x021C, r24	; 0x80021c <__data_end>
+    edc8:	80 91 d8 00 	lds	r24, 0x00D8	; 0x8000d8 <__TEXT_REGION_LENGTH__+0x7e00d8>
+    edcc:	8c 7f       	andi	r24, 0xFC	; 252
+    edce:	80 93 d8 00 	sts	0x00D8, r24	; 0x8000d8 <__TEXT_REGION_LENGTH__+0x7e00d8>
+    edd2:	10 92 e2 00 	sts	0x00E2, r1	; 0x8000e2 <__TEXT_REGION_LENGTH__+0x7e00e2>
+    edd6:	10 92 da 00 	sts	0x00DA, r1	; 0x8000da <__TEXT_REGION_LENGTH__+0x7e00da>
+    edda:	10 92 e1 00 	sts	0x00E1, r1	; 0x8000e1 <__TEXT_REGION_LENGTH__+0x7e00e1>
+    edde:	80 91 d8 00 	lds	r24, 0x00D8	; 0x8000d8 <__TEXT_REGION_LENGTH__+0x7e00d8>
+    ede2:	8f 77       	andi	r24, 0x7F	; 127
+    ede4:	80 93 d8 00 	sts	0x00D8, r24	; 0x8000d8 <__TEXT_REGION_LENGTH__+0x7e00d8>
+    ede8:	80 91 d8 00 	lds	r24, 0x00D8	; 0x8000d8 <__TEXT_REGION_LENGTH__+0x7e00d8>
+    edec:	80 68       	ori	r24, 0x80	; 128
+    edee:	80 93 d8 00 	sts	0x00D8, r24	; 0x8000d8 <__TEXT_REGION_LENGTH__+0x7e00d8>
+    edf2:	80 91 d8 00 	lds	r24, 0x00D8	; 0x8000d8 <__TEXT_REGION_LENGTH__+0x7e00d8>
+    edf6:	8f 7d       	andi	r24, 0xDF	; 223
+    edf8:	80 93 d8 00 	sts	0x00D8, r24	; 0x8000d8 <__TEXT_REGION_LENGTH__+0x7e00d8>
+    edfc:	80 91 d7 00 	lds	r24, 0x00D7	; 0x8000d7 <__TEXT_REGION_LENGTH__+0x7e00d7>
+    ee00:	80 68       	ori	r24, 0x80	; 128
+    ee02:	80 93 d7 00 	sts	0x00D7, r24	; 0x8000d7 <__TEXT_REGION_LENGTH__+0x7e00d7>
+    ee06:	19 bc       	out	0x29, r1	; 41
+    ee08:	1e ba       	out	0x1e, r1	; 30
+    ee0a:	10 92 22 02 	sts	0x0222, r1	; 0x800222 <USB_Device_ConfigurationNumber>
+    ee0e:	80 91 e0 00 	lds	r24, 0x00E0	; 0x8000e0 <__TEXT_REGION_LENGTH__+0x7e00e0>
+    ee12:	8b 7f       	andi	r24, 0xFB	; 251
+    ee14:	80 93 e0 00 	sts	0x00E0, r24	; 0x8000e0 <__TEXT_REGION_LENGTH__+0x7e00e0>
+    ee18:	80 91 d8 00 	lds	r24, 0x00D8	; 0x8000d8 <__TEXT_REGION_LENGTH__+0x7e00d8>
+    ee1c:	81 60       	ori	r24, 0x01	; 1
+    ee1e:	80 93 d8 00 	sts	0x00D8, r24	; 0x8000d8 <__TEXT_REGION_LENGTH__+0x7e00d8>
+    ee22:	42 e0       	ldi	r20, 0x02	; 2
+    ee24:	60 e0       	ldi	r22, 0x00	; 0
+    ee26:	80 e0       	ldi	r24, 0x00	; 0
+    ee28:	ed d9       	rcall	.-3110   	; 0xe204 <Endpoint_ConfigureEndpoint_Prv>
+    ee2a:	80 91 e1 00 	lds	r24, 0x00E1	; 0x8000e1 <__TEXT_REGION_LENGTH__+0x7e00e1>
+    ee2e:	8e 7f       	andi	r24, 0xFE	; 254
+    ee30:	80 93 e1 00 	sts	0x00E1, r24	; 0x8000e1 <__TEXT_REGION_LENGTH__+0x7e00e1>
+    ee34:	80 91 e2 00 	lds	r24, 0x00E2	; 0x8000e2 <__TEXT_REGION_LENGTH__+0x7e00e2>
+    ee38:	81 60       	ori	r24, 0x01	; 1
+    ee3a:	80 93 e2 00 	sts	0x00E2, r24	; 0x8000e2 <__TEXT_REGION_LENGTH__+0x7e00e2>
+    ee3e:	80 91 e2 00 	lds	r24, 0x00E2	; 0x8000e2 <__TEXT_REGION_LENGTH__+0x7e00e2>
+    ee42:	88 60       	ori	r24, 0x08	; 8
+    ee44:	80 93 e2 00 	sts	0x00E2, r24	; 0x8000e2 <__TEXT_REGION_LENGTH__+0x7e00e2>
+    ee48:	80 91 e0 00 	lds	r24, 0x00E0	; 0x8000e0 <__TEXT_REGION_LENGTH__+0x7e00e0>
+    ee4c:	8e 7f       	andi	r24, 0xFE	; 254
+    ee4e:	80 93 e0 00 	sts	0x00E0, r24	; 0x8000e0 <__TEXT_REGION_LENGTH__+0x7e00e0>
+    ee52:	80 91 d8 00 	lds	r24, 0x00D8	; 0x8000d8 <__TEXT_REGION_LENGTH__+0x7e00d8>
+    ee56:	80 61       	ori	r24, 0x10	; 16
+    ee58:	80 93 d8 00 	sts	0x00D8, r24	; 0x8000d8 <__TEXT_REGION_LENGTH__+0x7e00d8>
+    ee5c:	78 94       	sei
+    ee5e:	aa 24       	eor	r10, r10
+    ee60:	a3 94       	inc	r10
+    ee62:	b1 2c       	mov	r11, r1
+    ee64:	cc 24       	eor	r12, r12
+    ee66:	c3 94       	inc	r12
+    ee68:	53 e9       	ldi	r21, 0x93	; 147
+    ee6a:	95 2e       	mov	r9, r21
+    ee6c:	65 e5       	ldi	r22, 0x55	; 85
+    ee6e:	46 2e       	mov	r4, r22
+    ee70:	63 e5       	ldi	r22, 0x53	; 83
+    ee72:	56 2e       	mov	r5, r22
+    ee74:	62 e4       	ldi	r22, 0x42	; 66
+    ee76:	66 2e       	mov	r6, r22
+    ee78:	75 2c       	mov	r7, r5
+    ee7a:	70 e2       	ldi	r23, 0x20	; 32
+    ee7c:	87 2e       	mov	r8, r23
+    ee7e:	82 e0       	ldi	r24, 0x02	; 2
+    ee80:	28 2e       	mov	r2, r24
+    ee82:	94 e2       	ldi	r25, 0x24	; 36
+    ee84:	39 2e       	mov	r3, r25
+    ee86:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+    ee8a:	88 23       	and	r24, r24
+    ee8c:	09 f4       	brne	.+2      	; 0xee90 <main+0x1ac>
+    ee8e:	f0 c1       	rjmp	.+992    	; 0xf270 <main+0x58c>
+    ee90:	8e b3       	in	r24, 0x1e	; 30
+    ee92:	84 30       	cpi	r24, 0x04	; 4
+    ee94:	09 f0       	breq	.+2      	; 0xee98 <main+0x1b4>
+    ee96:	d4 c1       	rjmp	.+936    	; 0xf240 <main+0x55c>
+    ee98:	80 91 07 01 	lds	r24, 0x0107	; 0x800107 <Disk_MS_Interface+0x6>
+    ee9c:	8f 70       	andi	r24, 0x0F	; 15
+    ee9e:	80 93 e9 00 	sts	0x00E9, r24	; 0x8000e9 <__TEXT_REGION_LENGTH__+0x7e00e9>
+    eea2:	90 91 e8 00 	lds	r25, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    eea6:	92 ff       	sbrs	r25, 2
+    eea8:	93 c1       	rjmp	.+806    	; 0xf1d0 <main+0x4ec>
+    eeaa:	80 93 e9 00 	sts	0x00E9, r24	; 0x8000e9 <__TEXT_REGION_LENGTH__+0x7e00e9>
+    eeae:	1a 82       	std	Y+2, r1	; 0x02
+    eeb0:	19 82       	std	Y+1, r1	; 0x01
+    eeb2:	ae 01       	movw	r20, r28
+    eeb4:	4f 5f       	subi	r20, 0xFF	; 255
+    eeb6:	5f 4f       	sbci	r21, 0xFF	; 255
+    eeb8:	6f e0       	ldi	r22, 0x0F	; 15
+    eeba:	70 e0       	ldi	r23, 0x00	; 0
+    eebc:	8d e0       	ldi	r24, 0x0D	; 13
+    eebe:	91 e0       	ldi	r25, 0x01	; 1
+    eec0:	e3 d9       	rcall	.-3130   	; 0xe288 <Endpoint_Read_Stream_LE>
+    eec2:	85 30       	cpi	r24, 0x05	; 5
+    eec4:	29 f4       	brne	.+10     	; 0xeed0 <main+0x1ec>
+    eec6:	80 91 39 01 	lds	r24, 0x0139	; 0x800139 <Disk_MS_Interface+0x38>
+    eeca:	88 23       	and	r24, r24
+    eecc:	91 f3       	breq	.-28     	; 0xeeb2 <main+0x1ce>
+    eece:	80 c1       	rjmp	.+768    	; 0xf1d0 <main+0x4ec>
+    eed0:	80 91 0d 01 	lds	r24, 0x010D	; 0x80010d <Disk_MS_Interface+0xc>
+    eed4:	90 91 0e 01 	lds	r25, 0x010E	; 0x80010e <Disk_MS_Interface+0xd>
+    eed8:	a0 91 0f 01 	lds	r26, 0x010F	; 0x80010f <Disk_MS_Interface+0xe>
+    eedc:	b0 91 10 01 	lds	r27, 0x0110	; 0x800110 <Disk_MS_Interface+0xf>
+    eee0:	85 35       	cpi	r24, 0x55	; 85
+    eee2:	93 45       	sbci	r25, 0x53	; 83
+    eee4:	a2 44       	sbci	r26, 0x42	; 66
+    eee6:	b3 44       	sbci	r27, 0x43	; 67
+    eee8:	79 f4       	brne	.+30     	; 0xef08 <main+0x224>
+    eeea:	90 91 1a 01 	lds	r25, 0x011A	; 0x80011a <Disk_MS_Interface+0x19>
+    eeee:	80 91 0c 01 	lds	r24, 0x010C	; 0x80010c <Disk_MS_Interface+0xb>
+    eef2:	98 17       	cp	r25, r24
+    eef4:	48 f4       	brcc	.+18     	; 0xef08 <main+0x224>
+    eef6:	80 91 19 01 	lds	r24, 0x0119	; 0x800119 <Disk_MS_Interface+0x18>
+    eefa:	8f 71       	andi	r24, 0x1F	; 31
+    eefc:	29 f4       	brne	.+10     	; 0xef08 <main+0x224>
+    eefe:	80 91 1b 01 	lds	r24, 0x011B	; 0x80011b <Disk_MS_Interface+0x1a>
+    ef02:	81 50       	subi	r24, 0x01	; 1
+    ef04:	80 31       	cpi	r24, 0x10	; 16
+    ef06:	80 f0       	brcs	.+32     	; 0xef28 <main+0x244>
+    ef08:	80 91 eb 00 	lds	r24, 0x00EB	; 0x8000eb <__TEXT_REGION_LENGTH__+0x7e00eb>
+    ef0c:	80 62       	ori	r24, 0x20	; 32
+    ef0e:	80 93 eb 00 	sts	0x00EB, r24	; 0x8000eb <__TEXT_REGION_LENGTH__+0x7e00eb>
+    ef12:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <Disk_MS_Interface+0x1>
+    ef16:	8f 70       	andi	r24, 0x0F	; 15
+    ef18:	80 93 e9 00 	sts	0x00E9, r24	; 0x8000e9 <__TEXT_REGION_LENGTH__+0x7e00e9>
+    ef1c:	80 91 eb 00 	lds	r24, 0x00EB	; 0x8000eb <__TEXT_REGION_LENGTH__+0x7e00eb>
+    ef20:	80 62       	ori	r24, 0x20	; 32
+    ef22:	80 93 eb 00 	sts	0x00EB, r24	; 0x8000eb <__TEXT_REGION_LENGTH__+0x7e00eb>
+    ef26:	54 c1       	rjmp	.+680    	; 0xf1d0 <main+0x4ec>
+    ef28:	1a 82       	std	Y+2, r1	; 0x02
+    ef2a:	19 82       	std	Y+1, r1	; 0x01
+    ef2c:	60 91 1b 01 	lds	r22, 0x011B	; 0x80011b <Disk_MS_Interface+0x1a>
+    ef30:	70 e0       	ldi	r23, 0x00	; 0
+    ef32:	ae 01       	movw	r20, r28
+    ef34:	4f 5f       	subi	r20, 0xFF	; 255
+    ef36:	5f 4f       	sbci	r21, 0xFF	; 255
+    ef38:	8c e1       	ldi	r24, 0x1C	; 28
+    ef3a:	91 e0       	ldi	r25, 0x01	; 1
+    ef3c:	a5 d9       	rcall	.-3254   	; 0xe288 <Endpoint_Read_Stream_LE>
+    ef3e:	85 30       	cpi	r24, 0x05	; 5
+    ef40:	29 f4       	brne	.+10     	; 0xef4c <main+0x268>
+    ef42:	80 91 39 01 	lds	r24, 0x0139	; 0x800139 <Disk_MS_Interface+0x38>
+    ef46:	88 23       	and	r24, r24
+    ef48:	89 f3       	breq	.-30     	; 0xef2c <main+0x248>
+    ef4a:	42 c1       	rjmp	.+644    	; 0xf1d0 <main+0x4ec>
+    ef4c:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    ef50:	8b 77       	andi	r24, 0x7B	; 123
+    ef52:	80 93 e8 00 	sts	0x00E8, r24	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    ef56:	dd 24       	eor	r13, r13
+    ef58:	d3 94       	inc	r13
+    ef5a:	80 91 19 01 	lds	r24, 0x0119	; 0x800119 <Disk_MS_Interface+0x18>
+    ef5e:	87 ff       	sbrs	r24, 7
+    ef60:	05 c0       	rjmp	.+10     	; 0xef6c <main+0x288>
+    ef62:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <Disk_MS_Interface+0x1>
+    ef66:	8f 70       	andi	r24, 0x0F	; 15
+    ef68:	80 93 e9 00 	sts	0x00E9, r24	; 0x8000e9 <__TEXT_REGION_LENGTH__+0x7e00e9>
+    ef6c:	80 91 1c 01 	lds	r24, 0x011C	; 0x80011c <Disk_MS_Interface+0x1b>
+    ef70:	8f 31       	cpi	r24, 0x1F	; 31
+    ef72:	a0 f4       	brcc	.+40     	; 0xef9c <main+0x2b8>
+    ef74:	8d 31       	cpi	r24, 0x1D	; 29
+    ef76:	08 f0       	brcs	.+2      	; 0xef7a <main+0x296>
+    ef78:	d0 c0       	rjmp	.+416    	; 0xf11a <main+0x436>
+    ef7a:	82 31       	cpi	r24, 0x12	; 18
+    ef7c:	f1 f1       	breq	.+124    	; 0xeffa <main+0x316>
+    ef7e:	38 f4       	brcc	.+14     	; 0xef8e <main+0x2aa>
+    ef80:	88 23       	and	r24, r24
+    ef82:	09 f4       	brne	.+2      	; 0xef86 <main+0x2a2>
+    ef84:	ca c0       	rjmp	.+404    	; 0xf11a <main+0x436>
+    ef86:	83 30       	cpi	r24, 0x03	; 3
+    ef88:	09 f4       	brne	.+2      	; 0xef8c <main+0x2a8>
+    ef8a:	6f c0       	rjmp	.+222    	; 0xf06a <main+0x386>
+    ef8c:	cf c0       	rjmp	.+414    	; 0xf12c <main+0x448>
+    ef8e:	8a 31       	cpi	r24, 0x1A	; 26
+    ef90:	09 f4       	brne	.+2      	; 0xef94 <main+0x2b0>
+    ef92:	99 c0       	rjmp	.+306    	; 0xf0c6 <main+0x3e2>
+    ef94:	8b 31       	cpi	r24, 0x1B	; 27
+    ef96:	09 f4       	brne	.+2      	; 0xef9a <main+0x2b6>
+    ef98:	b7 c0       	rjmp	.+366    	; 0xf108 <main+0x424>
+    ef9a:	c8 c0       	rjmp	.+400    	; 0xf12c <main+0x448>
+    ef9c:	88 32       	cpi	r24, 0x28	; 40
+    ef9e:	09 f4       	brne	.+2      	; 0xefa2 <main+0x2be>
+    efa0:	8d c0       	rjmp	.+282    	; 0xf0bc <main+0x3d8>
+    efa2:	20 f5       	brcc	.+72     	; 0xefec <main+0x308>
+    efa4:	85 32       	cpi	r24, 0x25	; 37
+    efa6:	09 f0       	breq	.+2      	; 0xefaa <main+0x2c6>
+    efa8:	c1 c0       	rjmp	.+386    	; 0xf12c <main+0x448>
+    efaa:	10 92 f1 00 	sts	0x00F1, r1	; 0x8000f1 <__TEXT_REGION_LENGTH__+0x7e00f1>
+    efae:	10 92 f1 00 	sts	0x00F1, r1	; 0x8000f1 <__TEXT_REGION_LENGTH__+0x7e00f1>
+    efb2:	10 92 f1 00 	sts	0x00F1, r1	; 0x8000f1 <__TEXT_REGION_LENGTH__+0x7e00f1>
+    efb6:	90 92 f1 00 	sts	0x00F1, r9	; 0x8000f1 <__TEXT_REGION_LENGTH__+0x7e00f1>
+    efba:	10 92 f1 00 	sts	0x00F1, r1	; 0x8000f1 <__TEXT_REGION_LENGTH__+0x7e00f1>
+    efbe:	10 92 f1 00 	sts	0x00F1, r1	; 0x8000f1 <__TEXT_REGION_LENGTH__+0x7e00f1>
+    efc2:	20 92 f1 00 	sts	0x00F1, r2	; 0x8000f1 <__TEXT_REGION_LENGTH__+0x7e00f1>
+    efc6:	10 92 f1 00 	sts	0x00F1, r1	; 0x8000f1 <__TEXT_REGION_LENGTH__+0x7e00f1>
+    efca:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    efce:	8e 77       	andi	r24, 0x7E	; 126
+    efd0:	80 93 e8 00 	sts	0x00E8, r24	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    efd4:	80 91 15 01 	lds	r24, 0x0115	; 0x800115 <Disk_MS_Interface+0x14>
+    efd8:	90 91 16 01 	lds	r25, 0x0116	; 0x800116 <Disk_MS_Interface+0x15>
+    efdc:	a0 91 17 01 	lds	r26, 0x0117	; 0x800117 <Disk_MS_Interface+0x16>
+    efe0:	b0 91 18 01 	lds	r27, 0x0118	; 0x800118 <Disk_MS_Interface+0x17>
+    efe4:	08 97       	sbiw	r24, 0x08	; 8
+    efe6:	a1 09       	sbc	r26, r1
+    efe8:	b1 09       	sbc	r27, r1
+    efea:	85 c0       	rjmp	.+266    	; 0xf0f6 <main+0x412>
+    efec:	8a 32       	cpi	r24, 0x2A	; 42
+    efee:	09 f4       	brne	.+2      	; 0xeff2 <main+0x30e>
+    eff0:	63 c0       	rjmp	.+198    	; 0xf0b8 <main+0x3d4>
+    eff2:	8f 32       	cpi	r24, 0x2F	; 47
+    eff4:	09 f4       	brne	.+2      	; 0xeff8 <main+0x314>
+    eff6:	91 c0       	rjmp	.+290    	; 0xf11a <main+0x436>
+    eff8:	99 c0       	rjmp	.+306    	; 0xf12c <main+0x448>
+    effa:	00 91 20 01 	lds	r16, 0x0120	; 0x800120 <Disk_MS_Interface+0x1f>
+    effe:	10 91 1f 01 	lds	r17, 0x011F	; 0x80011f <Disk_MS_Interface+0x1e>
+    f002:	78 01       	movw	r14, r16
+    f004:	05 32       	cpi	r16, 0x25	; 37
+    f006:	11 05       	cpc	r17, r1
+    f008:	18 f0       	brcs	.+6      	; 0xf010 <main+0x32c>
+    f00a:	34 e2       	ldi	r19, 0x24	; 36
+    f00c:	e3 2e       	mov	r14, r19
+    f00e:	f1 2c       	mov	r15, r1
+    f010:	80 91 1d 01 	lds	r24, 0x011D	; 0x80011d <Disk_MS_Interface+0x1c>
+    f014:	83 70       	andi	r24, 0x03	; 3
+    f016:	21 f4       	brne	.+8      	; 0xf020 <main+0x33c>
+    f018:	80 91 1e 01 	lds	r24, 0x011E	; 0x80011e <Disk_MS_Interface+0x1d>
+    f01c:	88 23       	and	r24, r24
+    f01e:	49 f0       	breq	.+18     	; 0xf032 <main+0x34e>
+    f020:	80 91 3c 01 	lds	r24, 0x013C	; 0x80013c <SenseData+0x2>
+    f024:	80 7f       	andi	r24, 0xF0	; 240
+    f026:	85 60       	ori	r24, 0x05	; 5
+    f028:	80 93 3c 01 	sts	0x013C, r24	; 0x80013c <SenseData+0x2>
+    f02c:	30 92 46 01 	sts	0x0146, r3	; 0x800146 <SenseData+0xc>
+    f030:	85 c0       	rjmp	.+266    	; 0xf13c <main+0x458>
+    f032:	40 e0       	ldi	r20, 0x00	; 0
+    f034:	50 e0       	ldi	r21, 0x00	; 0
+    f036:	b7 01       	movw	r22, r14
+    f038:	8c e4       	ldi	r24, 0x4C	; 76
+    f03a:	91 e0       	ldi	r25, 0x01	; 1
+    f03c:	6e d9       	rcall	.-3364   	; 0xe31a <Endpoint_Write_Stream_LE>
+    f03e:	c8 01       	movw	r24, r16
+    f040:	8e 19       	sub	r24, r14
+    f042:	9f 09       	sbc	r25, r15
+    f044:	9e d8       	rcall	.-3780   	; 0xe182 <Endpoint_Null_Stream.constprop.6>
+    f046:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    f04a:	8e 77       	andi	r24, 0x7E	; 126
+    f04c:	80 93 e8 00 	sts	0x00E8, r24	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    f050:	80 91 15 01 	lds	r24, 0x0115	; 0x800115 <Disk_MS_Interface+0x14>
+    f054:	90 91 16 01 	lds	r25, 0x0116	; 0x800116 <Disk_MS_Interface+0x15>
+    f058:	a0 91 17 01 	lds	r26, 0x0117	; 0x800117 <Disk_MS_Interface+0x16>
+    f05c:	b0 91 18 01 	lds	r27, 0x0118	; 0x800118 <Disk_MS_Interface+0x17>
+    f060:	8e 19       	sub	r24, r14
+    f062:	9f 09       	sbc	r25, r15
+    f064:	a1 09       	sbc	r26, r1
+    f066:	b1 09       	sbc	r27, r1
+    f068:	46 c0       	rjmp	.+140    	; 0xf0f6 <main+0x412>
+    f06a:	e0 90 20 01 	lds	r14, 0x0120	; 0x800120 <Disk_MS_Interface+0x1f>
+    f06e:	fe 2c       	mov	r15, r14
+    f070:	22 e1       	ldi	r18, 0x12	; 18
+    f072:	2e 15       	cp	r18, r14
+    f074:	10 f4       	brcc	.+4      	; 0xf07a <main+0x396>
+    f076:	22 e1       	ldi	r18, 0x12	; 18
+    f078:	f2 2e       	mov	r15, r18
+    f07a:	0f 2d       	mov	r16, r15
+    f07c:	10 e0       	ldi	r17, 0x00	; 0
+    f07e:	40 e0       	ldi	r20, 0x00	; 0
+    f080:	50 e0       	ldi	r21, 0x00	; 0
+    f082:	b8 01       	movw	r22, r16
+    f084:	8a e3       	ldi	r24, 0x3A	; 58
+    f086:	91 e0       	ldi	r25, 0x01	; 1
+    f088:	48 d9       	rcall	.-3440   	; 0xe31a <Endpoint_Write_Stream_LE>
+    f08a:	8e 2d       	mov	r24, r14
+    f08c:	90 e0       	ldi	r25, 0x00	; 0
+    f08e:	80 1b       	sub	r24, r16
+    f090:	91 0b       	sbc	r25, r17
+    f092:	77 d8       	rcall	.-3858   	; 0xe182 <Endpoint_Null_Stream.constprop.6>
+    f094:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    f098:	8e 77       	andi	r24, 0x7E	; 126
+    f09a:	80 93 e8 00 	sts	0x00E8, r24	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    f09e:	80 91 15 01 	lds	r24, 0x0115	; 0x800115 <Disk_MS_Interface+0x14>
+    f0a2:	90 91 16 01 	lds	r25, 0x0116	; 0x800116 <Disk_MS_Interface+0x15>
+    f0a6:	a0 91 17 01 	lds	r26, 0x0117	; 0x800117 <Disk_MS_Interface+0x16>
+    f0aa:	b0 91 18 01 	lds	r27, 0x0118	; 0x800118 <Disk_MS_Interface+0x17>
+    f0ae:	8f 19       	sub	r24, r15
+    f0b0:	91 09       	sbc	r25, r1
+    f0b2:	a1 09       	sbc	r26, r1
+    f0b4:	b1 09       	sbc	r27, r1
+    f0b6:	1f c0       	rjmp	.+62     	; 0xf0f6 <main+0x412>
+    f0b8:	80 e0       	ldi	r24, 0x00	; 0
+    f0ba:	01 c0       	rjmp	.+2      	; 0xf0be <main+0x3da>
+    f0bc:	81 e0       	ldi	r24, 0x01	; 1
+    f0be:	a7 dd       	rcall	.-1202   	; 0xec0e <SCSI_Command_ReadWrite_10.constprop.8>
+    f0c0:	81 11       	cpse	r24, r1
+    f0c2:	3f c0       	rjmp	.+126    	; 0xf142 <main+0x45e>
+    f0c4:	29 c1       	rjmp	.+594    	; 0xf318 <main+0x634>
+    f0c6:	10 92 f1 00 	sts	0x00F1, r1	; 0x8000f1 <__TEXT_REGION_LENGTH__+0x7e00f1>
+    f0ca:	10 92 f1 00 	sts	0x00F1, r1	; 0x8000f1 <__TEXT_REGION_LENGTH__+0x7e00f1>
+    f0ce:	10 92 f1 00 	sts	0x00F1, r1	; 0x8000f1 <__TEXT_REGION_LENGTH__+0x7e00f1>
+    f0d2:	10 92 f1 00 	sts	0x00F1, r1	; 0x8000f1 <__TEXT_REGION_LENGTH__+0x7e00f1>
+    f0d6:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    f0da:	8e 77       	andi	r24, 0x7E	; 126
+    f0dc:	80 93 e8 00 	sts	0x00E8, r24	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    f0e0:	80 91 15 01 	lds	r24, 0x0115	; 0x800115 <Disk_MS_Interface+0x14>
+    f0e4:	90 91 16 01 	lds	r25, 0x0116	; 0x800116 <Disk_MS_Interface+0x15>
+    f0e8:	a0 91 17 01 	lds	r26, 0x0117	; 0x800117 <Disk_MS_Interface+0x16>
+    f0ec:	b0 91 18 01 	lds	r27, 0x0118	; 0x800118 <Disk_MS_Interface+0x17>
+    f0f0:	04 97       	sbiw	r24, 0x04	; 4
+    f0f2:	a1 09       	sbc	r26, r1
+    f0f4:	b1 09       	sbc	r27, r1
+    f0f6:	80 93 15 01 	sts	0x0115, r24	; 0x800115 <Disk_MS_Interface+0x14>
+    f0fa:	90 93 16 01 	sts	0x0116, r25	; 0x800116 <Disk_MS_Interface+0x15>
+    f0fe:	a0 93 17 01 	sts	0x0117, r26	; 0x800117 <Disk_MS_Interface+0x16>
+    f102:	b0 93 18 01 	sts	0x0118, r27	; 0x800118 <Disk_MS_Interface+0x17>
+    f106:	1d c0       	rjmp	.+58     	; 0xf142 <main+0x45e>
+    f108:	80 91 20 01 	lds	r24, 0x0120	; 0x800120 <Disk_MS_Interface+0x1f>
+    f10c:	83 70       	andi	r24, 0x03	; 3
+    f10e:	91 e0       	ldi	r25, 0x01	; 1
+    f110:	82 30       	cpi	r24, 0x02	; 2
+    f112:	09 f4       	brne	.+2      	; 0xf116 <main+0x432>
+    f114:	90 e0       	ldi	r25, 0x00	; 0
+    f116:	90 93 00 01 	sts	0x0100, r25	; 0x800100 <__data_start>
+    f11a:	10 92 15 01 	sts	0x0115, r1	; 0x800115 <Disk_MS_Interface+0x14>
+    f11e:	10 92 16 01 	sts	0x0116, r1	; 0x800116 <Disk_MS_Interface+0x15>
+    f122:	10 92 17 01 	sts	0x0117, r1	; 0x800117 <Disk_MS_Interface+0x16>
+    f126:	10 92 18 01 	sts	0x0118, r1	; 0x800118 <Disk_MS_Interface+0x17>
+    f12a:	0b c0       	rjmp	.+22     	; 0xf142 <main+0x45e>
+    f12c:	80 91 3c 01 	lds	r24, 0x013C	; 0x80013c <SenseData+0x2>
+    f130:	80 7f       	andi	r24, 0xF0	; 240
+    f132:	85 60       	ori	r24, 0x05	; 5
+    f134:	80 93 3c 01 	sts	0x013C, r24	; 0x80013c <SenseData+0x2>
+    f138:	80 92 46 01 	sts	0x0146, r8	; 0x800146 <SenseData+0xc>
+    f13c:	10 92 47 01 	sts	0x0147, r1	; 0x800147 <SenseData+0xd>
+    f140:	eb c0       	rjmp	.+470    	; 0xf318 <main+0x634>
+    f142:	80 91 3c 01 	lds	r24, 0x013C	; 0x80013c <SenseData+0x2>
+    f146:	80 7f       	andi	r24, 0xF0	; 240
+    f148:	80 93 3c 01 	sts	0x013C, r24	; 0x80013c <SenseData+0x2>
+    f14c:	10 92 46 01 	sts	0x0146, r1	; 0x800146 <SenseData+0xc>
+    f150:	10 92 47 01 	sts	0x0147, r1	; 0x800147 <SenseData+0xd>
+    f154:	10 92 1d 02 	sts	0x021D, r1	; 0x80021d <TicksSinceLastCommand>
+    f158:	8d 2d       	mov	r24, r13
+    f15a:	8c 25       	eor	r24, r12
+    f15c:	80 93 38 01 	sts	0x0138, r24	; 0x800138 <Disk_MS_Interface+0x37>
+    f160:	40 92 2c 01 	sts	0x012C, r4	; 0x80012c <Disk_MS_Interface+0x2b>
+    f164:	50 92 2d 01 	sts	0x012D, r5	; 0x80012d <Disk_MS_Interface+0x2c>
+    f168:	60 92 2e 01 	sts	0x012E, r6	; 0x80012e <Disk_MS_Interface+0x2d>
+    f16c:	70 92 2f 01 	sts	0x012F, r7	; 0x80012f <Disk_MS_Interface+0x2e>
+    f170:	80 91 11 01 	lds	r24, 0x0111	; 0x800111 <Disk_MS_Interface+0x10>
+    f174:	90 91 12 01 	lds	r25, 0x0112	; 0x800112 <Disk_MS_Interface+0x11>
+    f178:	a0 91 13 01 	lds	r26, 0x0113	; 0x800113 <Disk_MS_Interface+0x12>
+    f17c:	b0 91 14 01 	lds	r27, 0x0114	; 0x800114 <Disk_MS_Interface+0x13>
+    f180:	80 93 30 01 	sts	0x0130, r24	; 0x800130 <Disk_MS_Interface+0x2f>
+    f184:	90 93 31 01 	sts	0x0131, r25	; 0x800131 <Disk_MS_Interface+0x30>
+    f188:	a0 93 32 01 	sts	0x0132, r26	; 0x800132 <Disk_MS_Interface+0x31>
+    f18c:	b0 93 33 01 	sts	0x0133, r27	; 0x800133 <Disk_MS_Interface+0x32>
+    f190:	80 91 15 01 	lds	r24, 0x0115	; 0x800115 <Disk_MS_Interface+0x14>
+    f194:	90 91 16 01 	lds	r25, 0x0116	; 0x800116 <Disk_MS_Interface+0x15>
+    f198:	a0 91 17 01 	lds	r26, 0x0117	; 0x800117 <Disk_MS_Interface+0x16>
+    f19c:	b0 91 18 01 	lds	r27, 0x0118	; 0x800118 <Disk_MS_Interface+0x17>
+    f1a0:	80 93 34 01 	sts	0x0134, r24	; 0x800134 <Disk_MS_Interface+0x33>
+    f1a4:	90 93 35 01 	sts	0x0135, r25	; 0x800135 <Disk_MS_Interface+0x34>
+    f1a8:	a0 93 36 01 	sts	0x0136, r26	; 0x800136 <Disk_MS_Interface+0x35>
+    f1ac:	b0 93 37 01 	sts	0x0137, r27	; 0x800137 <Disk_MS_Interface+0x36>
+    f1b0:	dd 20       	and	r13, r13
+    f1b2:	09 f4       	brne	.+2      	; 0xf1b6 <main+0x4d2>
+    f1b4:	81 c0       	rjmp	.+258    	; 0xf2b8 <main+0x5d4>
+    f1b6:	80 91 07 01 	lds	r24, 0x0107	; 0x800107 <Disk_MS_Interface+0x6>
+    f1ba:	8f 70       	andi	r24, 0x0F	; 15
+    f1bc:	80 93 e9 00 	sts	0x00E9, r24	; 0x8000e9 <__TEXT_REGION_LENGTH__+0x7e00e9>
+    f1c0:	80 91 eb 00 	lds	r24, 0x00EB	; 0x8000eb <__TEXT_REGION_LENGTH__+0x7e00eb>
+    f1c4:	85 ff       	sbrs	r24, 5
+    f1c6:	83 c0       	rjmp	.+262    	; 0xf2ce <main+0x5ea>
+    f1c8:	80 91 39 01 	lds	r24, 0x0139	; 0x800139 <Disk_MS_Interface+0x38>
+    f1cc:	88 23       	and	r24, r24
+    f1ce:	c1 f3       	breq	.-16     	; 0xf1c0 <main+0x4dc>
+    f1d0:	80 91 39 01 	lds	r24, 0x0139	; 0x800139 <Disk_MS_Interface+0x38>
+    f1d4:	88 23       	and	r24, r24
+    f1d6:	a1 f1       	breq	.+104    	; 0xf240 <main+0x55c>
+    f1d8:	90 91 07 01 	lds	r25, 0x0107	; 0x800107 <Disk_MS_Interface+0x6>
+    f1dc:	9f 70       	andi	r25, 0x0F	; 15
+    f1de:	95 01       	movw	r18, r10
+    f1e0:	09 2e       	mov	r0, r25
+    f1e2:	01 c0       	rjmp	.+2      	; 0xf1e6 <main+0x502>
+    f1e4:	22 0f       	add	r18, r18
+    f1e6:	0a 94       	dec	r0
+    f1e8:	ea f7       	brpl	.-6      	; 0xf1e4 <main+0x500>
+    f1ea:	20 93 ea 00 	sts	0x00EA, r18	; 0x8000ea <__TEXT_REGION_LENGTH__+0x7e00ea>
+    f1ee:	10 92 ea 00 	sts	0x00EA, r1	; 0x8000ea <__TEXT_REGION_LENGTH__+0x7e00ea>
+    f1f2:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <Disk_MS_Interface+0x1>
+    f1f6:	8f 70       	andi	r24, 0x0F	; 15
+    f1f8:	95 01       	movw	r18, r10
+    f1fa:	08 2e       	mov	r0, r24
+    f1fc:	01 c0       	rjmp	.+2      	; 0xf200 <main+0x51c>
+    f1fe:	22 0f       	add	r18, r18
+    f200:	0a 94       	dec	r0
+    f202:	ea f7       	brpl	.-6      	; 0xf1fe <main+0x51a>
+    f204:	20 93 ea 00 	sts	0x00EA, r18	; 0x8000ea <__TEXT_REGION_LENGTH__+0x7e00ea>
+    f208:	10 92 ea 00 	sts	0x00EA, r1	; 0x8000ea <__TEXT_REGION_LENGTH__+0x7e00ea>
+    f20c:	90 93 e9 00 	sts	0x00E9, r25	; 0x8000e9 <__TEXT_REGION_LENGTH__+0x7e00e9>
+    f210:	90 91 eb 00 	lds	r25, 0x00EB	; 0x8000eb <__TEXT_REGION_LENGTH__+0x7e00eb>
+    f214:	90 61       	ori	r25, 0x10	; 16
+    f216:	90 93 eb 00 	sts	0x00EB, r25	; 0x8000eb <__TEXT_REGION_LENGTH__+0x7e00eb>
+    f21a:	90 91 eb 00 	lds	r25, 0x00EB	; 0x8000eb <__TEXT_REGION_LENGTH__+0x7e00eb>
+    f21e:	98 60       	ori	r25, 0x08	; 8
+    f220:	90 93 eb 00 	sts	0x00EB, r25	; 0x8000eb <__TEXT_REGION_LENGTH__+0x7e00eb>
+    f224:	80 93 e9 00 	sts	0x00E9, r24	; 0x8000e9 <__TEXT_REGION_LENGTH__+0x7e00e9>
+    f228:	80 91 eb 00 	lds	r24, 0x00EB	; 0x8000eb <__TEXT_REGION_LENGTH__+0x7e00eb>
+    f22c:	80 61       	ori	r24, 0x10	; 16
+    f22e:	80 93 eb 00 	sts	0x00EB, r24	; 0x8000eb <__TEXT_REGION_LENGTH__+0x7e00eb>
+    f232:	80 91 eb 00 	lds	r24, 0x00EB	; 0x8000eb <__TEXT_REGION_LENGTH__+0x7e00eb>
+    f236:	88 60       	ori	r24, 0x08	; 8
+    f238:	80 93 eb 00 	sts	0x00EB, r24	; 0x8000eb <__TEXT_REGION_LENGTH__+0x7e00eb>
+    f23c:	10 92 39 01 	sts	0x0139, r1	; 0x800139 <Disk_MS_Interface+0x38>
+    f240:	8e b3       	in	r24, 0x1e	; 30
+    f242:	88 23       	and	r24, r24
+    f244:	09 f4       	brne	.+2      	; 0xf248 <main+0x564>
+    f246:	1f ce       	rjmp	.-962    	; 0xee86 <main+0x1a2>
+    f248:	10 91 e9 00 	lds	r17, 0x00E9	; 0x8000e9 <__TEXT_REGION_LENGTH__+0x7e00e9>
+    f24c:	1f 70       	andi	r17, 0x0F	; 15
+    f24e:	90 91 ec 00 	lds	r25, 0x00EC	; 0x8000ec <__TEXT_REGION_LENGTH__+0x7e00ec>
+    f252:	89 2f       	mov	r24, r25
+    f254:	81 70       	andi	r24, 0x01	; 1
+    f256:	90 fd       	sbrc	r25, 0
+    f258:	80 e8       	ldi	r24, 0x80	; 128
+    f25a:	18 2b       	or	r17, r24
+    f25c:	10 92 e9 00 	sts	0x00E9, r1	; 0x8000e9 <__TEXT_REGION_LENGTH__+0x7e00e9>
+    f260:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    f264:	83 fd       	sbrc	r24, 3
+    f266:	b0 d8       	rcall	.-3744   	; 0xe3c8 <USB_Device_ProcessControlRequest>
+    f268:	1f 70       	andi	r17, 0x0F	; 15
+    f26a:	10 93 e9 00 	sts	0x00E9, r17	; 0x8000e9 <__TEXT_REGION_LENGTH__+0x7e00e9>
+    f26e:	07 ce       	rjmp	.-1010   	; 0xee7e <main+0x19a>
+    f270:	80 91 1d 02 	lds	r24, 0x021D	; 0x80021d <TicksSinceLastCommand>
+    f274:	91 e0       	ldi	r25, 0x01	; 1
+    f276:	98 0f       	add	r25, r24
+    f278:	90 93 1d 02 	sts	0x021D, r25	; 0x80021d <TicksSinceLastCommand>
+    f27c:	8f 3f       	cpi	r24, 0xFF	; 255
+    f27e:	09 f0       	breq	.+2      	; 0xf282 <main+0x59e>
+    f280:	07 ce       	rjmp	.-1010   	; 0xee90 <main+0x1ac>
+    f282:	8f ef       	ldi	r24, 0xFF	; 255
+    f284:	90 e7       	ldi	r25, 0x70	; 112
+    f286:	e2 e0       	ldi	r30, 0x02	; 2
+    f288:	81 50       	subi	r24, 0x01	; 1
+    f28a:	90 40       	sbci	r25, 0x00	; 0
+    f28c:	e0 40       	sbci	r30, 0x00	; 0
+    f28e:	e1 f7       	brne	.-8      	; 0xf288 <main+0x5a4>
+    f290:	00 c0       	rjmp	.+0      	; 0xf292 <main+0x5ae>
+    f292:	00 00       	nop
+    f294:	a9 da       	rcall	.-2734   	; 0xe7e8 <clearLCD>
+    f296:	73 98       	cbi	0x0e, 3	; 14
+    f298:	80 91 e0 00 	lds	r24, 0x00E0	; 0x8000e0 <__TEXT_REGION_LENGTH__+0x7e00e0>
+    f29c:	81 60       	ori	r24, 0x01	; 1
+    f29e:	80 93 e0 00 	sts	0x00E0, r24	; 0x8000e0 <__TEXT_REGION_LENGTH__+0x7e00e0>
+    f2a2:	9c e0       	ldi	r25, 0x0C	; 12
+    f2a4:	88 e1       	ldi	r24, 0x18	; 24
+    f2a6:	0f b6       	in	r0, 0x3f	; 63
+    f2a8:	f8 94       	cli
+    f2aa:	a8 95       	wdr
+    f2ac:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__TEXT_REGION_LENGTH__+0x7e0060>
+    f2b0:	0f be       	out	0x3f, r0	; 63
+    f2b2:	90 93 60 00 	sts	0x0060, r25	; 0x800060 <__TEXT_REGION_LENGTH__+0x7e0060>
+    f2b6:	ff cf       	rjmp	.-2      	; 0xf2b6 <main+0x5d2>
+    f2b8:	89 2b       	or	r24, r25
+    f2ba:	8a 2b       	or	r24, r26
+    f2bc:	8b 2b       	or	r24, r27
+    f2be:	09 f4       	brne	.+2      	; 0xf2c2 <main+0x5de>
+    f2c0:	7a cf       	rjmp	.-268    	; 0xf1b6 <main+0x4d2>
+    f2c2:	80 91 eb 00 	lds	r24, 0x00EB	; 0x8000eb <__TEXT_REGION_LENGTH__+0x7e00eb>
+    f2c6:	80 62       	ori	r24, 0x20	; 32
+    f2c8:	80 93 eb 00 	sts	0x00EB, r24	; 0x8000eb <__TEXT_REGION_LENGTH__+0x7e00eb>
+    f2cc:	74 cf       	rjmp	.-280    	; 0xf1b6 <main+0x4d2>
+    f2ce:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <Disk_MS_Interface+0x1>
+    f2d2:	8f 70       	andi	r24, 0x0F	; 15
+    f2d4:	80 93 e9 00 	sts	0x00E9, r24	; 0x8000e9 <__TEXT_REGION_LENGTH__+0x7e00e9>
+    f2d8:	80 91 eb 00 	lds	r24, 0x00EB	; 0x8000eb <__TEXT_REGION_LENGTH__+0x7e00eb>
+    f2dc:	85 ff       	sbrs	r24, 5
+    f2de:	05 c0       	rjmp	.+10     	; 0xf2ea <main+0x606>
+    f2e0:	80 91 39 01 	lds	r24, 0x0139	; 0x800139 <Disk_MS_Interface+0x38>
+    f2e4:	88 23       	and	r24, r24
+    f2e6:	c1 f3       	breq	.-16     	; 0xf2d8 <main+0x5f4>
+    f2e8:	73 cf       	rjmp	.-282    	; 0xf1d0 <main+0x4ec>
+    f2ea:	1a 82       	std	Y+2, r1	; 0x02
+    f2ec:	19 82       	std	Y+1, r1	; 0x01
+    f2ee:	ae 01       	movw	r20, r28
+    f2f0:	4f 5f       	subi	r20, 0xFF	; 255
+    f2f2:	5f 4f       	sbci	r21, 0xFF	; 255
+    f2f4:	6d e0       	ldi	r22, 0x0D	; 13
+    f2f6:	70 e0       	ldi	r23, 0x00	; 0
+    f2f8:	8c e2       	ldi	r24, 0x2C	; 44
+    f2fa:	91 e0       	ldi	r25, 0x01	; 1
+    f2fc:	0e d8       	rcall	.-4068   	; 0xe31a <Endpoint_Write_Stream_LE>
+    f2fe:	85 30       	cpi	r24, 0x05	; 5
+    f300:	29 f4       	brne	.+10     	; 0xf30c <main+0x628>
+    f302:	80 91 39 01 	lds	r24, 0x0139	; 0x800139 <Disk_MS_Interface+0x38>
+    f306:	88 23       	and	r24, r24
+    f308:	91 f3       	breq	.-28     	; 0xf2ee <main+0x60a>
+    f30a:	62 cf       	rjmp	.-316    	; 0xf1d0 <main+0x4ec>
+    f30c:	80 91 e8 00 	lds	r24, 0x00E8	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    f310:	8e 77       	andi	r24, 0x7E	; 126
+    f312:	80 93 e8 00 	sts	0x00E8, r24	; 0x8000e8 <__TEXT_REGION_LENGTH__+0x7e00e8>
+    f316:	5c cf       	rjmp	.-328    	; 0xf1d0 <main+0x4ec>
+    f318:	d1 2c       	mov	r13, r1
+    f31a:	1c cf       	rjmp	.-456    	; 0xf154 <main+0x470>
+
+0000f31c <_exit>:
+    f31c:	f8 94       	cli
+
+0000f31e <__stop_program>:
+    f31e:	ff cf       	rjmp	.-2      	; 0xf31e <__stop_program>
+
+Disassembly of section .apitable_trampolines:
+
+0000ffa0 <BootloaderAPI_Trampolines>:
+.section .apitable_trampolines, "ax"
+.global BootloaderAPI_Trampolines
+BootloaderAPI_Trampolines:
+
+	BootloaderAPI_ErasePage_Trampoline:
+		jmp BootloaderAPI_ErasePage
+    ffa0:	0c 94 66 75 	jmp	0xeacc	; 0xeacc <BootloaderAPI_ErasePage>
+
+0000ffa4 <BootloaderAPI_WritePage_Trampoline>:
+	BootloaderAPI_WritePage_Trampoline:
+		jmp BootloaderAPI_WritePage
+    ffa4:	0c 94 44 75 	jmp	0xea88	; 0xea88 <BootloaderAPI_WritePage>
+
+0000ffa8 <BootloaderAPI_FillWord_Trampoline>:
+	BootloaderAPI_FillWord_Trampoline:
+		jmp BootloaderAPI_FillWord
+    ffa8:	0c 94 37 75 	jmp	0xea6e	; 0xea6e <BootloaderAPI_FillWord>
+
+0000ffac <BootloaderAPI_ReadSignature_Trampoline>:
+	BootloaderAPI_ReadSignature_Trampoline:
+		jmp BootloaderAPI_ReadSignature
+    ffac:	0c 94 31 75 	jmp	0xea62	; 0xea62 <BootloaderAPI_ReadSignature>
+
+0000ffb0 <BootloaderAPI_ReadFuse_Trampoline>:
+	BootloaderAPI_ReadFuse_Trampoline:
+		jmp BootloaderAPI_ReadFuse
+    ffb0:	0c 94 2b 75 	jmp	0xea56	; 0xea56 <BootloaderAPI_ReadFuse>
+
+0000ffb4 <BootloaderAPI_ReadLock_Trampoline>:
+	BootloaderAPI_ReadLock_Trampoline:
+		jmp BootloaderAPI_ReadLock
+    ffb4:	0c 94 24 75 	jmp	0xea48	; 0xea48 <BootloaderAPI_ReadLock>
+
+0000ffb8 <BootloaderAPI_WriteLock_Trampoline>:
+	BootloaderAPI_WriteLock_Trampoline:
+		jmp BootloaderAPI_WriteLock
+    ffb8:	0c 94 13 75 	jmp	0xea26	; 0xea26 <BootloaderAPI_WriteLock>
+
+0000ffbc <BootloaderAPI_UNUSED1>:
+	BootloaderAPI_UNUSED1:
+		ret
+    ffbc:	08 95       	ret
+
+0000ffbe <BootloaderAPI_UNUSED2>:
+	BootloaderAPI_UNUSED2:
+		ret
+    ffbe:	08 95       	ret
+
+0000ffc0 <BootloaderAPI_UNUSED3>:
+	BootloaderAPI_UNUSED3:
+		ret
+    ffc0:	08 95       	ret
+
+0000ffc2 <BootloaderAPI_UNUSED4>:
+	BootloaderAPI_UNUSED4:
+		ret
+    ffc2:	08 95       	ret
+
+0000ffc4 <BootloaderAPI_UNUSED5>:
+	BootloaderAPI_UNUSED5:
+		ret
+    ffc4:	08 95       	ret
+
+Disassembly of section .apitable_jumptable:
+
+0000ffe0 <BootloaderAPI_JumpTable>:
+; API function jump table
+.section .apitable_jumptable, "ax"
+.global BootloaderAPI_JumpTable
+BootloaderAPI_JumpTable:
+
+	rjmp BootloaderAPI_ErasePage_Trampoline
+    ffe0:	df cf       	rjmp	.-66     	; 0xffa0 <__DATA_REGION_LENGTH__>
+	rjmp BootloaderAPI_WritePage_Trampoline
+    ffe2:	e0 cf       	rjmp	.-64     	; 0xffa4 <BootloaderAPI_WritePage_Trampoline>
+	rjmp BootloaderAPI_FillWord_Trampoline
+    ffe4:	e1 cf       	rjmp	.-62     	; 0xffa8 <BootloaderAPI_FillWord_Trampoline>
+	rjmp BootloaderAPI_ReadSignature_Trampoline
+    ffe6:	e2 cf       	rjmp	.-60     	; 0xffac <BootloaderAPI_ReadSignature_Trampoline>
+	rjmp BootloaderAPI_ReadFuse_Trampoline
+    ffe8:	e3 cf       	rjmp	.-58     	; 0xffb0 <BootloaderAPI_ReadFuse_Trampoline>
+	rjmp BootloaderAPI_ReadLock_Trampoline
+    ffea:	e4 cf       	rjmp	.-56     	; 0xffb4 <BootloaderAPI_ReadLock_Trampoline>
+	rjmp BootloaderAPI_WriteLock_Trampoline
+    ffec:	e5 cf       	rjmp	.-54     	; 0xffb8 <BootloaderAPI_WriteLock_Trampoline>
+	rjmp BootloaderAPI_UNUSED1 ; UNUSED ENTRY 1
+    ffee:	e6 cf       	rjmp	.-52     	; 0xffbc <BootloaderAPI_UNUSED1>
+	rjmp BootloaderAPI_UNUSED2 ; UNUSED ENTRY 2
+    fff0:	e6 cf       	rjmp	.-52     	; 0xffbe <BootloaderAPI_UNUSED2>
+	rjmp BootloaderAPI_UNUSED3 ; UNUSED ENTRY 3
+    fff2:	e6 cf       	rjmp	.-52     	; 0xffc0 <BootloaderAPI_UNUSED3>
+	rjmp BootloaderAPI_UNUSED4 ; UNUSED ENTRY 4
+    fff4:	e6 cf       	rjmp	.-52     	; 0xffc2 <BootloaderAPI_UNUSED4>
+	rjmp BootloaderAPI_UNUSED5 ; UNUSED ENTRY 5
+    fff6:	e6 cf       	rjmp	.-52     	; 0xffc4 <BootloaderAPI_UNUSED5>
+
+Disassembly of section .apitable_signatures:
+
+0000fff8 <BootloaderAPI_Signatures>:
+    fff8:	00 e0       	ldi	r16, 0x00	; 0
+    fffa:	00 00       	nop
+    fffc:	30 df       	rcall	.-416    	; 0xfe5e <__data_load_end+0xa22>
+    fffe:	fb dc       	rcall	.-1546   	; 0xf9f6 <__data_load_end+0x5ba>
