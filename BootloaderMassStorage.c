@@ -61,7 +61,7 @@ USB_ClassInfo_MS_Device_t Disk_MS_Interface =
 						.Banks             = 1,
 					},
 				.TotalLUNs                 = 1,
-			},
+			}
 	};
 
 /** Flag to indicate if the bootloader should be running, or should exit and allow the application code to run

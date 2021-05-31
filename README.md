@@ -17,4 +17,4 @@ This version of the bootloader is speciffically designed for the AVR AT90USB646 
 * Copy the LUFA folder from the library to the root folder fo this repository.
 * Run the *make* command from the root folder of the project to compile the code.
 
-To upload the code to the microcontroller you need a compatible AVR programmer. The upload was tested with the USBASP as well as the AVRISP MKII. Update the AVRDUDE_PROGRAMMER setting in the makefile and run the command *make avrdude*.
+To upload the code to the microcontroller you need a compatible AVR programmer. The upload was tested with the USBASP (usbasp) as well as the AVRISP MKII (avrisp2). Update the AVRDUDE_PROGRAMMER setting in the makefile and run the command *make avrdude*.

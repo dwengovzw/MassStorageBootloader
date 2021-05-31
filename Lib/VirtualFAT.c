@@ -37,6 +37,11 @@
 
 #define  INCLUDE_FROM_VIRTUAL_FAT_C
 #include "VirtualFAT.h"
+#include <avr/delay.h>
+#include "../BootloaderMassStorage.h"
+
+// Dirty hack to stop bootloader after file transfer
+extern bool RunBootloader;
 
 /** FAT filesystem boot sector block, must be the first sector on the physical
  *  disk so that the host can identify the presence of a FAT filesystem. This
@@ -130,6 +135,8 @@ static void UpdateFAT12ClusterEntry(uint8_t* const FATTable,
 
 
 int sector_in_file = 0;
+bool valid_file = true;
+int num_file_sectors = 0;
 
 /** Reads or writes a block of data from/to the physical device FLASH using a
  *  block buffer stored in RAM, if the requested block is within the virtual
@@ -145,41 +152,56 @@ static void ReadWriteFLASHFileBlock(const uint16_t BlockNumber,
                                     const bool Read)
 {
 
-	/* Range check the write request - abort if requested block is not within the
-	 * virtual firmware file sector range */
-	if (sector_in_file >= FILE_SECTORS(FLASH_FILE_SIZE_BYTES)){
-		return;
-	}
-
-	uint16_t FlashAddress;
-
-	if (Read)
-	{
+	if (Read){
 		// Don't allow users to read files from the program memory.
-	}
-	else
-	{
-		FlashAddress = sector_in_file * SECTOR_SIZE_BYTES;
-		sector_in_file++;
+	}else{
 		
-		/* Write out the mapped block of data to the device's FLASH */
-		for (uint16_t i = 0; i < SECTOR_SIZE_BYTES; i += 2)
-		{
-			if ((FlashAddress % SPM_PAGESIZE) == 0)
-			{
-				/* Erase the given FLASH page, ready to be programmed */
-				BootloaderAPI_ErasePage(FlashAddress);
-			}
+		/* Range check the write request - abort if requested block is not within the
+		* virtual firmware file sector range or file signature was invalid*/
+		if (sector_in_file >= FILE_SECTORS(FLASH_FILE_SIZE_BYTES) || !valid_file){
+			return;
+		}
 
-			/* Write the next data word to the FLASH page */
-			BootloaderAPI_FillWord(FlashAddress, (BlockBuffer[i + 1] << 8) | BlockBuffer[i]);
-			FlashAddress += 2;
-
-			if ((FlashAddress % SPM_PAGESIZE) == 0)
-			{
-				/* Write the filled FLASH page to memory */
-				BootloaderAPI_WritePage(FlashAddress - SPM_PAGESIZE);
+		// If first sector in file, check if first four bytes ar equal to the 
+		// dwenguinoblockly file signature. Set file validity flag and skip first sector (512 bytes).
+		if (sector_in_file == 0){
+			if (!(BlockBuffer[0] == 0x74 && BlockBuffer[1] == 0x08 && BlockBuffer[2] == 0xcc && BlockBuffer[3] == 0x96)){
+				valid_file = false;
+			}else{
+				valid_file = true;
+				num_file_sectors = BlockBuffer[4];
+				// Always skip first sector, if signature was valid, the next sector will be written to the program memory
+				// If the signature was invalid, this sector is skipped as well as all subsequent sectors in the file.
+				sector_in_file=1;
 			}
+		}else{
+			uint16_t FlashAddress = (sector_in_file-1) * SECTOR_SIZE_BYTES; // First sector contains signature so skip.
+			
+			/* Write out the mapped block of data to the device's FLASH */
+			for (uint16_t byte_in_sector = 0 ; byte_in_sector < SECTOR_SIZE_BYTES; byte_in_sector += 2)
+			{
+				if ((FlashAddress % SPM_PAGESIZE) == 0)
+				{
+					/* Erase the given FLASH page, ready to be programmed */
+					BootloaderAPI_ErasePage(FlashAddress);
+				}
+
+				/* Write the next data word to the FLASH page */
+				BootloaderAPI_FillWord(FlashAddress, (BlockBuffer[byte_in_sector + 1] << 8) | BlockBuffer[byte_in_sector]);
+				FlashAddress += 2;
+
+				if ((FlashAddress % SPM_PAGESIZE) == 0)
+				{
+					/* Write the filled FLASH page to memory */
+					BootloaderAPI_WritePage(FlashAddress - SPM_PAGESIZE);
+				}
+			}
+			/* If this was the last sector in the file, assume the program was written into the program memory 
+			reset te microcontroller to start running the application */
+			if (sector_in_file == num_file_sectors){
+				RunBootloader = false;
+			}
+			sector_in_file++;
 		}
 	}
 }
@@ -210,6 +232,7 @@ void VirtualFAT_WriteBlock(const uint16_t BlockNumber)
 			/* Copy over the updated directory entries */
 			//memcpy(FirmwareFileEntries, BlockBuffer, sizeof(FirmwareFileEntries));
 			sector_in_file = 0;	// When file table has is changed assume next write is new file.
+			valid_file = true;
 			break;
 
 		default:
