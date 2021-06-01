@@ -12,10 +12,17 @@ has_param() {
     return 1
 }
 
-if has_param '-h' "$@"; then
+if [[ "$1" == '-h' || "$1" == '--help' || "$#" != 2 ]]; then
     echo "Script needs two parameters:"
     echo "1: input hex file in intel format (.elf)."
     echo  "2: name of the output file."
+    exit 0
+fi
+
+if [[ -f "$1" ]]; then
+    echo "$1 exists."
+else
+    echo "$1 does not exist"
     exit 0
 fi
 

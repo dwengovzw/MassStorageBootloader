@@ -129,6 +129,10 @@ void Application_Jump_Check(void)
 
 		/* Disable pull-up after the check has completed */
 		PORTE &= ~(1 << PE5);
+		/* Clear lcd at the start of the program */
+		initLCD();
+		clearLCD();
+		backlightOff();
 	#else
 		/* Check if the device's BOOTRST fuse is set */
 		if (!(BootloaderAPI_ReadFuse(GET_HIGH_FUSE_BITS) & ~FUSE_BOOTRST))

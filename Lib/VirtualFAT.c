@@ -38,10 +38,8 @@
 #define  INCLUDE_FROM_VIRTUAL_FAT_C
 #include "VirtualFAT.h"
 #include <avr/delay.h>
-#include "../BootloaderMassStorage.h"
 
 // Dirty hack to stop bootloader after file transfer
-extern bool RunBootloader;
 
 /** FAT filesystem boot sector block, must be the first sector on the physical
  *  disk so that the host can identify the presence of a FAT filesystem. This
@@ -195,11 +193,6 @@ static void ReadWriteFLASHFileBlock(const uint16_t BlockNumber,
 					/* Write the filled FLASH page to memory */
 					BootloaderAPI_WritePage(FlashAddress - SPM_PAGESIZE);
 				}
-			}
-			/* If this was the last sector in the file, assume the program was written into the program memory 
-			reset te microcontroller to start running the application */
-			if (sector_in_file == num_file_sectors){
-				RunBootloader = false;
 			}
 			sector_in_file++;
 		}
