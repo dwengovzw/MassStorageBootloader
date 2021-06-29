@@ -92,9 +92,6 @@ void Application_Jump_Check(void)
 {
 	bool JumpToApplication = false;
 
-	DDRA = 0xff;
-	PORTA = 0x00;
-
 	#if (BOARD == BOARD_LEONARDO)
 		/* Enable pull-up on the IO13 pin so we can use it to select the mode */
 		PORTC |= (1 << 7);
@@ -127,12 +124,14 @@ void Application_Jump_Check(void)
 		/* Start application by default, only if south pin pressed on reset or no program is loaded you enter the bootloader */
 		JumpToApplication = (PINE & (1 << PE5));
 
+		DDRA = 0xff;
+		PORTA = 0x00;
 		/* Disable pull-up after the check has completed */
 		PORTE &= ~(1 << PE5);
 		/* Clear lcd at the start of the program */
-		initLCD();
+		/*initLCD();
 		clearLCD();
-		backlightOff();
+		backlightOff();*/
 	#else
 		/* Check if the device's BOOTRST fuse is set */
 		if (!(BootloaderAPI_ReadFuse(GET_HIGH_FUSE_BITS) & ~FUSE_BOOTRST))
@@ -197,7 +196,10 @@ int main(void)
 		USB_USBTask();
 	}
 	/* Wait a short time to end all USB transactions and then disconnect */
-	_delay_ms(50);
+	clearLCD();
+	printStringToLCD("Bezig....", 0, 3);
+
+	_delay_ms(1000);
 
 	clearLCD();
 	backlightOff();
