@@ -17,9 +17,9 @@ Archive member included to satisfy reference by file (symbol)
 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libat90usb646.a(eeupd_byte.o)
                               obj/EndpointStream_AVR8.o (symbol from plugin) (eeprom_update_byte)
 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
-                              /tmp/ccU7ILKX.ltrans0.ltrans.o (__do_copy_data)
+                              /tmp/ccKI2aTe.ltrans0.ltrans.o (__do_copy_data)
 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
-                              /tmp/ccU7ILKX.ltrans0.ltrans.o (__do_clear_bss)
+                              /tmp/ccKI2aTe.ltrans0.ltrans.o (__do_clear_bss)
 
 Allocating common symbols
 Common symbol       size              file
@@ -176,7 +176,7 @@ Linker script and memory map
 Address of section .data set to 0x800100
 LOAD /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtat90usb646.o
 LOAD obj/BootloaderMassStorage.o
-LOAD /tmp/ccU7ILKX.ltrans0.ltrans.o
+LOAD /tmp/ccKI2aTe.ltrans0.ltrans.o
 LOAD obj/dwenguino_lcd.o
 LOAD obj/dwenguino_board.o
 LOAD obj/Descriptors.o
@@ -324,7 +324,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x000000000000e000     0x1320
+.text           0x000000000000e000     0x1388
  *(.vectors)
  .vectors       0x000000000000e000       0x98 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtat90usb646.o
                 0x000000000000e000                __vectors
@@ -363,14 +363,14 @@ END GROUP
  .init2         0x000000000000e098        0xc /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtat90usb646.o
  *(.init2)
  *(.init3)
- .init3         0x000000000000e0a4       0x4c /tmp/ccU7ILKX.ltrans0.ltrans.o
+ .init3         0x000000000000e0a4       0x52 /tmp/ccKI2aTe.ltrans0.ltrans.o
                 0x000000000000e0a4                Application_Jump_Check
  *(.init3)
  *(.init4)
- .init4         0x000000000000e0f0       0x16 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
-                0x000000000000e0f0                __do_copy_data
- .init4         0x000000000000e106       0x10 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
-                0x000000000000e106                __do_clear_bss
+ .init4         0x000000000000e0f6       0x16 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
+                0x000000000000e0f6                __do_copy_data
+ .init4         0x000000000000e10c       0x10 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
+                0x000000000000e10c                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
@@ -381,65 +381,65 @@ END GROUP
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x000000000000e116        0x6 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtat90usb646.o
+ .init9         0x000000000000e11c        0x6 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtat90usb646.o
  *(.init9)
  *(.text)
- .text          0x000000000000e11c        0x2 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtat90usb646.o
-                0x000000000000e11c                __vector_22
-                0x000000000000e11c                __vector_28
-                0x000000000000e11c                __vector_1
-                0x000000000000e11c                __vector_32
-                0x000000000000e11c                __vector_34
-                0x000000000000e11c                __vector_24
-                0x000000000000e11c                __vector_12
-                0x000000000000e11c                __bad_interrupt
-                0x000000000000e11c                __vector_6
-                0x000000000000e11c                __vector_31
-                0x000000000000e11c                __vector_35
-                0x000000000000e11c                __vector_3
-                0x000000000000e11c                __vector_23
-                0x000000000000e11c                __vector_30
-                0x000000000000e11c                __vector_25
-                0x000000000000e11c                __vector_13
-                0x000000000000e11c                __vector_17
-                0x000000000000e11c                __vector_19
-                0x000000000000e11c                __vector_7
-                0x000000000000e11c                __vector_27
-                0x000000000000e11c                __vector_5
-                0x000000000000e11c                __vector_33
-                0x000000000000e11c                __vector_37
-                0x000000000000e11c                __vector_4
-                0x000000000000e11c                __vector_9
-                0x000000000000e11c                __vector_2
-                0x000000000000e11c                __vector_21
-                0x000000000000e11c                __vector_15
-                0x000000000000e11c                __vector_36
-                0x000000000000e11c                __vector_29
-                0x000000000000e11c                __vector_8
-                0x000000000000e11c                __vector_26
-                0x000000000000e11c                __vector_14
-                0x000000000000e11c                __vector_16
-                0x000000000000e11c                __vector_18
- .text          0x000000000000e11e      0xbc6 /tmp/ccU7ILKX.ltrans0.ltrans.o
-                0x000000000000e83a                __vector_11
-                0x000000000000e8c0                __vector_10
-                0x000000000000ea26                BootloaderAPI_WriteLock
-                0x000000000000ea48                BootloaderAPI_ReadLock
-                0x000000000000ea56                BootloaderAPI_ReadFuse
-                0x000000000000ea62                BootloaderAPI_ReadSignature
-                0x000000000000ea6e                BootloaderAPI_FillWord
-                0x000000000000ea88                BootloaderAPI_WritePage
-                0x000000000000eacc                BootloaderAPI_ErasePage
-                0x000000000000ecc6                __vector_20
-                0x000000000000ece4                . = ALIGN (0x2)
+ .text          0x000000000000e122        0x2 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtat90usb646.o
+                0x000000000000e122                __vector_22
+                0x000000000000e122                __vector_28
+                0x000000000000e122                __vector_1
+                0x000000000000e122                __vector_32
+                0x000000000000e122                __vector_34
+                0x000000000000e122                __vector_24
+                0x000000000000e122                __vector_12
+                0x000000000000e122                __bad_interrupt
+                0x000000000000e122                __vector_6
+                0x000000000000e122                __vector_31
+                0x000000000000e122                __vector_35
+                0x000000000000e122                __vector_3
+                0x000000000000e122                __vector_23
+                0x000000000000e122                __vector_30
+                0x000000000000e122                __vector_25
+                0x000000000000e122                __vector_13
+                0x000000000000e122                __vector_17
+                0x000000000000e122                __vector_19
+                0x000000000000e122                __vector_7
+                0x000000000000e122                __vector_27
+                0x000000000000e122                __vector_5
+                0x000000000000e122                __vector_33
+                0x000000000000e122                __vector_37
+                0x000000000000e122                __vector_4
+                0x000000000000e122                __vector_9
+                0x000000000000e122                __vector_2
+                0x000000000000e122                __vector_21
+                0x000000000000e122                __vector_15
+                0x000000000000e122                __vector_36
+                0x000000000000e122                __vector_29
+                0x000000000000e122                __vector_8
+                0x000000000000e122                __vector_26
+                0x000000000000e122                __vector_14
+                0x000000000000e122                __vector_16
+                0x000000000000e122                __vector_18
+ .text          0x000000000000e124      0xc78 /tmp/ccKI2aTe.ltrans0.ltrans.o
+                0x000000000000e894                __vector_11
+                0x000000000000e91a                __vector_10
+                0x000000000000ea80                BootloaderAPI_WriteLock
+                0x000000000000eaa2                BootloaderAPI_ReadLock
+                0x000000000000eab0                BootloaderAPI_ReadFuse
+                0x000000000000eabc                BootloaderAPI_ReadSignature
+                0x000000000000eac8                BootloaderAPI_FillWord
+                0x000000000000eae2                BootloaderAPI_WritePage
+                0x000000000000eb26                BootloaderAPI_ErasePage
+                0x000000000000ed7e                __vector_20
+                0x000000000000ed9c                . = ALIGN (0x2)
  *(.text.*)
- .text.startup  0x000000000000ece4      0x638 /tmp/ccU7ILKX.ltrans0.ltrans.o
-                0x000000000000ece4                main
-                0x000000000000f31c                . = ALIGN (0x2)
+ .text.startup  0x000000000000ed9c      0x5e8 /tmp/ccKI2aTe.ltrans0.ltrans.o
+                0x000000000000ed9c                main
+                0x000000000000f384                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000000000000f31c        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
-                0x000000000000f31c                exit
-                0x000000000000f31c                _exit
+ .fini9         0x000000000000f384        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
+                0x000000000000f384                exit
+                0x000000000000f384                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -458,35 +458,34 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000000000000f31c        0x4 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
+ .fini0         0x000000000000f384        0x4 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
  *(.fini0)
-                0x000000000000f320                _etext = .
+                0x000000000000f388                _etext = .
 
-.data           0x0000000000800100      0x11c load address 0x000000000000f320
+.data           0x0000000000800100      0x11c load address 0x000000000000f388
                 0x0000000000800100                PROVIDE (__data_start, .)
  *(.data)
- .data          0x0000000000800100       0x4c /tmp/ccU7ILKX.ltrans0.ltrans.o
+ .data          0x0000000000800100       0x4d /tmp/ccKI2aTe.ltrans0.ltrans.o
  *(.data*)
  *(.rodata)
- .rodata        0x000000000080014c       0xb4 /tmp/ccU7ILKX.ltrans0.ltrans.o
+ .rodata        0x000000000080014d       0xb4 /tmp/ccKI2aTe.ltrans0.ltrans.o
  *(.rodata*)
  .rodata.str1.1
-                0x0000000000800200       0x1b /tmp/ccU7ILKX.ltrans0.ltrans.o
+                0x0000000000800201       0x1b /tmp/ccKI2aTe.ltrans0.ltrans.o
  *(.gnu.linkonce.d*)
                 0x000000000080021c                . = ALIGN (0x2)
- *fill*         0x000000000080021b        0x1 
                 0x000000000080021c                _edata = .
                 0x000000000080021c                PROVIDE (__data_end, .)
 
 .bss            0x000000000080021c        0xf
                 0x000000000080021c                PROVIDE (__bss_start, .)
  *(.bss)
- .bss           0x000000000080021c        0xf /tmp/ccU7ILKX.ltrans0.ltrans.o
+ .bss           0x000000000080021c        0xf /tmp/ccKI2aTe.ltrans0.ltrans.o
  *(.bss*)
  *(COMMON)
                 0x000000000080022b                PROVIDE (__bss_end, .)
-                0x000000000000f320                __data_load_start = LOADADDR (.data)
-                0x000000000000f43c                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x000000000000f388                __data_load_start = LOADADDR (.data)
+                0x000000000000f4a4                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x000000000080022b        0x0
                 [!provide]                        PROVIDE (__noinit_start, .)
@@ -534,7 +533,7 @@ END GROUP
 
 .comment        0x0000000000000000       0x11
  *(.comment)
- .comment       0x0000000000000000       0x11 /tmp/ccU7ILKX.ltrans0.ltrans.o
+ .comment       0x0000000000000000       0x11 /tmp/ccKI2aTe.ltrans0.ltrans.o
                                          0x12 (size before relaxing)
 
 .note.gnu.avr.deviceinfo
@@ -638,35 +637,35 @@ LOAD linker stubs
 Cross Reference Table
 
 Symbol                                            File
-Application_Jump_Check                            /tmp/ccU7ILKX.ltrans0.ltrans.o
+Application_Jump_Check                            /tmp/ccKI2aTe.ltrans0.ltrans.o
                                                   obj/BootloaderMassStorage.o (symbol from plugin)
 Audio_Device_ConfigureEndpoints                   obj/AudioClassDevice.o (symbol from plugin)
 Audio_Device_Event_Stub                           obj/AudioClassDevice.o (symbol from plugin)
 Audio_Device_ProcessControlRequest                obj/AudioClassDevice.o (symbol from plugin)
-BootloaderAPI_ErasePage                           /tmp/ccU7ILKX.ltrans0.ltrans.o
+BootloaderAPI_ErasePage                           /tmp/ccKI2aTe.ltrans0.ltrans.o
                                                   obj/BootloaderAPI.o (symbol from plugin)
                                                   obj/VirtualFAT.o (symbol from plugin)
                                                   obj/BootloaderAPITable.o
-BootloaderAPI_FillWord                            /tmp/ccU7ILKX.ltrans0.ltrans.o
+BootloaderAPI_FillWord                            /tmp/ccKI2aTe.ltrans0.ltrans.o
                                                   obj/BootloaderAPI.o (symbol from plugin)
                                                   obj/VirtualFAT.o (symbol from plugin)
                                                   obj/BootloaderAPITable.o
 BootloaderAPI_JumpTable                           obj/BootloaderAPITable.o
-BootloaderAPI_ReadFuse                            /tmp/ccU7ILKX.ltrans0.ltrans.o
+BootloaderAPI_ReadFuse                            /tmp/ccKI2aTe.ltrans0.ltrans.o
                                                   obj/BootloaderAPI.o (symbol from plugin)
                                                   obj/BootloaderAPITable.o
-BootloaderAPI_ReadLock                            /tmp/ccU7ILKX.ltrans0.ltrans.o
+BootloaderAPI_ReadLock                            /tmp/ccKI2aTe.ltrans0.ltrans.o
                                                   obj/BootloaderAPI.o (symbol from plugin)
                                                   obj/BootloaderAPITable.o
-BootloaderAPI_ReadSignature                       /tmp/ccU7ILKX.ltrans0.ltrans.o
+BootloaderAPI_ReadSignature                       /tmp/ccKI2aTe.ltrans0.ltrans.o
                                                   obj/BootloaderAPI.o (symbol from plugin)
                                                   obj/BootloaderAPITable.o
 BootloaderAPI_Signatures                          obj/BootloaderAPITable.o
 BootloaderAPI_Trampolines                         obj/BootloaderAPITable.o
-BootloaderAPI_WriteLock                           /tmp/ccU7ILKX.ltrans0.ltrans.o
+BootloaderAPI_WriteLock                           /tmp/ccKI2aTe.ltrans0.ltrans.o
                                                   obj/BootloaderAPI.o (symbol from plugin)
                                                   obj/BootloaderAPITable.o
-BootloaderAPI_WritePage                           /tmp/ccU7ILKX.ltrans0.ltrans.o
+BootloaderAPI_WritePage                           /tmp/ccKI2aTe.ltrans0.ltrans.o
                                                   obj/BootloaderAPI.o (symbol from plugin)
                                                   obj/VirtualFAT.o (symbol from plugin)
                                                   obj/BootloaderAPITable.o
@@ -897,9 +896,9 @@ __data_end                                        /usr/lib/gcc/avr/5.4.0/avr5/li
 __data_load_start                                 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
 __data_start                                      /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
 __do_clear_bss                                    /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
-                                                  /tmp/ccU7ILKX.ltrans0.ltrans.o
+                                                  /tmp/ccKI2aTe.ltrans0.ltrans.o
 __do_copy_data                                    /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
-                                                  /tmp/ccU7ILKX.ltrans0.ltrans.o
+                                                  /tmp/ccKI2aTe.ltrans0.ltrans.o
 __heap_end                                        /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtat90usb646.o
 __init                                            /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtat90usb646.o
 __itoa_ncheck                                     /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(itoa_ncheck.o)
@@ -911,10 +910,10 @@ __utoa_common                                     /usr/lib/gcc/avr/5.4.0/../../.
                                                   /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(itoa_ncheck.o)
 __utoa_ncheck                                     /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(utoa_ncheck.o)
 __vector_1                                        /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtat90usb646.o
-__vector_10                                       /tmp/ccU7ILKX.ltrans0.ltrans.o
+__vector_10                                       /tmp/ccKI2aTe.ltrans0.ltrans.o
                                                   obj/USBInterrupt_AVR8.o (symbol from plugin)
                                                   /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtat90usb646.o
-__vector_11                                       /tmp/ccU7ILKX.ltrans0.ltrans.o
+__vector_11                                       /tmp/ccKI2aTe.ltrans0.ltrans.o
                                                   obj/USBInterrupt_AVR8.o (symbol from plugin)
                                                   /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtat90usb646.o
 __vector_12                                       /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtat90usb646.o
@@ -926,7 +925,7 @@ __vector_17                                       /usr/lib/gcc/avr/5.4.0/../../.
 __vector_18                                       /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtat90usb646.o
 __vector_19                                       /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtat90usb646.o
 __vector_2                                        /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtat90usb646.o
-__vector_20                                       /tmp/ccU7ILKX.ltrans0.ltrans.o
+__vector_20                                       /tmp/ccKI2aTe.ltrans0.ltrans.o
                                                   obj/BootloaderMassStorage.o (symbol from plugin)
                                                   /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtat90usb646.o
 __vector_21                                       /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtat90usb646.o
@@ -975,11 +974,12 @@ initLCD                                           obj/dwenguino_lcd.o (symbol fr
                                                   obj/dwenguino_board.o (symbol from plugin)
                                                   obj/BootloaderMassStorage.o (symbol from plugin)
 lcd_info                                          obj/dwenguino_lcd.o (symbol from plugin)
-main                                              /tmp/ccU7ILKX.ltrans0.ltrans.o
+main                                              /tmp/ccKI2aTe.ltrans0.ltrans.o
                                                   obj/BootloaderMassStorage.o (symbol from plugin)
                                                   /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtat90usb646.o
 memcpy_P                                          /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(memcpy_P.o)
                                                   obj/RNDISClassDevice.o (symbol from plugin)
+num_file_sectors                                  obj/VirtualFAT.o (symbol from plugin)
 printCharToLCD                                    obj/dwenguino_lcd.o (symbol from plugin)
 printIntToLCD                                     obj/dwenguino_lcd.o (symbol from plugin)
 printStringToLCD                                  obj/dwenguino_lcd.o (symbol from plugin)
@@ -988,3 +988,4 @@ sector_in_file                                    obj/VirtualFAT.o (symbol from 
 setCursorLCD                                      obj/dwenguino_lcd.o (symbol from plugin)
 strrev                                            /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strrev.o)
                                                   /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(utoa_ncheck.o)
+valid_file                                        obj/VirtualFAT.o (symbol from plugin)

@@ -37,7 +37,6 @@
 
 #define  INCLUDE_FROM_VIRTUAL_FAT_C
 #include "VirtualFAT.h"
-#include <avr/delay.h>
 
 // Dirty hack to stop bootloader after file transfer
 
@@ -224,7 +223,7 @@ void VirtualFAT_WriteBlock(const uint16_t BlockNumber)
 		case DISK_BLOCK_RootFilesBlock:
 			/* Copy over the updated directory entries */
 			//memcpy(FirmwareFileEntries, BlockBuffer, sizeof(FirmwareFileEntries));
-			sector_in_file = 0;	// When file table has is changed assume next write is new file.
+			sector_in_file = 0;	// When file table has changed assume next write is new file.
 			valid_file = true;
 			break;
 
