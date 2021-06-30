@@ -93,6 +93,8 @@
 
 		bool CALLBACK_MS_Device_SCSICommandReceived(USB_ClassInfo_MS_Device_t* const MSInterfaceInfo) AUX_BOOT_SECTION;
 
+		static void PrepareForApplication() AUX_BOOT_SECTION;
+
 		#if defined(INCLUDE_FROM_BOOTLOADER_MASSSTORAGE_C)
 			static void SetupHardware(void) AUX_BOOT_SECTION;
 		#endif

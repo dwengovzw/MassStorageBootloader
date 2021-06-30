@@ -12,32 +12,36 @@ has_param() {
     return 1
 }
 
-if [[ "$1" == '-h' || "$1" == '--help' || "$#" != 2 ]]; then
-    echo "Script needs two parameters:"
-    echo "1: input hex file in intel format (.elf)."
-    echo  "2: name of the output file."
+if [[ "$1" == '-h' || "$1" == '--help' || "$#" != 4 ]]; then
+    echo "Script needs four parameters:"
+    echo "1: signature file location (will be created)"
+    echo "2: input hex file in intel format (.elf) (should exist)."
+    echo "3: name of the output file. (will be created)"
+    echo "4: Name of the intermediate file"
     exit 0
 fi
 
-if [[ -f "$1" ]]; then
-    echo "$1 exists."
+# Check if .elf file exists
+if [[ -f "$2" ]]; then
+    echo "$2 exists."
 else
-    echo "$1 does not exist"
+    echo "$2 does not exist"
     exit 0
 fi
 
-avr-objcopy -O binary "$1" output.bin
+avr-objcopy -O binary "$2" "$4"
 
 # First extract information from the binary file.
 sectorsizebytes=512
-filesizebytes=$(stat -c%s output.bin)
+filesizebytes=$(stat -c%s $4)
 numsectors=$((filesizebytes/$sectorsizebytes+1))
-echo "Size of $1 in bytes: $filesizebytes which is $numsectors sectors."
+echo "Size of $2 in bytes: $filesizebytes which is $numsectors sectors."
 
 # Now generate the signature file and the zero padding for the first sector
-printf "%b" '\x74\x08\xcc\x96' > sig.bin	# Verification signature
-printf "0: %.2x" $numsectors | xxd -r -p >> sig.bin	# Number of sectors in file
-dd < /dev/zero bs=507 count=1 >> sig.bin	# Zero padding to full sector size 512 sector size - 4 signature bytes - 1 filesize byte
+printf "%b" '\x74\x08\xcc\x96' > "$1" #sig.bin	# Verification signature
+printf "0: %.2x" $numsectors | xxd -r -p >> "$1" #sig.bin	# Number of sectors in file
+dd < /dev/zero bs=507 count=1 >> "$1" #sig.bin	# Zero padding to full sector size 512 sector size - 4 signature bytes - 1 filesize byte
 
 # Prepend the signature to the binary file
-cat sig.bin output.bin > "$2"
+cat "$1" "$4" > "$3"
+

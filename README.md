@@ -18,3 +18,19 @@ This version of the bootloader is speciffically designed for the AVR AT90USB646 
 * Run the *make* command from the root folder of the project to compile the code.
 
 To upload the code to the microcontroller you need a compatible AVR programmer. The upload was tested with the USBASP (usbasp) as well as the AVRISP MKII (avrisp2). Update the AVRDUDE_PROGRAMMER setting in the makefile and run the command *make avrdude*.
+
+### Requirements for binary file
+
+The USB Massstorage bootloader enables programming .bin files using the standard USB file transfer protocol. Since we do not want users to be able to transfer incompatible files to the microcontroller, the .bin files have to be signed. The singature contains a set of signature bytes and the number of fat sectors the file needs to be stored. If the signature in the file matches the one set inside the bootloader, the bootloader accepts next transfered sectors to be written to the program memory. 
+
+To sign your compiled arduino/dwenguino code you can run the shell script *package.sh* with the following parameters:
+
+1. Signature file location (will be created)
+2. Input hex file in intel format (.elf) (should exist).
+3. Name of the output file. (will be created, this is the file you can upload to the Dwenguino Microcontroller with the USB Massstorage bootloader)
+4. Name of the intermediate file 
+
+
+The script can easliy be changed to automatically create the intermidiate files. However, we chose not to do this to allow us to specify them programmatically from our other applications.
+
+

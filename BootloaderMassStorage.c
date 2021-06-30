@@ -92,68 +92,21 @@ void Application_Jump_Check(void)
 {
 	bool JumpToApplication = false;
 
-	#if (BOARD == BOARD_LEONARDO)
-		/* Enable pull-up on the IO13 pin so we can use it to select the mode */
-		PORTC |= (1 << 7);
-		Delay_MS(10);
+	// Setup boot selection on the Dwenguino board
 
-		/* If IO13 is not jumpered to ground, start the user application instead */
-		JumpToApplication = ((PINC & (1 << 7)) != 0);
+	/* Enable pull-up on the south button so we can use it to select the mode */
+	DDRE &= ~(1<<PE5); // Set south button as input
+	PORTE |= (1 << PE5);
+	Delay_MS(10);
 
-		/* Disable pull-up after the check has completed */
-		PORTC &= ~(1 << 7);
-	#elif ((BOARD == BOARD_XPLAIN) || (BOARD == BOARD_XPLAIN_REV1))
-		/* Disable JTAG debugging */
-		JTAG_DISABLE();
+	/* Start application by default, only if south pin pressed on reset or no program is loaded you enter the bootloader */
+	JumpToApplication = (PINE & (1 << PE5));
 
-		/* Enable pull-up on the JTAG TCK pin so we can use it to select the mode */
-		PORTF |= (1 << 4);
-		Delay_MS(10);
-
-		/* If the TCK pin is not jumpered to ground, start the user application instead */
-		JumpToApplication = ((PINF & (1 << 4)) != 0);
-
-		/* Re-enable JTAG debugging */
-		JTAG_ENABLE();
-	#elif (BOARD == BOARD_DWENGUINO)
-		/* Enable pull-up on the south button so we can use it to select the mode */
-		DDRE &= ~(1<<PE5); // Set south button as input
-		PORTE |= (1 << PE5);
-		Delay_MS(10);
-
-		/* Start application by default, only if south pin pressed on reset or no program is loaded you enter the bootloader */
-		JumpToApplication = (PINE & (1 << PE5));
-
-		DDRA = 0xff;
-		PORTA = 0x00;
-		/* Disable pull-up after the check has completed */
-		PORTE &= ~(1 << PE5);
-		/* Clear lcd at the start of the program */
-		/*initLCD();
-		clearLCD();
-		backlightOff();*/
-	#else
-		/* Check if the device's BOOTRST fuse is set */
-		if (!(BootloaderAPI_ReadFuse(GET_HIGH_FUSE_BITS) & ~FUSE_BOOTRST))
-		{
-			/* If the reset source was not an external reset or the key is correct, clear it and jump to the application */
-			if (!(MCUSR & (1 << EXTRF)) || (MagicBootKey == MAGIC_BOOT_KEY))
-			  JumpToApplication = true;
-
-			/* Clear reset source */
-			MCUSR &= ~(1 << EXTRF);
-		}
-		else
-		{
-			/* If the reset source was the bootloader and the key is correct, clear it and jump to the application;
-			 * this can happen in the HWBE fuse is set, and the HBE pin is low during the watchdog reset */
-			if ((MCUSR & (1 << WDRF)) && (MagicBootKey == MAGIC_BOOT_KEY))
-				JumpToApplication = true;
-
-			/* Clear reset source */
-			MCUSR &= ~(1 << WDRF);
-		}
-	#endif
+	DDRA = 0xff;
+	PORTA = 0x00;
+	/* Disable pull-up after the check has completed */
+	PORTE &= ~(1 << PE5);
+	
 
 	/* Don't run the user application if the reset vector is blank (no app loaded) */
 	bool ApplicationValid = (pgm_read_word_near(0) != 0xFFFF);
@@ -161,6 +114,8 @@ void Application_Jump_Check(void)
 	/* If a request has been made to jump to the user application, honor it */
 	if (JumpToApplication && ApplicationValid)
 	{
+		PrepareForApplication();
+
 		/* Turn off the watchdog */
 		MCUSR &= ~(1 << WDRF);
 		wdt_disable();
@@ -198,11 +153,9 @@ int main(void)
 	/* Wait a short time to end all USB transactions and then disconnect */
 	clearLCD();
 	printStringToLCD("Bezig....", 0, 3);
-
 	_delay_ms(1000);
 
-	clearLCD();
-	backlightOff();
+	PrepareForApplication();
 	
 	/* Disconnect from the host - USB interface will be reset later along with the AVR */
 	USB_Detach();
@@ -214,6 +167,14 @@ int main(void)
 	wdt_enable(WDTO_250MS);
 
 	for (;;);
+}
+/**
+ * Resets board hardware used by bootloader
+ */
+static void PrepareForApplication(void){
+	PORTA = 0;
+	clearLCD();
+	backlightOff();
 }
 
 /** Configures the board hardware and chip peripherals for the demo's functionality. */
@@ -236,24 +197,7 @@ static void SetupHardware(void)
     MCUCR = temp | (1<<IVSEL);
 
 	/* Hardware Initialization */
-	//LEDs_Init();
-	USB_Init();
-    
-	/* Bootloader active LED toggle timer initialization */
-	/*SREG |= (1<<SREG_I);
-	TIMSK1 |= (1 << TOIE1);
-	TCCR1B |= ((1 << CS12) | (1 << CS10));
-	TCCR1B &= ~((1 << WGM12)|(1 << WGM13)|(1<<CS11));
-	TCCR1A &= ~((1<<WGM10)|(1<<WGM11));*/
-	
-}
-
-
-
-/** ISR to periodically toggle the LEDs on the board to indicate that the bootloader is active. */
-ISR(TIMER1_OVF_vect)
-{
-    PORTA ^= 128;
+	USB_Init();   	
 }
 
 /** Event handler for the USB_Connect event. This indicates that the device is enumerating via the status LEDs. */
