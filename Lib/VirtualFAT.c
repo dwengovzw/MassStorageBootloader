@@ -132,7 +132,7 @@ static void UpdateFAT12ClusterEntry(uint8_t* const FATTable,
 
 
 int sector_in_file = 0;
-bool valid_file = true;
+//bool valid_file = true;
 int num_file_sectors = 0;
 
 /** Reads or writes a block of data from/to the physical device FLASH using a
@@ -155,7 +155,7 @@ static void ReadWriteFLASHFileBlock(const uint16_t BlockNumber,
 		
 		/* Range check the write request - abort if requested block is not within the
 		* virtual firmware file sector range or file signature was invalid*/
-		if (sector_in_file >= FILE_SECTORS(FLASH_FILE_SIZE_BYTES) || !valid_file){
+		if (sector_in_file >= FILE_SECTORS(FLASH_FILE_SIZE_BYTES) /*|| !valid_file*/){
 			return;
 		}
 
@@ -163,9 +163,9 @@ static void ReadWriteFLASHFileBlock(const uint16_t BlockNumber,
 		// dwenguinoblockly file signature. Set file validity flag and skip first sector (512 bytes).
 		if (sector_in_file == 0){
 			if (!(BlockBuffer[0] == 0x74 && BlockBuffer[1] == 0x08 && BlockBuffer[2] == 0xcc && BlockBuffer[3] == 0x96)){
-				valid_file = false;
+				sector_in_file = 0;
 			}else{
-				valid_file = true;
+				//valid_file = true;
 				num_file_sectors = BlockBuffer[4];
 				// Always skip first sector, if signature was valid, the next sector will be written to the program memory
 				// If the signature was invalid, this sector is skipped as well as all subsequent sectors in the file.
@@ -224,7 +224,7 @@ void VirtualFAT_WriteBlock(const uint16_t BlockNumber)
 			/* Copy over the updated directory entries */
 			//memcpy(FirmwareFileEntries, BlockBuffer, sizeof(FirmwareFileEntries));
 			sector_in_file = 0;	// When file table has changed assume next write is new file.
-			valid_file = true;
+			//valid_file = true;
 			break;
 
 		default:
