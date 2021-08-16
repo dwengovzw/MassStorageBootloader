@@ -13,7 +13,7 @@ This version of the bootloader is speciffically designed for the AVR AT90USB646 
 ### Compilation instructions
 
 * Clone/download this repository to your local machine.
-* Download the LUFA library (version 210130) from their [github page](https://github.com/abcminiuser/lufa).
+* Download the LUFA library ([version 210130](https://github.com/abcminiuser/lufa/releases/tag/LUFA-210130)) from their [github page](https://github.com/abcminiuser/lufa).
 * Copy the LUFA folder from the library to the root folder fo this repository.
 * Run the *make* command from the root folder of the project to compile the code.
 
