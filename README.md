@@ -6,9 +6,8 @@ This version of the bootloader is speciffically designed for the AVR AT90USB646 
 
 ### Dependencies
 
-* LUFA library (version 210130)
-* gmake
-* avrdude
+* gmake (installed by default on ubuntu)
+* avrdude (sudo apt-get install gcc-avr binutils-avr avr-libc)
 
 ### Compilation instructions
 
