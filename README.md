@@ -7,7 +7,7 @@ This version of the bootloader is speciffically designed for the AVR AT90USB646 
 ### Dependencies
 
 * gmake (installed by default on ubuntu)
-* avrdude (sudo apt-get install gcc-avr binutils-avr avr-libc)
+* avrdude (sudo apt-get install -y avrdude gcc-avr binutils-avr avr-libc)
 
 ### Compilation instructions
 
